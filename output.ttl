@@ -5085,6 +5085,219 @@ fields:b05954eb-73fb-4a68-a8cc-cdf51b7a8e2a a form:ConditionalFieldGroup ;
       ] ;
     form:hasFieldGroup fieldGroups:2a680569-0262-4030-842e-0925e1348446 .
 
+########### Vaststelling gemeentelijk beleidskader (gemeentewegen) ###########
+
+# Conditionally add the form fields to the "type dossier" field
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:14cf00b9-af35-4dc7-9a6e-78c7f9b98d2a.
+
+# Only add the fields if the user selected the "Vaststelling gemeentelijk beleidskader (gemeentewegen)" option
+fields:14cf00b9-af35-4dc7-9a6e-78c7f9b98d2a a form:ConditionalFieldGroup ;
+    mu:uuid "14cf00b9-af35-4dc7-9a6e-78c7f9b98d2a";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/b0fcc0c3-bb33-427f-8da2-4ef3833c9060>
+      ] ;
+    form:hasFieldGroup fieldGroups:94b97172-f358-4ffd-b8e7-81898551a97c .
+
+# Fields that should always be added to the current form
+fieldGroups:94b97172-f358-4ffd-b8e7-81898551a97c a form:FieldGroup ;
+    mu:uuid "94b97172-f358-4ffd-b8e7-81898551a97c" ;
+
+    form:hasField
+      ###Gaat het over een voorlopige of definitieve vaststelling?###
+      fields:656c67e2-05e0-41f5-a449-0056d06eb64f,
+
+      ###Datum-zitting/besluit###
+      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+      ###Welk-beslissingsorgaan-nam-het-besluit?###
+      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc.
+
+
+# Some fields are added conditionally based on the selection of "Gaat het over een voorlopige of definitieve vaststelling?"
+
+## If the selected value is "Definitief"
+fields:656c67e2-05e0-41f5-a449-0056d06eb64f form:hasConditionalFieldGroup fields:e2421a9f-cb0e-4f61-9d4e-2f340e10f9d2.
+
+fields:e2421a9f-cb0e-4f61-9d4e-2f340e10f9d2 a form:ConditionalFieldGroup ;
+    mu:uuid "e2421a9f-cb0e-4f61-9d4e-2f340e10f9d2";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16> ;
+        form:customValue <http://lblod.data.gift/concepts/28da07ad-4a25-460e-b1be-92bd4b7b8927>
+      ] ;
+    form:hasFieldGroup fieldGroups:541b0bea-bd2b-4e4c-99f4-1b0deb3d6a28 .
+
+fieldGroups:541b0bea-bd2b-4e4c-99f4-1b0deb3d6a28 a form:FieldGroup ;
+    mu:uuid "541b0bea-bd2b-4e4c-99f4-1b0deb3d6a28" ;
+    form:hasField
+      ###Datum-van-publicatie-op-webtoepassing###
+      fields:f63b6a4d-38a2-445d-96c2-f79d248edfca,
+
+      ### Links-naar-documenten ###
+      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
+      
+      ### File uploader with custom help text
+      fields:fc5ff1f9-65ac-4200-8bcb-ec827c2aee01,
+      
+      ###Type RemoteDataObject or FileDataObject###
+      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+      ### RemoteDataObject/url ###
+      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+## If the selected value is "Voorlopig"
+fields:656c67e2-05e0-41f5-a449-0056d06eb64f form:hasConditionalFieldGroup fields:dcce4bc3-7dbb-4f60-88ea-5ace19c8890a.
+
+fields:dcce4bc3-7dbb-4f60-88ea-5ace19c8890a a form:ConditionalFieldGroup ;
+    mu:uuid "dcce4bc3-7dbb-4f60-88ea-5ace19c8890a";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16> ;
+        form:customValue <http://lblod.data.gift/concepts/055d66b8-204c-47da-80d9-d41601503616>
+      ] ;
+    form:hasFieldGroup fieldGroups:de6a45ac-e658-4cb7-8c75-d0734c7f76df .
+
+fieldGroups:de6a45ac-e658-4cb7-8c75-d0734c7f76df a form:FieldGroup ;
+    mu:uuid "de6a45ac-e658-4cb7-8c75-d0734c7f76df" ;
+    form:hasField
+      ### Datum-van-publicatie-op-webtoepassing without required validator
+      fields:7d31d717-ee75-4280-996f-2b76bbfa6759,
+
+      ### Links-naar-documenten ###
+      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
+
+      ### File uploader with custom help text
+      fields:0d2a3e6c-81ea-4c24-87b3-4f9cc5512a07,
+      
+      ###Type RemoteDataObject or FileDataObject###
+      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+      ### RemoteDataObject/url ###
+      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+############################################################################################
+# Custom form fields for the "Vaststelling gemeentelijk beleidskader (gemeentewegen)" form 
+############################################################################################
+
+## Clone of `b9d831c5-da21-40d6-aac8-65feb4783d76` so we can conditionally add fields to it without conflicts in the other form
+fields:656c67e2-05e0-41f5-a449-0056d06eb64f a form:Field ;
+    mu:uuid "656c67e2-05e0-41f5-a449-0056d06eb64f" ;
+    sh:name "Gaat het over een voorlopige of definitieve vaststelling?" ;
+    sh:order 3700 ;
+    sh:path lblodBesluit:AdoptionType ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16>;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
+    sh:group fields:aDynamicPropertyGroup .
+
+## Copy of the standard field but with a different ordering
+fields:f63b6a4d-38a2-445d-96c2-f79d248edfca a form:Field ;
+    mu:uuid "f63b6a4d-38a2-445d-96c2-f79d248edfca" ;
+    sh:name "Datum van publicatie op webtoepassing" ;
+    sh:order 3800 ;
+    sh:path eli:date_publication ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht.";
+        sh:path eli:date_publication ],
+      [ a form:ValidDate ;
+        form:grouping form:MatchEvery ;
+        sh:path eli:date_publication ;
+        sh:resultMessage "Geef een geldige datum op."@nl ] ;
+    form:displayType displayTypes:date ;
+    sh:group fields:aDynamicPropertyGroup .
+
+# Variant of "fields:f63b6a4d-38a2-445d-96c2-f79d248edfca" without the RequiredConstraint
+fields:7d31d717-ee75-4280-996f-2b76bbfa6759 a form:Field ;
+    mu:uuid "7d31d717-ee75-4280-996f-2b76bbfa6759" ;
+    sh:name "Datum van publicatie op webtoepassing" ;
+    sh:order 3800 ;
+    sh:path eli:date_publication ;
+    form:validations
+      [ a form:ValidDate ;
+        form:grouping form:MatchEvery ;
+        sh:path eli:date_publication ;
+        sh:resultMessage "Geef een geldige datum op."@nl ] ;
+    form:displayType displayTypes:date ;
+    sh:group fields:aDynamicPropertyGroup .
+
+## File upload with custom help text which should be shown when "Definitief" is selected
+fields:fc5ff1f9-65ac-4200-8bcb-ec827c2aee01 a form:Field ;
+    mu:uuid "fc5ff1f9-65ac-4200-8bcb-ec827c2aee01" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de definitieve beslissing, gemeentelijk beleidskader, gemeentelijk actieplan (indien opgemaakt).""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+## File upload with custom help text which should be shown when "Voorlopig" is selected
+fields:0d2a3e6c-81ea-4c24-87b3-4f9cc5512a07 a form:Field ;
+    mu:uuid "0d2a3e6c-81ea-4c24-87b3-4f9cc5512a07" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """
+    <div class="au-c-content au-c-content--tiny">
+      <p>
+        Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, 
+        ontwerp gemeentelijk beleidskader, ontwerp gemeentelijk actieplan (indien opgemaakt).
+      </p>
+      <p>
+        Het Departement MOW verleent momenteel enkel niet-dossierspecifiek advies. Het decreet Gemeentewegen kent nieuwe
+        taken toe aan het Departement. Gezien de vrij recente goedkeuring van dit decreet en de mogelijke impact op de 
+        organisatie loopt de transitie die gepaard gaat met het opnemen van deze taken momenteel nog. We willen benadrukken dat uw 
+        beslissing moet voldoen aan de doelstellingen en principes zoals geformuleerd in artikel 3 en 4 van het decreet Gemeentewegen:
+      </p>
+      <ul>
+        <li>het belang van de huidige en toekomstige behoeften van de zachte mobiliteit staat voorop.</li>
+        <li>
+          de noodzaak om een geïntegreerd beleid te voeren, dat leidt tot de uitbouw van veilige wegen op lokaal niveau 
+          en op de herwaardering en bescherming van de trage wegen.
+        </li>
+      </ul>
+      <p>
+        Het gemeentelijk beleidskader moet dan ook altijd van algemeen belang zijn, waarbij wijzigingen en afschaffingen van wegen
+        uitzonderingsmaatregelen zijn. Het is ook van belang om de wijzigingen te bekijken in een ruimere context dan enkel het 
+        eigen gemeentelijk niveau. Verder vragen we u de vormvereisten van het decreet Gemeentewegen na te leven, oog te hebben
+        voor de eventuele meer- en minwaarden die het dossier met zich kan meebrengen en het goede huisvader-principe niet te verwaarlozen.
+      </p>
+    </div>""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ###########Definitieve aanleg, verplaatsing of wijziging van een gemeenteweg###########
 
 fieldGroups:f7e0c669-2634-4264-b01f-cc76cfa24b1a a form:FieldGroup ;
