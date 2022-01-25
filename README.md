@@ -50,11 +50,18 @@ Full flow
 - Create a submission with the new forms version in Loket, send it, make sure it appears in Toezicht and can be opened
 - Same with a submission created with the old forms version but sent with the new forms version in application (env variable)
 
+**app-public-decisions-database**
+- connect the app to a source loket (with delta's), assuming the new forms have been deployed at the source
+- create e.g. a besluitenlijst in the source and see wether it comes through and you can open it
+
 ### Debugging hints
 
 *This list is meant to evolve and get filled by developpers encountering issues.*
 
 - Forms not opening in Toezicht ABB --> double check there is a migration defining the form file as a resource
+- For app-public-decisions-database, there is another default graph where the forms-files are stored, so you will need to update the migration accordingly.
+- For app-public-decisions-database, if a new form, very likely the business rules to decided whether it should be published or not, should be updated too.
+  - So most likely [enrich-submission](https://github.com/lblod/enrich-submission-service) needs an upate too
 
 ## Guide to create new fields
 
