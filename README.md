@@ -42,6 +42,7 @@ Built forms will be put in ./output.ttl.
 
 **Toezicht**
 
+- Note ⚠️ forms should reside in http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b
 - Open a submission with the new form version
 - Open a submission with the old form version
 
@@ -51,6 +52,7 @@ Full flow
 - Same with a submission created with the old forms version but sent with the new forms version in application (env variable)
 
 **app-public-decisions-database**
+- Note ⚠️ forms should reside in http://mu.semte.ch/graphs/access-for-role/PubliekeBesluitendatabank-BesluitendatabankLezer
 - connect the app to a source loket (with delta's), assuming the new forms have been deployed at the source
 - create e.g. a besluitenlijst in the source and see wether it comes through and you can open it
 
