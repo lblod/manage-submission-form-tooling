@@ -7,7 +7,7 @@ To run in a docker container clone this repo then run:
 ### Concatenating folder structure files in one file
 
 ```
-docker run -it --rm -v "$PWD":/app -w /app node:10 ./build-forms.sh
+docker run -it --rm -v "$PWD":/app -w /app node:16 ./build-forms.sh
 ```
 
 Built forms will be put in ./output.ttl.
@@ -90,7 +90,7 @@ Furthermore, most likely, you want this field in the database if new relation: t
 Generate the output file using the `build-forms.sh` script and paste the output to the apps using it (`app-digitaal-loket`, `app-meldingsplichtige-api`, `app-toezicht-abb`) in the `config/semanticForms/` folder.
 
 If you create a new configuration file, a few things need to be done :
-1. The `ACTIVE_FORM_FIELDS` environment variable of the [enrich-submission-service](https://github.com/lblod/enrich-submission-service#add-the-service-to-a-stack) needs to be updated to the new file name
+1. The `ACTIVE_FORM_FILE` environment variable of the [enrich-submission-service](https://github.com/lblod/enrich-submission-service#add-the-service-to-a-stack) needs to be updated to the new file name
 2. Add migrations to the app defining the configuration file as a resource in the database ([migration](https://github.com/lblod/app-digitaal-loket/blob/ed761a8731ffe8fd51226582f0e6223d460e7f50/config/migrations/20200407100352-automatisch-melding/20200904103600-fix-add-the-forms-file-as-a-file-resource.sparql))
   - Best to add the migration on all instances of the apps using it.
   - Bear in mind: [app-digitaal-loket](https://github.com/lblod/app-digitaal-loket), [app-toezicht-abb](https://github.com/lblod/app-toezicht-abb), [app-meldingsplichtige-api](https://github.com/lblod/app-meldingsplichtige-api) are currently using it.
