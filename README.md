@@ -2,15 +2,31 @@
 
 ## Usage
 
+The `buildForms` script can be used to bundle all form configurations and generate a folder structure for each supported project.
+
+```sh
+npm install # Make sure you run this before running the script
+npm run buildForms
+```
+
+This will create a folder for each supported project in the `./dist` folder. You can then copy this folder to each respective project.
+
+### Using a specific date
+By default a new timestamp will be generated when running the script, which will be used to prefix all file and folder names. If you want to use a different date for this you can pass it in as an argument to the script:
+
+```sh
+npm run buildForms -- --date 2022-02-03T11:00:00
+```
+
+> The date should be a valid [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) date and parsable by date-fns' [`parseISO` function](https://date-fns.org/v2.28.0/docs/parseISO).
+
+### Using Docker to run the script
+
 To run in a docker container clone this repo then run:
 
-### Concatenating folder structure files in one file
-
 ```
-docker run -it --rm -v "$PWD":/app -w /app node:16 ./build-forms.sh
+docker run -it --rm -v "$PWD":/app -w /app node:16 npm install && npm run buildForms
 ```
-
-Built forms will be put in ./output.ttl.
 
 ## Testing changes
 
@@ -87,10 +103,10 @@ Furthermore, most likely, you want this field in the database if new relation: t
 
 ### Export configuration to the apps
 
-Generate the output file using the `build-forms.sh` script and paste the output to the apps using it (`app-digitaal-loket`, `app-meldingsplichtige-api`, `app-toezicht-abb`) in the `config/semanticForms/` folder.
+Generate the project specific files using the `npm run buildForms` script and paste the output in the app's root folder.
 
 If you create a new configuration file, a few things need to be done :
 1. The `ACTIVE_FORM_FILE` environment variable of the [enrich-submission-service](https://github.com/lblod/enrich-submission-service#add-the-service-to-a-stack) needs to be updated to the new file name
 2. Add migrations to the app defining the configuration file as a resource in the database ([migration](https://github.com/lblod/app-digitaal-loket/blob/ed761a8731ffe8fd51226582f0e6223d460e7f50/config/migrations/20200407100352-automatisch-melding/20200904103600-fix-add-the-forms-file-as-a-file-resource.sparql))
   - Best to add the migration on all instances of the apps using it.
-  - Bear in mind: [app-digitaal-loket](https://github.com/lblod/app-digitaal-loket), [app-toezicht-abb](https://github.com/lblod/app-toezicht-abb), [app-meldingsplichtige-api](https://github.com/lblod/app-meldingsplichtige-api) are currently using it.
+  - Bear in mind: [app-digitaal-loket](https://github.com/lblod/app-digitaal-loket), [app-toezicht-abb](https://github.com/lblod/app-toezicht-abb), [app-meldingsplichtige-api](https://github.com/lblod/app-meldingsplichtige-api) and [app-public-decisions-database](https://github.com/lblod/app-public-decisions-database) are currently using it.
