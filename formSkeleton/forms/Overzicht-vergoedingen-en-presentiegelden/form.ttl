@@ -1,0 +1,52 @@
+########### Overzicht vergoedingen en presentiegelden ###########
+
+# Conditionally add the form fields to the "type dossier" field
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:26b8392b-4097-4e99-8fec-832d063d316b.
+
+# Only add the fields if the user selected the "Overzicht vergoedingen en presentiegelden" option
+fields:26b8392b-4097-4e99-8fec-832d063d316b a form:ConditionalFieldGroup ;
+    mu:uuid "26b8392b-4097-4e99-8fec-832d063d316b";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/365d561c-57c7-4523-af04-6e3c91426c56>
+      ] ;
+    form:hasFieldGroup fieldGroups:8a07bf7d-c99f-47fa-9bcf-a4b7d221ac28 .
+
+fieldGroups:8a07bf7d-c99f-47fa-9bcf-a4b7d221ac28 a form:FieldGroup ;
+    mu:uuid "8a07bf7d-c99f-47fa-9bcf-a4b7d221ac28" ;
+
+    form:hasField
+      ### Links-naar-documenten ###
+      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
+
+      ### File uploader with custom help text
+      fields:1d8f3fa0-a908-494c-8cd3-48035f581936,
+
+      ###Type RemoteDataObject or FileDataObject###
+      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+      ### RemoteDataObject/url ###
+      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+############################################################################################
+# Custom form fields for the "Overzicht vergoedingen en presentiegelden" form
+############################################################################################
+
+## File upload with custom help text
+fields:1d8f3fa0-a908-494c-8cd3-48035f581936 a form:Field ;
+    mu:uuid "1d8f3fa0-a908-494c-8cd3-48035f581936" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Hier dient u de exceltabel in te dienen met een per mandataris geïndividualiseerd overzicht van de vergoedingen en de presentiegelden zoals bepaald in artikel 448, vierde lid DLB.""";
+    sh:group fields:aDynamicPropertyGroup .
