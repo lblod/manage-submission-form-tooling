@@ -530,6 +530,23 @@ fields:c7c5a589-0785-4032-a4bd-ee589add3c39 a form:Field ;
     sh:group fields:aDynamicPropertyGroup .
 
 ##########################################################
+# Required file
+##########################################################
+fields:cd27f7a0-5e6b-4f76-b55c-a1cb7c4efee6 a form:Field ;
+    mu:uuid "cd27f7a0-5e6b-4f76-b55c-a1cb7c4efee6" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path dct:hasPart ;
+         sh:resultMessage "Gelieve minstens één bestand op te geven."@nl
+     ];
+    form:displayType <http://lblod.data.gift/display-types/files> ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
 # Custom files and links fields
 # Following fields should be considered as a pair.
 # Their validation is mutually dependent.
