@@ -64,7 +64,7 @@ let uuid = uuidv4();
 projects.forEach((project) => {
   createFormTtlFile({ project, fileName, bundledFormOutput });
 
-  let targetGraph = project.fileGraph ?? defaultFileGraph;
+  let targetGraph = project.fileGraph || defaultFileGraph;
 
   createResourceMigrationFile({
     project,
