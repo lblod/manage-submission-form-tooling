@@ -25,7 +25,7 @@ npm run buildForms -- --date 2022-02-03T11:00:00
 To run in a docker container clone this repo then run:
 
 ```
-docker run -it --rm -v "$PWD":/app -w /app node:16 npm install && npm run buildForms
+docker run -it --rm -v "$PWD":/app -w /app node:16 /bin/bash -c "npm install && npm run buildForms"
 ```
 
 ## Testing changes
