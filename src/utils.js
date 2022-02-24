@@ -41,16 +41,18 @@ function createResourceMigrationFile({
   fileSize,
   dateCreated,
   dateModified,
-  uuid,
+  uuid
 }) {
+
+  const year = timestamp.substr(0, 4);
   fs.mkdirSync(
-    `./dist/${project.name}/config/migrations/${timestamp}-add-new-forms`,
+    `./dist/${project.name}/config/migrations/${year}/${timestamp}-add-new-forms`,
     {
       recursive: true,
     }
   );
   fs.writeFileSync(
-    `./dist/${project.name}/config/migrations/${timestamp}-add-new-forms/${timestamp}-add-file-resource.sparql`,
+    `./dist/${project.name}/config/migrations/${year}/${timestamp}-add-new-forms/${timestamp}-add-file-resource.sparql`,
     generateMigrationContents({
       targetGraph,
       fileName,
@@ -120,5 +122,5 @@ module.exports = {
   clearDistFolder,
   createFormTtlFile,
   createResourceMigrationFile,
-  generateTimestamp,
+  generateTimestamp
 };
