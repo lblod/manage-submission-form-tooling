@@ -29,7 +29,7 @@ fieldGroups:0ec0bd00-3b93-4ccd-974c-dd18f99c877b a form:FieldGroup ;
       fields:49dbe1be-877a-4890-8465-1510ff18ce18,
 
       ### Links-naar-documenten ###
-      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
+      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb ,
 
       ### File uploader with custom help text
       fields:a633a5bd-0ceb-4ead-8c53-27b7304100c5,
@@ -50,12 +50,6 @@ fields:a633a5bd-0ceb-4ead-8c53-27b7304100c5 a form:Field ;
     sh:name "Bestanden" ;
     sh:order 10001 ;
     sh:path dct:hasPart;
-    form:validations
-     [ a  form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:path dct:hasPart;
-          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
-     ];
     form:displayType displayTypes:files; # consider this v1.0
     form:help """
     <div class="au-c-content au-c-content--tiny">
