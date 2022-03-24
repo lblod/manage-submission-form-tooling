@@ -5,17 +5,17 @@ fieldGroups:acabf4e0-a124-4d68-b3f1-f93e86c7b1e5 a form:FieldGroup ;
     mu:uuid "acabf4e0-a124-4d68-b3f1-f93e86c7b1e5" ;
     form:hasField
 
-                      ###Links-naar-documenten (SIMPLE) ###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
-                      ###Bestanden (CUSTOM) ###
+                      ###Bestanden (custom)###
                       fields:7465c000-c844-4ba9-82cc-bd173cbe41a3.
 
 # this field is the custom bestuursorgaan selector
-fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:3a079210d-0f29-4ec8-b10a-502ab8be7735.
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:29e7bd94-1aa4-4ad2-9b43-b7ececf46348.
 
-fields:3a079210d-0f29-4ec8-b10a-502ab8be7735 a form:ConditionalFieldGroup ;
-    mu:uuid "3a079210d-0f29-4ec8-b10a-502ab8be7735";
+fields:29e7bd94-1aa4-4ad2-9b43-b7ececf46348 a form:ConditionalFieldGroup ;
+    mu:uuid "29e7bd94-1aa4-4ad2-9b43-b7ececf46348";
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;

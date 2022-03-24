@@ -5,8 +5,8 @@ fieldGroups:5a21ed58-c0cf-4042-8b59-bd14ca595aae a form:FieldGroup ;
     mu:uuid "5a21ed58-c0cf-4042-8b59-bd14ca595aae" ;
     form:hasField
 
-                      ###Links-naar-documenten (SIMPLE) ###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden (CUSTOM) ###
                       fields:95c9236e-e849-4888-82ae-b812f906e75d.
