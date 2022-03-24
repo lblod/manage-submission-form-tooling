@@ -1,5 +1,4 @@
 
-
 ###########Meerjarenplan(aanpassing)###########
 
 fieldGroups:e0925be1-bdce-4890-b6e4-4f7640700581 a form:FieldGroup ;
@@ -14,26 +13,8 @@ fieldGroups:e0925be1-bdce-4890-b6e4-4f7640700581 a form:FieldGroup ;
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
-                      ###Datum-zitting/besluit###
-                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
-
-                      ###Rapportjaar###
-                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-
-                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
-                      fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
-
-                      ###Datum-van-publicatie-op-webtoepassing###
-                      fields:49dbe1be-877a-4890-8465-1510ff18ce18,
-
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
-
-                      ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
-
-                      ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,

@@ -1,8 +1,8 @@
 
-###########Budget-Andere###########
+###########Meerjarenplan(aanpassing)-andere###########
 
-fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 a form:FieldGroup ;
-    mu:uuid "5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95" ;
+fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 a form:FieldGroup ;
+    mu:uuid "978fd72b-26df-438e-8bf0-5dd661b191d5" ;
     form:hasField
                     
                     ###Datum-van-publicatie-op-webtoepassing###
@@ -15,16 +15,16 @@ fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 a form:FieldGroup ;
                     fields:c7c5a589-0785-4032-a4bd-ee589add3c39.
 
 # this field is the custom bestuursorgaan selector
-fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:3aa3da45-d29b-4ad4-83c3-b2eb99b3b13f.
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:8a4f42d4-8f18-41c8-ac9b-76d327ba0df5.
 
-fields:3aa3da45-d29b-4ad4-83c3-b2eb99b3b13f a form:ConditionalFieldGroup ;
-    mu:uuid "3aa3da45-d29b-4ad4-83c3-b2eb99b3b13f";
+fields:8a4f42d4-8f18-41c8-ac9b-76d327ba0df5 a form:ConditionalFieldGroup ;
+    mu:uuid "8a4f42d4-8f18-41c8-ac9b-76d327ba0df5";
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
         sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
-        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/40831a2c-771d-4b41-9720-0399998f1873>
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/f56c645d-b8e1-4066-813d-e213f5bc529f>
       ],
       [ a form:MatchValues ;
         form:grouping form:Bag ;
@@ -37,4 +37,4 @@ fields:3aa3da45-d29b-4ad4-83c3-b2eb99b3b13f a form:ConditionalFieldGroup ;
             <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183> 
              );
       ] ;
-    form:hasFieldGroup fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 .
+    form:hasFieldGroup fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 .                      
