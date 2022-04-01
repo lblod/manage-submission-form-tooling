@@ -1,5 +1,5 @@
 
-###########Budget-Andere###########
+###########Budget-General###########
 
 fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 a form:FieldGroup ;
     mu:uuid "5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95" ;

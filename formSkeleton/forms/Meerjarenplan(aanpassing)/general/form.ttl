@@ -1,5 +1,5 @@
 
-###########Meerjarenplan(aanpassing)-andere###########
+###########Meerjarenplan(aanpassing)-General###########
 
 fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 a form:FieldGroup ;
     mu:uuid "978fd72b-26df-438e-8bf0-5dd661b191d5" ;
