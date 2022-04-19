@@ -78,6 +78,22 @@ fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
+fields:e578e3ff-240b-421b-a32c-f411489c3806 a form:Field ;
+    mu:uuid "e578e3ff-240b-421b-a32c-f411489c3806" ;
+    sh:name "Rapportperiode" ;
+    sh:order 1900 ;
+    sh:path lblodBesluit:authenticityType ;
+    form:validations
+      [ a form:ConceptSchemeConstraint ; #TODO
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:reportingPeriod ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/4e719768-d43b-4ca1-ab92-b463e15721f5> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/4e719768-d43b-4ca1-ab92-b463e15721f5"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 a form:Field ;
     mu:uuid "b9d831c5-da21-40d6-aac8-65feb4783d76" ;
     sh:name "Gaat het over een voorlopige of definitieve vaststelling?" ;
