@@ -4,6 +4,9 @@
 fieldGroups:393c7c2d-4e57-4bf7-89ae-21c05be7b5ed a form:FieldGroup ;
     mu:uuid "393c7c2d-4e57-4bf7-89ae-21c05be7b5ed" ; 
     form:hasField 
+                      ###Welk-beslissingsorgaan-nam-het-besluit?###
+                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+                      
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
                       
