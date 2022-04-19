@@ -27,7 +27,7 @@ fields:e3b81b82-78cb-4631-884d-ef9f135ab646 a form:ConditionalFieldGroup ;
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
         sh:path rdf:type ;
-        form:conceptScheme <TODO> ;
-        form:customValue <TODO>
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/672bf096-dccd-40af-ab60-bd7de15cc461>
       ] ;
     form:hasFieldGroup fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 .
