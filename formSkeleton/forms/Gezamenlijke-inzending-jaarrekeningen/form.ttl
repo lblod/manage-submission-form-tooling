@@ -1,0 +1,33 @@
+
+###########Gezamenlijke-inzending-jaarrekeningen###########
+
+fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 a form:FieldGroup ;
+    mu:uuid "40fa78b5-4e89-47c0-99cb-a8e936a09d19" ; 
+    form:hasField 
+                      ###Rapportjaar###
+                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+                      
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden (custom)###
+                      fields:48cff9eb-579b-4e6e-958f-6229903c63d8,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:e3b81b82-78cb-4631-884d-ef9f135ab646.
+
+fields:e3b81b82-78cb-4631-884d-ef9f135ab646 a form:ConditionalFieldGroup ;
+    mu:uuid "e3b81b82-78cb-4631-884d-ef9f135ab646";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <TODO> ;
+        form:customValue <TODO>
+      ] ;
+    form:hasFieldGroup fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 .
