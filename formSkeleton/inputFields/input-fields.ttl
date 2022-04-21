@@ -84,6 +84,11 @@ fields:e578e3ff-240b-421b-a32c-f411489c3806 a form:Field ;
     sh:order 1900 ;
     sh:path lblodBesluit:reportingPeriod ;
     form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:reportingPeriod ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
       [ a form:ConceptSchemeConstraint ; #TODO
         form:grouping form:Bag ;
         sh:path lblodBesluit:reportingPeriod ;
