@@ -4,9 +4,6 @@
 fieldGroups:e0925be1-bdce-4890-b6e4-4f7640700581 a form:FieldGroup ;
     mu:uuid "e0925be1-bdce-4890-b6e4-4f7640700581" ; 
     form:hasField 
-                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
-                      fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
-
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 

@@ -7,6 +7,9 @@ fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 a form:FieldGroup ;
                     ###Rapportjaar###
                     fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
 
+                    ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
+                    fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
+                    
                     ###Datum-van-publicatie-op-webtoepassing###
                     fields:49dbe1be-877a-4890-8465-1510ff18ce18,
                     

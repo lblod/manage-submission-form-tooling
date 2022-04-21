@@ -4,6 +4,8 @@
 fieldGroups:acabf4e0-a124-4d68-b3f1-f93e86c7b1e5 a form:FieldGroup ;
     mu:uuid "acabf4e0-a124-4d68-b3f1-f93e86c7b1e5" ;
     form:hasField
+                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?-erediensten###
+                      fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,

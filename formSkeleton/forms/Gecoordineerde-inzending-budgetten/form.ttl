@@ -5,8 +5,8 @@ fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 a form:FieldGroup ;
     mu:uuid "aaf4f9b2-643f-474d-b1b0-24f37784e5a6" ; 
     form:hasField 
 
-                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
-                      fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
+                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?-erediensten###
+                      fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6,
 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,

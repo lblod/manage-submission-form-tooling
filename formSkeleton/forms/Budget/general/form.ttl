@@ -4,7 +4,9 @@
 fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 a form:FieldGroup ;
     mu:uuid "5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95" ;
     form:hasField
-                    
+                    ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
+                    fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
+
                     ###Datum-van-publicatie-op-webtoepassing###
                     fields:49dbe1be-877a-4890-8465-1510ff18ce18,
                     

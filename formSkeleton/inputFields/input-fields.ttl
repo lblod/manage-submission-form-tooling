@@ -65,7 +65,7 @@ fields:bd6ee5ac-22d6-4279-bcba-3ed279021aac a form:Field ;
 fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
     mu:uuid "a8f6a6cb-dbb8-488c-878d-05603791a9eb" ;
     sh:name "Gaat het over het origineel document of over een wijziging?" ;
-    sh:order 700 ;
+    sh:order 2100 ;
     sh:path lblodBesluit:authenticityType ;
     form:validations
       [ a form:ConceptSchemeConstraint ; #TODO
@@ -77,11 +77,36 @@ fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/5cecec47-ba66-4d7a-ac9d-a1e7962ca4e2"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
+    
+###Origineel of wijziging voor erediensten ###
+fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6 a form:Field ;
+    mu:uuid "ea141dfa-80ff-4958-9493-c0cf6724cbf6" ;
+    sh:name "Gaat het over het origineel document of over een wijziging?" ;
+    sh:order 2101 ;
+    sh:path lblodBesluit:authenticityType ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:reportingPeriod ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ; #TODO
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:authenticityType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/91655ebf-5ab7-43c4-b587-094536baf737> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/91655ebf-5ab7-43c4-b587-094536baf737"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
+    
 
 fields:e578e3ff-240b-421b-a32c-f411489c3806 a form:Field ;
     mu:uuid "e578e3ff-240b-421b-a32c-f411489c3806" ;
     sh:name "Rapportperiode" ;
-    sh:order 2100 ;
+    sh:order 2200 ;
     sh:path lblodBesluit:reportingPeriod ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -166,7 +191,7 @@ fields:78bfbd91-0778-4573-a52d-4c53b3c512eb a form:Field ;
 fields:41737f90-02d6-4036-8d60-5d5b6ccf939c a form:Field ;
     mu:uuid "41737f90-02d6-4036-8d60-5d5b6ccf939c" ;
     sh:name "Rapportjaar" ;
-    sh:order 2101 ;
+    sh:order 2201 ;
     sh:path elod:financialYear ;
     form:validations
       [ a form:RequiredConstraint ;
