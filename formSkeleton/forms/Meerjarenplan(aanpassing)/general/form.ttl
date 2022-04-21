@@ -4,7 +4,9 @@
 fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 a form:FieldGroup ;
     mu:uuid "978fd72b-26df-438e-8bf0-5dd661b191d5" ;
     form:hasField
-                    
+                    ###Rapportjaar###
+                    fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+
                     ###Datum-van-publicatie-op-webtoepassing###
                     fields:49dbe1be-877a-4890-8465-1510ff18ce18,
                     

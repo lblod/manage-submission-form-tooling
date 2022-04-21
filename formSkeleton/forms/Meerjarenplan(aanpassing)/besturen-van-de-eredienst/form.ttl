@@ -4,6 +4,8 @@
 fieldGroups:5a21ed58-c0cf-4042-8b59-bd14ca595aae a form:FieldGroup ;
     mu:uuid "5a21ed58-c0cf-4042-8b59-bd14ca595aae" ;
     form:hasField
+                      ###Rapportperiode###
+                      fields:e578e3ff-240b-421b-a32c-f411489c3806,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,

@@ -14,7 +14,7 @@ fieldGroups:393c7c2d-4e57-4bf7-89ae-21c05be7b5ed a form:FieldGroup ;
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden (custom)###
-                      fields:d0555b84-9d8c-4ca8-b7f2-a3bee96bd82f,
+                      fields:e5aa62e8-08b7-4216-8b9c-5fea766e9a22,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
