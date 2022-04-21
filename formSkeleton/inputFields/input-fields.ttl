@@ -779,6 +779,27 @@ fields:c34a860a-a82e-482d-b077-6482a4edfe3f a form:Field ;
     form:help """Voeg hier een overzicht en alle meerjarenplanpen, strategische nota's en afsprakennota's toe.""" ;
     sh:group fields:aDynamicPropertyGroup .
 
+
+#########################################################
+# File with custom helper text for "Jaarrekeningen-centraal-bestuur-eredienst"
+#########################################################
+fields:48cff9eb-579b-4e6e-958f-6229903c63d8 a form:Field ;
+    mu:uuid "48cff9eb-579b-4e6e-958f-6229903c63d8" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier een toelagenoverzicht en alle jaarrekeningen, uittreksels werkingsrekening en patrimoniumrekeningen en eventueel aanvullende nota's toe.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
+
 ##########################################################
 # End Custom files and links fields
 ##########################################################
