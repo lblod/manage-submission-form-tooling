@@ -87,7 +87,7 @@ fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6 a form:Field ;
     form:validations
     [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:reportingPeriod ;
+        sh:path lblodBesluit:authenticityType ;
         sh:resultMessage "Dit veld is verplicht."@nl
       ],
       [ a form:ConceptSchemeConstraint ; #TODO
