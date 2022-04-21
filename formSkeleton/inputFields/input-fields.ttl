@@ -760,6 +760,25 @@ fields:9dd53fc5-077b-439c-aad9-5530f95083e8 a form:Field ;
     form:help """Voeg hier een overzicht en alle  budgetten en bijhorende beleidsnota's toe.""" ;
     sh:group fields:aDynamicPropertyGroup .
 
+
+#########################################################
+# File with custom helper text for "Meerjarenplannen" voor centrale besturen eredienst 
+#########################################################
+fields:c34a860a-a82e-482d-b077-6482a4edfe3f a form:Field ;
+    mu:uuid "c34a860a-a82e-482d-b077-6482a4edfe3f" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier een overzicht en alle meerjarenplanpen, strategische nota's en afsprakennota's toe.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ##########################################################
 # End Custom files and links fields
 ##########################################################
