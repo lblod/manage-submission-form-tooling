@@ -1,33 +1,18 @@
 
-
-###########Jaarrekening###########
+###########Jaarrekening-Root###########
 
 fieldGroups:7d5f1a08-598c-4a67-a102-a8bc07ac2f13 a form:FieldGroup ;
     mu:uuid "7d5f1a08-598c-4a67-a102-a8bc07ac2f13" ; 
     form:hasField 
-                      ###Rapportjaar###
-                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-
-                      ###Datum-zitting/besluit###
-                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-
-                      ###Datum-van-publicatie-op-webtoepassing###
-                      fields:49dbe1be-877a-4890-8465-1510ff18ce18,
 
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
-
-                      ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
-
-                      ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,

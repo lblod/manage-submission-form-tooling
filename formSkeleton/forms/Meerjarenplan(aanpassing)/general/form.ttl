@@ -1,0 +1,45 @@
+
+###########Meerjarenplan(aanpassing)-General###########
+
+fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 a form:FieldGroup ;
+    mu:uuid "978fd72b-26df-438e-8bf0-5dd661b191d5" ;
+    form:hasField
+                    ###Rapportjaar###
+                    fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+
+                    ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
+                    fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
+                    
+                    ###Datum-van-publicatie-op-webtoepassing###
+                    fields:49dbe1be-877a-4890-8465-1510ff18ce18,
+                    
+                    ###Links-naar-documenten###
+                    fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                    
+                    ###Bestanden###
+                    fields:c7c5a589-0785-4032-a4bd-ee589add3c39.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:8a4f42d4-8f18-41c8-ac9b-76d327ba0df5.
+
+fields:8a4f42d4-8f18-41c8-ac9b-76d327ba0df5 a form:ConditionalFieldGroup ;
+    mu:uuid "8a4f42d4-8f18-41c8-ac9b-76d327ba0df5";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/f56c645d-b8e1-4066-813d-e213f5bc529f>
+      ],
+      [ a form:MatchValues ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:valuesNotIn (
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/04f65457bf125b2dc59fd71917ac3d08>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b475fa47e17a8a05ae04a9e1fb9c9258>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/90a9ec83cb93b9369bba7ff29d9ce5ce>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/a0701624aefb115b7eda2ff39139c2dd>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183> 
+             );
+      ] ;
+    form:hasFieldGroup fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 .                      
