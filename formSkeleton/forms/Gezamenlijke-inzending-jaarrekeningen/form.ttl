@@ -1,12 +1,11 @@
-
 ###########Gezamenlijke-inzending-jaarrekeningen###########
 
 fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 a form:FieldGroup ;
-    mu:uuid "40fa78b5-4e89-47c0-99cb-a8e936a09d19" ; 
-    form:hasField 
+    mu:uuid "40fa78b5-4e89-47c0-99cb-a8e936a09d19" ;
+    form:hasField
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-                      
+
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
@@ -15,6 +14,9 @@ fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 a form:FieldGroup ;
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ###Related decision [hidden]###
+                      fields:c0f621fc-4c2c-456b-83f9-f087e64af03a,
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
