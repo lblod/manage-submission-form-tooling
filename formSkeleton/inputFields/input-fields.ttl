@@ -930,3 +930,14 @@ fields:eaf71eec-6ca8-4f63-b4a6-adfe4f21651b a form:Field ;
 ##########################################################
 #  END VLABEL [First version]
 ##########################################################
+
+##########################################################
+# Centraal bestuur van eredienst:
+#  keeps track of related submissions
+##########################################################
+fields:c0f621fc-4c2c-456b-83f9-f087e64af03a a form:Field ;
+    mu:uuid "c0f621fc-4c2c-456b-83f9-f087e64af03a" ;
+    sh:name "Related submission [hidden input]" ;
+    sh:order 5002 ;
+    sh:path dct:relation;
+    sh:group fields:aDynamicPropertyGroup .
