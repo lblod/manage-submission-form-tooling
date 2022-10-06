@@ -1,0 +1,32 @@
+###########LEKP-Rapport melding correctie authentieke bron###########
+
+fieldGroups:da491d56-4f98-4f9d-8c34-71ba617cfa64 a form:FieldGroup ;
+    mu:uuid "da491d56-4f98-4f9d-8c34-71ba617cfa64" ; 
+    form:hasField 
+                      ### Authentieke bron
+                      fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9,
+
+                      ### Type Correctie
+                      fields:40c91f8e-be26-4e7d-8920-ae547f143744,
+
+                      ### Omschrijving
+                      fields:5a52adff-2558-437e-8a30-132648f4870c,
+
+                      ###Bestanden
+                      fields:f7e4b0a8-e970-4d49-a6d0-16c99a761f17,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:6e4101e4-3eae-4e56-ad3e-d9897248d17c.
+
+fields:6e4101e4-3eae-4e56-ad3e-d9897248d17c a form:ConditionalFieldGroup ;
+    mu:uuid "6e4101e4-3eae-4e56-ad3e-d9897248d17c";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/bea3944f-4f6d-4d2c-9a6e-23264859e1e5>
+      ] ;
+    form:hasFieldGroup fieldGroups:da491d56-4f98-4f9d-8c34-71ba617cfa64 .
