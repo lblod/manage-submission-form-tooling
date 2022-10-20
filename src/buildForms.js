@@ -45,8 +45,6 @@ const projects = [
   },
   {
     name: "app-worship-decisions-database",
-    fileGraph:
-    "http://mu.semte.ch/graphs/access-for-role/PubliekeBesluitendatabank-BesluitendatabankLezer",
   }
 ];
 
