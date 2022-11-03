@@ -1,0 +1,32 @@
+###########LEKP-Rapport Klimaattafels###########
+
+fieldGroups:b1143874-884d-4ffd-8d69-97383870a42e a form:FieldGroup ;
+    mu:uuid "b1143874-884d-4ffd-8d69-97383870a42e" ; 
+    form:hasField 
+                      ### Infolabel 
+                      fields:2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e,
+                      
+                      ### climateTable Date
+                      fields:2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7,
+
+                      ### Households
+                      fields:28ddce67-6aaf-4a3b-8953-63eeb7178d1f,
+
+                      ### Links
+                      fields:df63b483-f2ee-4274-a7d0-0cfc916d22ce,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:a8ab356d-9d3b-46f1-8de6-9f2f1b9ec424 .
+
+fields:a8ab356d-9d3b-46f1-8de6-9f2f1b9ec424 a form:ConditionalFieldGroup ;
+    mu:uuid "a8ab356d-9d3b-46f1-8de6-9f2f1b9ec424";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/1d14cb62-7e57-44a9-ad20-2b08407fbb84>
+      ] ;
+    form:hasFieldGroup fieldGroups:b1143874-884d-4ffd-8d69-97383870a42e .

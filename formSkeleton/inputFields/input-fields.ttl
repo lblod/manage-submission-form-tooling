@@ -873,26 +873,27 @@ fields:48cff9eb-579b-4e6e-958f-6229903c63d8 a form:Field ;
 # Custom Fields for LEKP
 ##########################################################
 
-#### Property group ####
-fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 a form:PropertyGroup;
-    mu:uuid "55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41";
-    sh:description "parent property-group, used to group fields and property-groups together";
-    sh:name " " ;
-    form:help """Lees <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">hier</a> meer over het Lokaal Energie- en Klimaatpact en dit formulier.""";
-    sh:order 3 .
+#### Infolabel ####
+fields:2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e a form:Field;
+    mu:uuid "2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e" ;
+    sh:name "Dit dossierstype heeft betrekking tot het Lokaal Energie- en Klimaatpact.";
+    form:help """
+    <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">Meer informatie daarover, alsook over dit formulier, kun je hier terugvinden. </a>
+    """ ;
+    sh:order 101;
+    form:options """{ "level": "6", "skin": "6"}""";
+    form:displayType displayTypes:heading ;
+    sh:group fields:aDynamicPropertyGroup .
 
 #### Authentieke bron ####
 fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
     mu:uuid "7ebdf368-fe63-45d7-9d44-030ec0cd9ab9" ;
     sh:name "Authentieke bron" ;
     form:help """
-    <b>Lees
-    <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">hier</a>
-       meer over het Lokaal Energie- en Klimaatpact en dit formulier. <b> <br>
     Correcties voor <a href="https://groenblauwpeil.be/" target="_blank">groenblauwpeil</a>
      en <a href="/subsidy/applications" target="_blank">het Loket voor Lokale Besturen (module subsidie)</a> kunnen rechtstreeks in de authentieke bron.
     """;
-    sh:order 20 ;
+    sh:order 102 ;
     sh:path lblodBesluit:LEKPAuthenticSource ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -900,16 +901,16 @@ fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
         sh:path lblodBesluit:LEKPAuthenticSource ;
         sh:resultMessage "Dit veld is verplicht."@nl
       ];
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/c2e7699a-b543-443c-b8b2-b60bef8767dc"}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/c2e7699a-b543-443c-b8b2-b60bef8767dc", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
-    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+    sh:group fields:aDynamicPropertyGroup .
 
   #### Type Correctie ####
   fields:40c91f8e-be26-4e7d-8920-ae547f143744 a form:Field ;
     mu:uuid "40c91f8e-be26-4e7d-8920-ae547f143744" ;
     sh:name "Type Correctie" ;
     form:help """1 type correctie per melding - binnen eenzelfde type correctie kunnen meerdere datacorrecties doorgegeven worden.""";
-    sh:order 21 ;
+    sh:order 103 ;
     sh:path lblodBesluit:LEKPCorrectionType ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -919,17 +920,15 @@ fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
       ];
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/1dfc51af-99fd-4be9-a681-41360c195f14"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
-    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+    sh:group fields:aDynamicPropertyGroup .
+
 
 
 #### Doelstelling ####
 fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
     mu:uuid "b2813526-d400-4cba-bdc4-bf64b2e21a80" ;
     sh:name "LEKP-doelstelling" ;
-    form:help """
-     <b>Lees <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">hier</a> meer over het Lokaal Energie- en Klimaatpact en dit formulier. <b>
-    """;
-    sh:order 20 ;
+    sh:order 102 ;
     sh:path lblodBesluit:LEKPGoal ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -939,13 +938,13 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
       ];
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/5d05a003-4692-4aff-9e93-325db2aefb8a"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
-    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+    sh:group fields:aDynamicPropertyGroup .
 
   #### Type Toelichting ####
   fields:746e3820-c8db-478b-85d0-d238c6a531ea a form:Field ;
     mu:uuid "746e3820-c8db-478b-85d0-d238c6a531ea" ;
     sh:name "Type Toelichting" ;
-    sh:order 21 ;
+    sh:order 103 ;
     sh:path lblodBesluit:LEKPExplanationType ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -955,14 +954,19 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
       ];
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/0b93ef1c-4435-4922-8611-31b4f3ca3c85"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
-    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+    sh:group fields:aDynamicPropertyGroup.
 
   #### Omschrijving ####
   fields:5a52adff-2558-437e-8a30-132648f4870c a form:Field ;
     mu:uuid "5a52adff-2558-437e-8a30-132648f4870c";
     sh:name "Omschrijving" ;
-    form:help """Voeg hier uw beschrijving van de gevraagde correctie in. ABB volgt deze correctie verder op.""";
-    sh:order 22 ;
+    form:help """
+    Voeg hier uw beschrijving van de gevraagde correctie in. ABB volgt deze correctie verder op. <br>
+    <br> Een voorbeeld van aanvulling: <br>
+    In 2021 heeft het bestuur 20 laadpunten geïnstalleerd. Deze ontbreken in de cijfers. Details van de
+    laadpalen vind je in de bijlage bij dit formulier.
+    """;
+    sh:order 104 ;
     sh:path lblodBesluit:LEKPDescription ;
     form:options """{}""" ;
     form:displayType displayTypes:textArea ;
@@ -976,14 +980,23 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht." ;
       sh:path lblodBesluit:LEKPDescription ] ;
-    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+    sh:group fields:aDynamicPropertyGroup.
 
   #### Toelichting ####
   fields:8b8c8dc0-a728-42c6-837a-3b625d219140 a form:Field ;
     mu:uuid "8b8c8dc0-a728-42c6-837a-3b625d219140";
     sh:name "Toelichting" ;
-    form:help """Voeg hierboven uw toelichting in. Enkel de laatst doorgestuurde versie verschijnt in het LEKP-rapport bij de volgende maandelijkse update.""";
-    sh:order 22 ;
+    form:help """Voeg hierboven uw toelichting in. Enkel de laatst doorgestuurde versie verschijnt in het LEKP-rapport bij de volgende maandelijkse update. <br> <br>
+    3 voorbeelden: <br>
+    <ul  style="list-style-type:disc; margin-left: 30px;">
+      <li>In het verleden heeft het bestuur besloten om een ander beleid uit te voeren, zie het besluit van ...</li>
+      <li>Wegens plaatsgebrek heeft het bestuur besloten om samen te werken met een ander bestuur.
+      Hierdoor zullen de door ons aangeplante bomen niet op ons grondgebied staan. Meer informatie hierover op ...</li>
+      <li>Het bestuur besloot in 2008 om maximaal in te zetten op het openbaar vervoer. Dit krijgt hierdoor prioriteit op autodeelsystemen.
+      Meer informatie hierover vind je op onze website op ...</li>
+  </ul>
+    """;
+    sh:order 104 ;
     sh:path lblodBesluit:LEKPClarification ;
     form:options """{}""" ;
     form:displayType displayTypes:textArea ;
@@ -997,7 +1010,7 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht." ;
       sh:path lblodBesluit:LEKPClarification ] ;
-    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+    sh:group fields:aDynamicPropertyGroup.
 
  #### Meer info ####
   fields:fa96567b-6677-4502-add5-f41e24dfee15 a form:Field ;
@@ -1010,21 +1023,84 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat.";
        sh:path rdfs:seeAlso
       ];
-    sh:order 23 ;
+    sh:order 105 ;
     sh:path rdfs:seeAlso ;
     form:options """{}""" ;
     form:displayType displayTypes:defaultInput ;
-    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+    sh:group fields:aDynamicPropertyGroup .
 
 #### Bestanden ####
 fields:f7e4b0a8-e970-4d49-a6d0-16c99a761f17 a form:Field ;
     mu:uuid "f7e4b0a8-e970-4d49-a6d0-16c99a761f17" ;
     sh:name "Bestanden" ;
     form:help """Hier kan je bijkomende informatie toevoegen (uitgebreide omschrijving, screenshots, data...)""";
-    sh:order 23 ;
+    sh:order 105 ;
     sh:path dct:hasPart;
     form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
-    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+    sh:group fields:aDynamicPropertyGroup.
+
+
+#### Datum Klimaattafel ####
+fields:2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7 a form:Field ;
+    mu:uuid "2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7";
+    sh:name "Datum klimaattafel" ;
+    sh:order 102 ;
+    sh:path lblodBesluit:LEKPClimateTableDate ;
+    form:options """{}""" ;
+    form:displayType displayTypes:date ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:climateTableDate ],
+    [ a form:ValidDate ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Geef een geldige datum op." ;
+      sh:path lblodBesluit:climateTableDate ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Households ####
+fields:28ddce67-6aaf-4a3b-8953-63eeb7178d1f a form:Field ;
+    mu:uuid "28ddce67-6aaf-4a3b-8953-63eeb7178d1f";
+    sh:name "Geef hier aan hoeveel huishoudens uitgenodigd zijn voor een klimaattafel voor 31/12/2024" ;
+    sh:order 103 ;
+    sh:path lblodBesluit:LEKPHouseholds ;
+    form:options """{}""" ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPHouseholds ],
+    [ a form:ValidInteger ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Aantal moet een een geheel getal zijn." ;
+      sh:path lblodBesluit:LEKPHouseholds ],
+    [ a form:PositiveNumber ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Geef een positief aantal op." ;
+      sh:path lblodBesluit:LEKPHouseholds ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Links ####  
+fields:df63b483-f2ee-4274-a7d0-0cfc916d22ce a form:Field ;
+    mu:uuid "df63b483-f2ee-4274-a7d0-0cfc916d22ce" ;
+    sh:name "Voeg hier een link toe naar een webpagina, document of persbericht waar er meer informatie staat over de organisatie van de klimaattafel" ;
+    sh:order 104 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a form:UriConstraint ;
+        form:grouping form:MatchEvery ;
+        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+         sh:path ( dct:hasPart nie:url ) ],
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path ( dct:hasPart nie:url ) ;
+         sh:resultMessage "Gelieve minstens één URL op te geven."@nl
+     ];
+    form:displayType <http://lblod.data.gift/display-types/remoteUrls/variation/1>;
+    sh:group fields:aDynamicPropertyGroup .
+
 
 ##########################################################
 #  Files and links  [First version]
