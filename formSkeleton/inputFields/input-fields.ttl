@@ -1052,11 +1052,11 @@ fields:2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7 a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht." ;
-      sh:path lblodBesluit:climateTableDate ],
+      sh:path lblodBesluit:LEKPClimateTableDate ],
     [ a form:ValidDate ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Geef een geldige datum op." ;
-      sh:path lblodBesluit:climateTableDate ] ;
+      sh:path lblodBesluit:LEKPClimateTableDate ] ;
     sh:group fields:aDynamicPropertyGroup .
 
 #### Households ####
