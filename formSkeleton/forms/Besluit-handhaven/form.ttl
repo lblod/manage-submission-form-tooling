@@ -1,0 +1,38 @@
+
+
+########### Besluit-handhaven - erediensten (bestuur & centraal bestuur) ###########
+
+fieldGroups:90fde57d-8b72-4e4e-b7f2-d04f4e12cf8b a form:FieldGroup ;
+    mu:uuid "90fde57d-8b72-4e4e-b7f2-d04f4e12cf8b" ; 
+    form:hasField 
+                      ###Datum-zitting/besluit###
+                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+                      ###Welk-beslissingsorgaan-nam-het-besluit?###
+                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+                      ###Links-naar-documenten###
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden (CUSTOM)###
+                      fields:1b0b0d89-cb84-45d9-ba07-3a067df84ccc,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:ed2e8efd-229f-420e-bb7a-0e01575359eb .
+
+fields:ed2e8efd-229f-420e-bb7a-0e01575359eb a form:ConditionalFieldGroup ;
+    mu:uuid "ed2e8efd-229f-420e-bb7a-0e01575359eb";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/41a09f6c-7964-4777-8375-437ef61ed946>
+      ] ;
+    form:hasFieldGroup fieldGroups:90fde57d-8b72-4e4e-b7f2-d04f4e12cf8b .
+
