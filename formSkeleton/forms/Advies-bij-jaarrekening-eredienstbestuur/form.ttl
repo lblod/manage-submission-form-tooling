@@ -5,14 +5,12 @@
 fieldGroups:91045004-2066-40f3-aac1-bf2309eb2b99 a form:FieldGroup ;
     mu:uuid "91045004-2066-40f3-aac1-bf2309eb2b99" ; 
     form:hasField 
+                      
+                      ###Eredienst selector###
+                      fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd,
+              
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-
-                      ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
-                      fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
-
-                      ###Naam-betreffend-bedrijf/bestuur###
-                      fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
@@ -25,12 +23,6 @@ fieldGroups:91045004-2066-40f3-aac1-bf2309eb2b99 a form:FieldGroup ;
 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-
-                      ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
-                      fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
-
-                      ###Naam-betreffend-bedrijf/bestuur###
-                      fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
