@@ -1,0 +1,36 @@
+
+
+###########Naamswijziging###########
+
+fieldGroups:d390d46b-ccf0-4da5-ba54-7ac372a32045 a form:FieldGroup ;
+    mu:uuid "d390d46b-ccf0-4da5-ba54-7ac372a32045" ; 
+    form:hasField 
+
+                      ###Label met link naar webpagina###
+                      fields:9724f76e-6b1d-480d-a868-f24b74f236a0,
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:33cf1efd-a8c9-4035-a205-2df390b9c0b3.
+
+fields:33cf1efd-a8c9-4035-a205-2df390b9c0b3 a form:ConditionalFieldGroup ;
+    mu:uuid "33cf1efd-a8c9-4035-a205-2df390b9c0b3";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/d611364b-007b-49a7-b2bf-b8f4e5568777>
+      ] ;
+    form:hasFieldGroup fieldGroups:d390d46b-ccf0-4da5-ba54-7ac372a32045 .
+

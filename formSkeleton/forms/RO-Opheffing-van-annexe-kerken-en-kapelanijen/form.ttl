@@ -1,0 +1,36 @@
+
+
+###########Opheffing van annexe kerken en kapelanijen###########
+
+fieldGroups:cb043882-7721-4fde-839a-ee3a9e11bf0b a form:FieldGroup ;
+    mu:uuid "cb043882-7721-4fde-839a-ee3a9e11bf0b" ; 
+    form:hasField 
+
+                      ###Label met link naar webpagina###
+                      fields:9724f76e-6b1d-480d-a868-f24b74f236a0,
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:763a7a43-095a-44e8-bb95-44fb01e15bf0.
+
+fields:763a7a43-095a-44e8-bb95-44fb01e15bf0 a form:ConditionalFieldGroup ;
+    mu:uuid "763a7a43-095a-44e8-bb95-44fb01e15bf0";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/6d1a3aea-6773-4e10-924d-38be596c5e2e>
+      ] ;
+    form:hasFieldGroup fieldGroups:cb043882-7721-4fde-839a-ee3a9e11bf0b .
+

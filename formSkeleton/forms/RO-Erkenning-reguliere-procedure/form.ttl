@@ -1,0 +1,36 @@
+
+
+###########Erkenning - Reguliere procedure###########
+
+fieldGroups:5e65edf0-3443-4525-b4df-02009074d84f a form:FieldGroup ;
+    mu:uuid "5e65edf0-3443-4525-b4df-02009074d84f" ; 
+    form:hasField 
+
+                      ###Label met link naar webpagina###
+                      fields:9724f76e-6b1d-480d-a868-f24b74f236a0,
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:c90d9bae-4fc5-4db6-898d-49d5ed56871c .
+
+fields:c90d9bae-4fc5-4db6-898d-49d5ed56871c a form:ConditionalFieldGroup ;
+    mu:uuid "c90d9bae-4fc5-4db6-898d-49d5ed56871c";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/651525f8-8650-4ce8-8eea-f19b94d50b73>
+      ] ;
+    form:hasFieldGroup fieldGroups:5e65edf0-3443-4525-b4df-02009074d84f .
+
