@@ -1158,6 +1158,31 @@ fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
+##########################################################
+# Custom Fields for Erediensten selector (FILTERED)
+##########################################################
+fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
+    mu:uuid "7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b" ;
+    sh:name "Betreffend (centraal) bestuur van de eredienst" ;
+    sh:order 101 ;
+    sh:path besluit:Bestuurseenheid ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path besluit:Bestuurseenheid ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path besluit:Bestuurseenheid;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
 
 
 ##########################################################
