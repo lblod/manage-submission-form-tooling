@@ -1127,7 +1127,7 @@ fields:9724f76e-6b1d-480d-a868-f24b74f236a0 a form:Field;
     mu:uuid "9724f76e-6b1d-480d-a868-f24b74f236a0" ;
     sh:name "Dit dossierstype heeft betrekking tot erkenning lokale geloofsgemeenschappen.";
     form:help """
-    <a href="https://lokaalbestuur.vlaanderen.be/erediensten/erkenning" target="_blank">Meer informatie daarover, alsook het aanvraagformulier, kun je hier terugvinden. </a>
+    <a href="https://abb-vlaanderen.gitbook.io/handleiding-loket/erediensten/faq/eredienstendossiers-voor-representatieve-organen" target="_blank">Meer informatie daarover, alsook het aanvraagformulier, kun je hier terugvinden. </a>
     """ ;
     sh:order 101;
     form:options """{ "level": "6", "skin": "6"}""";
