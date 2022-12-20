@@ -6,7 +6,7 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
     mu:uuid "6745c3c5-ed83-45e2-a9e7-ca77c18f0d05" ; 
     form:hasField 
                       ###Eredienst selector###
-                      fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd,
+                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,

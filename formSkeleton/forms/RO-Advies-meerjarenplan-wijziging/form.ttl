@@ -7,7 +7,7 @@ fieldGroups:253be7ce-f723-4e82-8b24-3e55e0602aaa a form:FieldGroup ;
     form:hasField 
 
                       ###Eredienst selector###
-                      fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd,
+                      fields:eb089ca1-2c5b-42a4-a781-f009c46ac583,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
