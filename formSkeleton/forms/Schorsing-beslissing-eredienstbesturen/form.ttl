@@ -5,11 +5,8 @@
 fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
     mu:uuid "6745c3c5-ed83-45e2-a9e7-ca77c18f0d05" ; 
     form:hasField 
-                      ###Naam-betreffend-bedrijf/bestuur###
-                      fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
-
-                      ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
-                      fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
+                      ###Eredienst selector###
+                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
@@ -19,12 +16,6 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
 
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
-
-                      ###Naam-betreffend-bedrijf/bestuur###
-                      fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
-
-                      ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
-                      fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,

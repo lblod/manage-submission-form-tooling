@@ -1,0 +1,41 @@
+
+
+###########Advies meerjarenplan(wijziging)-RO###########
+
+fieldGroups:253be7ce-f723-4e82-8b24-3e55e0602aaa a form:FieldGroup ;
+    mu:uuid "253be7ce-f723-4e82-8b24-3e55e0602aaa" ; 
+    form:hasField 
+
+                      ###Eredienst selector###
+                      fields:eb089ca1-2c5b-42a4-a781-f009c46ac583,
+
+                      ###Datum-zitting/besluit###
+                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+                      ###Datum-zitting/besluit###
+                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:4c88c8af-4a47-444a-9280-7b60b54cfcb2 .
+
+fields:4c88c8af-4a47-444a-9280-7b60b54cfcb2 a form:ConditionalFieldGroup ;
+    mu:uuid "4c88c8af-4a47-444a-9280-7b60b54cfcb2";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/0fc2c27d-a03c-4e3f-9db1-f10f026f76f8>
+      ] ;
+    form:hasFieldGroup fieldGroups:253be7ce-f723-4e82-8b24-3e55e0602aaa .
