@@ -1178,10 +1178,10 @@ fields:00a7bce6-2925-4794-93cb-ebd571b28831 a form:Field ;
       [ a form:ConceptSchemeConstraint ;
         form:grouping form:Bag ;
         sh:path eli:is_about ;
-        form:conceptScheme <http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130> ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/2e136902-f709-4bf7-a54a-9fc820cf9f07> ;
         sh:resultMessage "Selecteer een waarde uit de lijst."@nl
       ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130"}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/2e136902-f709-4bf7-a54a-9fc820cf9f07"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
