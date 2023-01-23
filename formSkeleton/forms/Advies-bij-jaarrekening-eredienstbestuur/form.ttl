@@ -7,7 +7,7 @@ fieldGroups:91045004-2066-40f3-aac1-bf2309eb2b99 a form:FieldGroup ;
     form:hasField 
                       
                       ###Eredienst selector###
-                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
+                      fields:00a7bce6-2925-4794-93cb-ebd571b28831,
               
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
