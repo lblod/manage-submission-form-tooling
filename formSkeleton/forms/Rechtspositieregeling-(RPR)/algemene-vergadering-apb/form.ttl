@@ -9,10 +9,10 @@ fieldGroups:97b8287e-0a95-4f08-a60f-8f0a468ad7d2 a form:FieldGroup ;
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a.
 
 # this field is the custom bestuursorgaan selector
-fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:8112d820-9f26-4157-82fe-98eb1773e11f.
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:dc1b5303-c99e-432b-94ad-70d43e94ecc4.
 
-fields:8112d820-9f26-4157-82fe-98eb1773e11f a form:ConditionalFieldGroup ;
-    mu:uuid "8112d820-9f26-4157-82fe-98eb1773e11f";
+fields:dc1b5303-c99e-432b-94ad-70d43e94ecc4 a form:ConditionalFieldGroup ;
+    mu:uuid "dc1b5303-c99e-432b-94ad-70d43e94ecc4";
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
