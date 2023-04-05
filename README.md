@@ -28,6 +28,29 @@ To run in a docker container clone this repo then run:
 docker run -it --rm -v "$PWD":/app -w /app node:16 sh build-forms.sh
 ```
 
+### Using automatic form update with extending the build-forms.sh script
+
+The `update-semantic-forms.sh` script copies the semantic forms content and migrations from the `manage-submission-form-tooling/dist/project_name` directory to the specified list of projects. It also updates automatically the `ACTIVE_FORM_FILE` of each project to the latest form version for the `enrich-submission-service` located in the `docker-compose.yml` file.
+
+See : [enrich-submission-service](https://github.com/lblod/enrich-submission-service#add-the-service-to-a-stack)
+
+#### Usage
+
+  1. **Not recommended** : Comment out the `bash ./build-forms.sh` command if you have already built the forms and do not want to duplicate them.
+  2. **Required** : Set the `path_folder` variable to the folder where you store your projects. It's recommended to use the same base folder for storing project else you will run into issues.
+  3. Define the list of projects that will be affected by the script by setting the projects array.
+
+  _**Note :** You can ignore this step above since projects are already defined in the script but in the case where other apps will use semantic forms you'll need to add the corresponding project in the project array._
+
+  4. Run the script by executing `./update-semantic-forms.sh` in the terminal.
+
+### Requirements
+
+  - Bash
+  - rsync
+
+_**Note :** This script has some limitations, of example if you remove the `build-forms.sh` script, it's not advised to run this `./update-semantic-forms.sh` script twice as it will copy the same semantic-forms and migrations content twice, leading to duplicates. Also, before running the script don't forget switch branches in your projects or make sure you are inside the good one._
+
 ## Testing changes
 
 **Make sure to test extensively your updates.**
@@ -103,7 +126,7 @@ Furthermore, most likely, you want this field in the database if new relation: t
 
 ### Export configuration to the apps
 
-Generate the project specific files using the `npm run buildForms` script and paste the output in the app's root folder.
+Generate the project specific files using the `npm run buildForms` script and paste the output in the app's root folder OR you can use the `update-semantic-forms.sh` script to automate the copy, it includes the `build-forms.sh` script, then you can ignore the following steps.
 
 If you create a new configuration file, a few things need to be done :
 1. The `ACTIVE_FORM_FILE` environment variable of the [enrich-submission-service](https://github.com/lblod/enrich-submission-service#add-the-service-to-a-stack) needs to be updated to the new file name
