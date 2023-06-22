@@ -887,6 +887,17 @@ fields:1b0b0d89-cb84-45d9-ba07-3a067df84ccc a form:Field ;
 ##########################################################
 
 ##########################################################
+# Alert for Besluit handhaven na ontvangst schorsingsbesluit
+##########################################################
+fields:2ab610ad-871b-443e-9b79-3723390ba0c0 a form:Field;
+    mu:uuid "2ab610ad-871b-443e-9b79-3723390ba0c0" ;
+    sh:name "Met dit formulier kan je een besluit van het bestuur handhaven, na ontvangst van het schorsingsbesluit van de provinciegouverneur of de toezichthoudende gemeente of provincie.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
 # Custom Fields for LEKP
 ##########################################################
 
