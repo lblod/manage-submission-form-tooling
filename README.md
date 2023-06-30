@@ -72,6 +72,10 @@ Full flow
 - connect the app to a source loket (with delta's), assuming the new forms have been deployed at the source
 - create e.g. a besluitenlijst in the source and see wether it comes through and you can open it
 
+**app-worship-decisions-database**
+- connect the app to a source loket (with delta's), assuming the new forms have been deployed at the source
+- create e.g. notulen from an eredienstberstuur, and check it correctly syncs through, i.e. login as the same eredienstbestuur on worship-decisions-database
+
 ### Debugging hints
 
 *This list is meant to evolve and get filled by developpers encountering issues.*
