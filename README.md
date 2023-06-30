@@ -33,6 +33,7 @@ docker run -it --rm -v "$PWD":/app -w /app node:16 sh build-forms.sh
 **Make sure to test extensively your updates.**
 
 ### Checklists
+⚠️ ⚠️ ⚠️ An update to the form, means it needs to be manually propageted to ALL apps. ⚠️ ⚠️ ⚠️
 
 **Loket**
 
