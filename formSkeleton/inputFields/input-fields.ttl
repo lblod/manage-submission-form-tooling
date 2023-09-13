@@ -1145,6 +1145,23 @@ fields:9724f76e-6b1d-480d-a868-f24b74f236a0 a form:Field;
     form:displayType displayTypes:heading ;
     sh:group fields:aDynamicPropertyGroup .
 
+#### InfoAlert ####
+fields:99554984-daa3-47e9-8b79-10b27df87064 a form:Field;
+    mu:uuid "99554984-daa3-47e9-8b79-10b27df87064" ;
+    sh:name "Voeg hier de brief toe waarin je extra inlichtingen wil over een bepaalde beslissing van het EB/CB of waarin je het EB/CB op de hoogte brengt van een klacht tegen een beslissing van het EB/CB.  Deze opvraging stuit de termijn van de beslissing waarover de gemeente/provincie bijkomende inlichtingen inwint. De dag nadat de toezichthoudende overheid (gemeente/provincie) het dossier of de aanvullende inlichtingen heeft ontvangen, begint een nieuwe termijn van dertig dagen.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### InfoAlert ####
+fields:6e0f57d5-6d89-478b-8b0a-f3f662bccd40 a form:Field;
+    mu:uuid "6e0f57d5-6d89-478b-8b0a-f3f662bccd40" ;
+    sh:name "Voeg hier het dossier toe met alle bijhorende stukken.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ##########################################################
 # Custom Fields for Erediensten selector (FILTERED)
