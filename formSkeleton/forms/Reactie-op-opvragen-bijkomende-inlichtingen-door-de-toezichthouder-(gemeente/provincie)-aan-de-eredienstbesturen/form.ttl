@@ -23,7 +23,7 @@ fieldGroups:c042810f-bbfa-4438-9634-8adfa2fd0fc3 a form:FieldGroup ;
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
 
                       ### InfoAlert(Custom) ###
-                      fields:6e0f57d5-6d89-478b-8b0a-f3f662bccd40.
+                      fields:8aae740b-b041-420c-995e-c05c42efcdef.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:7ac60200-8539-4024-9d08-d0363063c0f2.
 

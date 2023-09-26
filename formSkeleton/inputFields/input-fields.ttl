@@ -1186,6 +1186,15 @@ fields:6e0f57d5-6d89-478b-8b0a-f3f662bccd40 a form:Field;
     form:displayType displayTypes:alert ;
     sh:group fields:aDynamicPropertyGroup .
 
+#### InfoAlert ####
+fields:8aae740b-b041-420c-995e-c05c42efcdef a form:Field;
+    mu:uuid "8aae740b-b041-420c-995e-c05c42efcdef" ;
+    sh:name "Voeg hier een reactie toe met alle bijhorende stukken.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ##########################################################
 # Custom Fields for Erediensten selector (FILTERED)
 # Centrale besturen and besturen van eredienst
