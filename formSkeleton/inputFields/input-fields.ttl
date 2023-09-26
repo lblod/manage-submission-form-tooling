@@ -887,6 +887,29 @@ fields:1b0b0d89-cb84-45d9-ba07-3a067df84ccc a form:Field ;
 ##########################################################
 
 ##########################################################
+# Alert for Aanvraag desaffectatie presbyteria/kerken
+##########################################################
+fields:143c2d80-0a31-4a1b-bdad-a723a4aa1efe a form:Field;
+    mu:uuid "143c2d80-0a31-4a1b-bdad-a723a4aa1efe" ;
+    sh:name "Met deze melding start je een desaffectatiedossier op wanneer de gemeente eigenaar is van het gebouw. Opgelet het betreft hier enkel presbyteria en kerken die (met toepassing van artikel 72 en 75 van de wet van 18 germinal jaar X « relative à l'organisation des cultes ») opnieuw ter beschikking zijn gesteld van de eredienst. Een presbyterium is een pastorie van voor de 19e eeuw die genationaliseerd werd in de Franse revolutionaire periode, niet vervreemd werd, en dan in 1802 opnieuw de bestemming van pastorie gekregen heeft. Een dergelijk presbyterium kan slechts een nieuwe bestemming krijgen nadat het werd gedesaffecteerd door de Vlaamse regering, na advies van de bisschoppelijke overheid.";
+    sh:order 101;
+    form:help """ Meer informatie over een desaffectatie van een presbyterium kan je hier terugvinden : <a href="https://www.vlaanderen.be/lokaal-bestuur/erediensten-en-kerken/bestemmingswijziging-en-desaffectatie-pastorieen" target="_blank">https://www.vlaanderen.be/lokaal-bestuur/erediensten-en-kerken/bestemmingswijziging-en-desaffectatie-pastorieen</a> """ ;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Alert for Opvragen bijkomende inlichtingen eredienstbesturen (met als gevolg stuiting termijn)
+##########################################################
+fields:949aed0c-8d85-4826-9e88-30891ed34acd a form:Field;
+    mu:uuid "949aed0c-8d85-4826-9e88-30891ed34acd" ;
+    sh:name "Dit formulier dient enkel voor opvraging(en) in kader van het algemeen toezicht en dus niet voor procedures in kader van het bijzonder toezicht.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
 # Alert for Besluit handhaven na ontvangst schorsingsbesluit
 ##########################################################
 fields:2ab610ad-871b-443e-9b79-3723390ba0c0 a form:Field;
@@ -1170,7 +1193,7 @@ fields:6e0f57d5-6d89-478b-8b0a-f3f662bccd40 a form:Field;
 fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
     mu:uuid "7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b" ;
     sh:name "Betreffend (centraal) bestuur van de eredienst" ;
-    sh:order 101 ;
+    sh:order 102 ;
     sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -1195,7 +1218,7 @@ fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
 fields:00a7bce6-2925-4794-93cb-ebd571b28831 a form:Field ;
     mu:uuid "00a7bce6-2925-4794-93cb-ebd571b28831" ;
     sh:name "Betreffend bestuur van de eredienst" ;
-    sh:order 101 ;
+    sh:order 102 ;
     sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -1219,7 +1242,7 @@ fields:00a7bce6-2925-4794-93cb-ebd571b28831 a form:Field ;
 fields:eb089ca1-2c5b-42a4-a781-f009c46ac583 a form:Field ;
     mu:uuid "eb089ca1-2c5b-42a4-a781-f009c46ac583" ;
     sh:name "Betreffend bestuur van de eredienst" ;
-    sh:order 101 ;
+    sh:order 102 ;
     sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;

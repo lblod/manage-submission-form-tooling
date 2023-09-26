@@ -4,6 +4,9 @@ fieldGroups:788cbc2b-8d7c-4b9e-b368-b1098e6ffe79 a form:FieldGroup ;
     mu:uuid "788cbc2b-8d7c-4b9e-b368-b1098e6ffe79" ; 
     form:hasField 
 
+                      ###Custom-textual-explanation###
+                      fields:143c2d80-0a31-4a1b-bdad-a723a4aa1efe,
+
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
 

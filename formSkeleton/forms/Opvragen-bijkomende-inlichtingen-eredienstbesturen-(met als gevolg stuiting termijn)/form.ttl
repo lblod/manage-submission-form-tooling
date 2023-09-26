@@ -4,6 +4,9 @@ fieldGroups:d7fb55d4-1ba1-4c71-9ada-2ebd1969e360 a form:FieldGroup ;
     mu:uuid "d7fb55d4-1ba1-4c71-9ada-2ebd1969e360" ; 
     form:hasField 
 
+                      ###Custom-textual-explanation###
+                      fields:949aed0c-8d85-4826-9e88-30891ed34acd,
+
                       ###Betreffend(centraal)-bestuur-van-de-eredienst###
                       fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
 
