@@ -921,6 +921,39 @@ fields:2ab610ad-871b-443e-9b79-3723390ba0c0 a form:Field;
     sh:group fields:aDynamicPropertyGroup .
 
 ##########################################################
+# Alert for Budget(wijziging) - Indiening bij toezichthoudende gemeente of provincie
+##########################################################
+fields:1b1d0fd4-926d-44d3-b1e4-3aa2f278f0f1 a form:Field;
+    mu:uuid "1b1d0fd4-926d-44d3-b1e4-3aa2f278f0f1" ;
+    sh:name "Dit formulier wordt gebruikt door een eredienstbestuur zonder centraal bestuur om een budget(wijziging) finaal in te dienen bij de financierende en toezichthoudende gemeente (of provincie) nadat het representatief orgaan advies heeft uitgebracht. Indien uw bestuur vertegenwoordigd wordt door een centraal bestuur, gelieve het formulier Budget(wijziging) - indiening bij centraal bestuur of representatief orgaan te gebruiken.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Alert for Budgetten(wijzigingen) - Indiening bij toezichthoudende gemeente of provincie
+##########################################################
+fields:386d079b-0c44-4280-bdba-9de3a49d4159 a form:Field;
+    mu:uuid "386d079b-0c44-4280-bdba-9de3a49d4159" ;
+    sh:name "Dit formulier mag enkel gebruikt worden indien uw bestuur een budget(wijziging) finaal wilt indienen bij de financierende en toezichthoudende gemeente (of provincie) nadat het representatief orgaan advies heeft uitgebracht.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Alert for Budget(wijziging) - Indiening bij Centraal bestuur of Representatief orgaan
+##########################################################
+fields:9fd8e83e-ad61-441a-847b-47232eecec7f a form:Field;
+    mu:uuid "9fd8e83e-ad61-441a-847b-47232eecec7f" ;
+    sh:name "Indien uw bestuur een centraal bestuur heeft, dan komt deze inzending enkel bij uw centraal bestuur terecht, die het vervolgens gecoördineerd zal indienen bij het representatief orgaan. Indien uw bestuur géén centraal bestuur heeft, dan komt deze inzending terecht bij het representatief orgaan.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
 # Custom Fields for LEKP
 ##########################################################
 
