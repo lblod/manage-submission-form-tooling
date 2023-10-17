@@ -887,11 +887,67 @@ fields:1b0b0d89-cb84-45d9-ba07-3a067df84ccc a form:Field ;
 ##########################################################
 
 ##########################################################
+# Alert for Aanvraag desaffectatie presbyteria/kerken
+##########################################################
+fields:143c2d80-0a31-4a1b-bdad-a723a4aa1efe a form:Field;
+    mu:uuid "143c2d80-0a31-4a1b-bdad-a723a4aa1efe" ;
+    sh:name "Met deze melding start je een desaffectatiedossier op wanneer de gemeente eigenaar is van het gebouw. Opgelet het betreft hier enkel presbyteria en kerken die (met toepassing van artikel 72 en 75 van de wet van 18 germinal jaar X « relative à l'organisation des cultes ») opnieuw ter beschikking zijn gesteld van de eredienst. Een presbyterium is een pastorie van voor de 19e eeuw die genationaliseerd werd in de Franse revolutionaire periode, niet vervreemd werd, en dan in 1802 opnieuw de bestemming van pastorie gekregen heeft. Een dergelijk presbyterium kan slechts een nieuwe bestemming krijgen nadat het werd gedesaffecteerd door de Vlaamse regering, na advies van de bisschoppelijke overheid.";
+    sh:order 101;
+    form:help """ Meer informatie over een desaffectatie van een presbyterium kan je hier terugvinden : <a href="https://www.vlaanderen.be/lokaal-bestuur/erediensten-en-kerken/bestemmingswijziging-en-desaffectatie-pastorieen" target="_blank">https://www.vlaanderen.be/lokaal-bestuur/erediensten-en-kerken/bestemmingswijziging-en-desaffectatie-pastorieen</a> """ ;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Alert for Opvragen bijkomende inlichtingen eredienstbesturen (met als gevolg stuiting termijn)
+##########################################################
+fields:949aed0c-8d85-4826-9e88-30891ed34acd a form:Field;
+    mu:uuid "949aed0c-8d85-4826-9e88-30891ed34acd" ;
+    sh:name "Dit formulier dient enkel voor opvraging(en) in kader van het algemeen toezicht en dus niet voor procedures in kader van het bijzonder toezicht.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
 # Alert for Besluit handhaven na ontvangst schorsingsbesluit
 ##########################################################
 fields:2ab610ad-871b-443e-9b79-3723390ba0c0 a form:Field;
     mu:uuid "2ab610ad-871b-443e-9b79-3723390ba0c0" ;
     sh:name "Met dit formulier kan je een besluit van het bestuur handhaven, na ontvangst van het schorsingsbesluit van de provinciegouverneur of de toezichthoudende gemeente of provincie.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Alert for Budget(wijziging) - Indiening bij toezichthoudende gemeente of provincie
+##########################################################
+fields:1b1d0fd4-926d-44d3-b1e4-3aa2f278f0f1 a form:Field;
+    mu:uuid "1b1d0fd4-926d-44d3-b1e4-3aa2f278f0f1" ;
+    sh:name "Dit formulier wordt gebruikt door een eredienstbestuur zonder centraal bestuur om een budget(wijziging) finaal in te dienen bij de financierende en toezichthoudende gemeente (of provincie) nadat het representatief orgaan advies heeft uitgebracht. Indien uw bestuur vertegenwoordigd wordt door een centraal bestuur, gelieve het formulier Budget(wijziging) - indiening bij centraal bestuur of representatief orgaan te gebruiken.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Alert for Budgetten(wijzigingen) - Indiening bij toezichthoudende gemeente of provincie
+##########################################################
+fields:386d079b-0c44-4280-bdba-9de3a49d4159 a form:Field;
+    mu:uuid "386d079b-0c44-4280-bdba-9de3a49d4159" ;
+    sh:name "Dit formulier mag enkel gebruikt worden indien uw bestuur een budget(wijziging) finaal wilt indienen bij de financierende en toezichthoudende gemeente (of provincie) nadat het representatief orgaan advies heeft uitgebracht.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Alert for Budget(wijziging) - Indiening bij Centraal bestuur of Representatief orgaan
+##########################################################
+fields:9fd8e83e-ad61-441a-847b-47232eecec7f a form:Field;
+    mu:uuid "9fd8e83e-ad61-441a-847b-47232eecec7f" ;
+    sh:name "Indien uw bestuur een centraal bestuur heeft, dan komt deze inzending enkel bij uw centraal bestuur terecht, die het vervolgens gecoördineerd zal indienen bij het representatief orgaan. Indien uw bestuur géén centraal bestuur heeft, dan komt deze inzending terecht bij het representatief orgaan.";
     sh:order 101;
     form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
     form:displayType displayTypes:alert ;
@@ -1145,6 +1201,32 @@ fields:9724f76e-6b1d-480d-a868-f24b74f236a0 a form:Field;
     form:displayType displayTypes:heading ;
     sh:group fields:aDynamicPropertyGroup .
 
+#### InfoAlert ####
+fields:99554984-daa3-47e9-8b79-10b27df87064 a form:Field;
+    mu:uuid "99554984-daa3-47e9-8b79-10b27df87064" ;
+    sh:name "Voeg hier de brief toe waarin je extra inlichtingen wil over een bepaalde beslissing van het EB/CB of waarin je het EB/CB op de hoogte brengt van een klacht tegen een beslissing van het EB/CB.  Deze opvraging stuit de termijn van de beslissing waarover de gemeente/provincie bijkomende inlichtingen inwint. De dag nadat de toezichthoudende overheid (gemeente/provincie) het dossier of de aanvullende inlichtingen heeft ontvangen, begint een nieuwe termijn van dertig dagen.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### InfoAlert ####
+fields:6e0f57d5-6d89-478b-8b0a-f3f662bccd40 a form:Field;
+    mu:uuid "6e0f57d5-6d89-478b-8b0a-f3f662bccd40" ;
+    sh:name "Voeg hier het dossier toe met alle bijhorende stukken.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### InfoAlert ####
+fields:8aae740b-b041-420c-995e-c05c42efcdef a form:Field;
+    mu:uuid "8aae740b-b041-420c-995e-c05c42efcdef" ;
+    sh:name "Voeg hier een reactie toe met alle bijhorende stukken.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ##########################################################
 # Custom Fields for Erediensten selector (FILTERED)
@@ -1153,7 +1235,7 @@ fields:9724f76e-6b1d-480d-a868-f24b74f236a0 a form:Field;
 fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
     mu:uuid "7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b" ;
     sh:name "Betreffend (centraal) bestuur van de eredienst" ;
-    sh:order 101 ;
+    sh:order 102 ;
     sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -1178,7 +1260,7 @@ fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
 fields:00a7bce6-2925-4794-93cb-ebd571b28831 a form:Field ;
     mu:uuid "00a7bce6-2925-4794-93cb-ebd571b28831" ;
     sh:name "Betreffend bestuur van de eredienst" ;
-    sh:order 101 ;
+    sh:order 102 ;
     sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -1202,7 +1284,7 @@ fields:00a7bce6-2925-4794-93cb-ebd571b28831 a form:Field ;
 fields:eb089ca1-2c5b-42a4-a781-f009c46ac583 a form:Field ;
     mu:uuid "eb089ca1-2c5b-42a4-a781-f009c46ac583" ;
     sh:name "Betreffend bestuur van de eredienst" ;
-    sh:order 101 ;
+    sh:order 102 ;
     sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;

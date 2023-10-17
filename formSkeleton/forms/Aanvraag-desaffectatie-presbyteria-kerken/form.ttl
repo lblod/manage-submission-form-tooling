@@ -1,0 +1,39 @@
+########### Aanvraag desaffectatie presbyteria/kerken ###########
+
+fieldGroups:788cbc2b-8d7c-4b9e-b368-b1098e6ffe79 a form:FieldGroup ;
+    mu:uuid "788cbc2b-8d7c-4b9e-b368-b1098e6ffe79" ; 
+    form:hasField 
+
+                      ###Custom-textual-explanation###
+                      fields:143c2d80-0a31-4a1b-bdad-a723a4aa1efe,
+
+                      ###Welk-beslissingsorgaan-nam-het-besluit?###
+                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+
+                      ### InfoAlert(Custom) ###
+                      fields:6e0f57d5-6d89-478b-8b0a-f3f662bccd40.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:0445e260-da17-4348-9734-01ae5857cdc0.
+
+fields:0445e260-da17-4348-9734-01ae5857cdc0 a form:ConditionalFieldGroup ;
+    mu:uuid "0445e260-da17-4348-9734-01ae5857cdc0";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/4f938e44-8bce-4d3a-b5a7-b84754fe981a> # Aanvraag desaffectatie presbyteria/kerken
+      ] ;
+    form:hasFieldGroup fieldGroups:788cbc2b-8d7c-4b9e-b368-b1098e6ffe79 .

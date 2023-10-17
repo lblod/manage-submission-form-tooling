@@ -1,0 +1,39 @@
+########### Reactie op opvragen bijkomende inlichtingen door de toezichthouder (gemeente/provincie) aan de eredienstbesturen ###########
+
+fieldGroups:c042810f-bbfa-4438-9634-8adfa2fd0fc3 a form:FieldGroup ;
+    mu:uuid "c042810f-bbfa-4438-9634-8adfa2fd0fc3" ; 
+    form:hasField 
+
+                      ###Welk-beslissingsorgaan-nam-het-besluit?###
+                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+                      ###Datum-zitting/besluit###
+                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+
+                      ### InfoAlert(Custom) ###
+                      fields:8aae740b-b041-420c-995e-c05c42efcdef.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:7ac60200-8539-4024-9d08-d0363063c0f2.
+
+fields:7ac60200-8539-4024-9d08-d0363063c0f2 a form:ConditionalFieldGroup ;
+    mu:uuid "7ac60200-8539-4024-9d08-d0363063c0f2";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3a3ea43f-6631-4a7d-94c6-3a77a445d450> # Reactie na stuiten door de gemeente of provincie
+      ] ;
+    form:hasFieldGroup fieldGroups:c042810f-bbfa-4438-9634-8adfa2fd0fc3 .

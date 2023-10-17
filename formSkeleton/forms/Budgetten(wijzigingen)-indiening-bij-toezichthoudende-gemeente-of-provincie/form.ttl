@@ -1,8 +1,10 @@
-###########Gecoordineerde-inzending-budgetten###########
+###########Budgetten(wijzigingen) - Indiening bij toezichthoudende gemeente of provincie###########
 
-fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 a form:FieldGroup ;
-    mu:uuid "aaf4f9b2-643f-474d-b1b0-24f37784e5a6" ;
+fieldGroups:7832d3be-7e6a-4ff8-9e47-be2654174668 a form:FieldGroup ;
+    mu:uuid "7832d3be-7e6a-4ff8-9e47-be2654174668" ;
     form:hasField
+                      ###Custom Alert###
+                      fields:386d079b-0c44-4280-bdba-9de3a49d4159,
 
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?-erediensten###
                       fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6,
@@ -14,7 +16,7 @@ fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 a form:FieldGroup ;
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden (custom)###
-                      fields:9dd53fc5-077b-439c-aad9-5530f95083e8,
+                      fields:7465c000-c844-4ba9-82cc-bd173cbe41a3,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
@@ -25,15 +27,15 @@ fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 a form:FieldGroup ;
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
-fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:7a09cedf-cfa9-4513-ae75-83c650e854b5.
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:4ae23c37-b731-408c-a999-33d0b7183a23.
 
-fields:7a09cedf-cfa9-4513-ae75-83c650e854b5 a form:ConditionalFieldGroup ;
-    mu:uuid "7a09cedf-cfa9-4513-ae75-83c650e854b5";
+fields:4ae23c37-b731-408c-a999-33d0b7183a23 a form:ConditionalFieldGroup ;
+    mu:uuid "4ae23c37-b731-408c-a999-33d0b7183a23";
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
         sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
-        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/18833df2-8c9e-4edd-87fd-b5c252337349>
-      ] ;
-    form:hasFieldGroup fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 .
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/ce569d3d-25ff-4ce9-a194-e77113597e29> 
+      ];
+    form:hasFieldGroup fieldGroups:7832d3be-7e6a-4ff8-9e47-be2654174668 .
