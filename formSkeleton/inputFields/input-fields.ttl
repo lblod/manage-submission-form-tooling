@@ -100,8 +100,26 @@ fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6 a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
-
-    
+fields:ecc2bbf1-c76d-4237-9b7b-a4c42b2b1e29 a form:Field;
+    mu:uuid "ecc2bbf1-c76d-4237-9b7b-a4c42b2b1e29" ;
+    sh:name "Inhoud besluit" ;
+    sh:order 2102 ;
+    sh:path rdf:type ;
+    form:validations
+      [ a form:RequiredConstraint ; #TODO
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
 
 fields:e578e3ff-240b-421b-a32c-f411489c3806 a form:Field ;
     mu:uuid "e578e3ff-240b-421b-a32c-f411489c3806" ;
