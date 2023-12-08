@@ -1007,25 +1007,6 @@ fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
-  #### Type Correctie ####
-  fields:40c91f8e-be26-4e7d-8920-ae547f143744 a form:Field ;
-    mu:uuid "40c91f8e-be26-4e7d-8920-ae547f143744" ;
-    sh:name "Type Correctie" ;
-    form:help """1 type correctie per melding - binnen eenzelfde type correctie kunnen meerdere datacorrecties doorgegeven worden.""";
-    sh:order 103 ;
-    sh:path lblodBesluit:LEKPCorrectionType ;
-    form:validations
-      [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path lblodBesluit:LEKPCorrectionType ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-      ];
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/1dfc51af-99fd-4be9-a681-41360c195f14"}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
-    sh:group fields:aDynamicPropertyGroup .
-
-
-
 #### Doelstelling ####
 fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
     mu:uuid "b2813526-d400-4cba-bdc4-bf64b2e21a80" ;
