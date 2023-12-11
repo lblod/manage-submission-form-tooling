@@ -77,7 +77,7 @@ fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/5cecec47-ba66-4d7a-ac9d-a1e7962ca4e2"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
-    
+
 ###Origineel of wijziging voor erediensten ###
 fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6 a form:Field ;
     mu:uuid "ea141dfa-80ff-4958-9493-c0cf6724cbf6" ;
@@ -845,7 +845,7 @@ fields:9dd53fc5-077b-439c-aad9-5530f95083e8 a form:Field ;
 
 
 #########################################################
-# File with custom helper text for "Meerjarenplannen" voor centrale besturen eredienst 
+# File with custom helper text for "Meerjarenplannen" voor centrale besturen eredienst
 #########################################################
 fields:c34a860a-a82e-482d-b077-6482a4edfe3f a form:Field ;
     mu:uuid "c34a860a-a82e-482d-b077-6482a4edfe3f" ;
@@ -986,6 +986,19 @@ fields:2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e a form:Field;
     form:options """{ "level": "6", "skin": "6"}""";
     form:displayType displayTypes:heading ;
     sh:group fields:aDynamicPropertyGroup .
+
+#### Custom Infolabel ####
+fields:d0644dd9-5181-49c8-9bef-bf109aabdc59 a form:Field ;
+    mu:uuid "d0644dd9-5181-49c8-9bef-bf109aabdc59" ;
+    sh:name "Dit dossierstype heeft betrekking tot het Lokaal Energie- en Klimaatpact." ;
+    form:help """
+    <a href="https://lokaalklimaatpact.be/hoe-rapporteren/doelstellingen-rapporteren/loket-voor-lokale-besturen" target="_blank">Meer informatie daarover, alsook over dit formulier, kun je hier terugvinden. </a>
+    """ ;
+    sh:order 101 ;
+    form:options """{ "level": "6", "skin": "6"}""" ;
+    form:displayType displayTypes:heading ;
+    sh:group fields:aDynamicPropertyGroup .
+
 
 #### Authentieke bron ####
 fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
@@ -1142,6 +1155,44 @@ fields:2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7 a form:Field ;
       sh:path lblodBesluit:LEKPClimateTableDate ] ;
     sh:group fields:aDynamicPropertyGroup .
 
+#### Datum Sloopbeleidsplan ####
+fields:7b3feafe-fbf9-4cdb-ae80-b37dbd3107dd a form:Field ;
+    mu:uuid "7b3feafe-fbf9-4cdb-ae80-b37dbd3107dd";
+    sh:name "Datum Sloopbeleidsplan" ;
+    sh:order 102 ;
+    sh:path lblodBesluit:LEKPSloopbeleidsplanDate ;
+    form:options """{}""" ;
+    form:displayType displayTypes:date ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPSloopbeleidsplanDate ],
+    [ a form:ValidDate ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Geef een geldige datum op." ;
+      sh:path lblodBesluit:LEKPSloopbeleidsplanDate ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Datum Collectieve Renovatie ####
+fields:7e3d3dcf-f80b-4364-9e4c-dc6fc1602232 a form:Field ;
+    mu:uuid "7e3d3dcf-f80b-4364-9e4c-dc6fc1602232";
+    sh:name "Datum Beëindigen Collectieve Renovatie" ;
+    sh:order 102 ;
+    sh:path lblodBesluit:LEKPCollectieveRenovatieDate ;
+    form:options """{}""" ;
+    form:displayType displayTypes:date ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieDate ],
+    [ a form:ValidDate ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Geef een geldige datum op." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieDate ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
 #### Households ####
 fields:28ddce67-6aaf-4a3b-8953-63eeb7178d1f a form:Field ;
     mu:uuid "28ddce67-6aaf-4a3b-8953-63eeb7178d1f";
@@ -1165,7 +1216,7 @@ fields:28ddce67-6aaf-4a3b-8953-63eeb7178d1f a form:Field ;
       sh:path lblodBesluit:LEKPHouseholds ] ;
     sh:group fields:aDynamicPropertyGroup .
 
-#### Links ####  
+#### Links ####
 fields:df63b483-f2ee-4274-a7d0-0cfc916d22ce a form:Field ;
     mu:uuid "df63b483-f2ee-4274-a7d0-0cfc916d22ce" ;
     sh:name "Voeg hier een link toe naar een webpagina, document of persbericht waar er meer informatie staat over de organisatie van de klimaattafel" ;

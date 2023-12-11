@@ -1,0 +1,29 @@
+########### LEKP Rapport Sloopbeleidsplan ###########
+
+fieldGroups:91667a37-bba1-451e-b6d3-6a8379616280 a form:FieldGroup ;
+  mu:uuid "91667a37-bba1-451e-b6d3-6a8379616280" ;
+  form:hasField
+    # Infolabel
+    fields:d0644dd9-5181-49c8-9bef-bf109aabdc59,
+
+    # Datum Sloopbeleidsplan
+    fields:7b3feafe-fbf9-4cdb-ae80-b37dbd3107dd,
+
+    # Bestanden (Required)
+    fields:cd27f7a0-5e6b-4f76-b55c-a1cb7c4efee6,
+
+    # Type RemoteDataObject or FileDataObject
+    fields:355fe001-cdca-48cc-8a6e-88b3aab09874 .
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:59f09c0d-e30b-4703-9a6e-a3547434e4c8 .
+
+fields:59f09c0d-e30b-4703-9a6e-a3547434e4c8 a form:ConditionalFieldGroup ;
+  mu:uuid "59f09c0d-e30b-4703-9a6e-a3547434e4c8" ;
+  form:conditions
+    [ a form:SingleCodelistValue ;
+      form:grouping form:Bag ;
+      sh:path rdf:type ;
+      form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/fbe65218-836d-4e7a-a988-bb0b2cf26c7b>
+    ] ;
+  form:hasFieldGroup fieldGroups:91667a37-bba1-451e-b6d3-6a8379616280 .
