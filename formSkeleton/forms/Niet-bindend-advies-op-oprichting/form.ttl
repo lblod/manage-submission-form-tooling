@@ -1,0 +1,35 @@
+###########Niet-bindend-advies-op-oprichting###########
+
+fieldGroups:48e48b72-b8d2-49f8-a0e1-7039882f3f12 a form:FieldGroup ;
+    mu:uuid "48e48b72-b8d2-49f8-a0e1-7039882f3f12" ; 
+    form:hasField 
+                      ###Naam-betreffend-bedrijf/bestuur###
+                      fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
+
+                      ###Datum-zitting/besluit###
+                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:e4438ae3-3979-4929-9c99-8e16b1fd49e0.
+
+fields:e4438ae3-3979-4929-9c99-8e16b1fd49e0 a form:ConditionalFieldGroup ;
+    mu:uuid "e4438ae3-3979-4929-9c99-8e16b1fd49e0";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/a2836d2f-1fee-4549-bd85-b9c13698b757>
+      ] ;
+    form:hasFieldGroup fieldGroups:48e48b72-b8d2-49f8-a0e1-7039882f3f12 .
