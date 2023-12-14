@@ -1019,7 +1019,7 @@ fields:f70a9c35-a58f-4943-bdfc-7b9a761ed04c a form:Field ;
 fields:d0f11e8a-8a57-4309-91ff-e92e40d27525 a form:Field ;
     mu:uuid "d0f11e8a-8a57-4309-91ff-e92e40d27525" ;
     sh:name "Nieuw aangelegde fietsinfrastructuur op eigen grondgebied." ;
-    form:help """ Maak een optelsom van het aantal meter niew aangelegde of structureel verbeterde fietsinfrastructuur. """ ;
+    form:help """ Maak een optelsom van het aantal meter niew aangelegde of structureel verbeterde fietsinfrastructuur. Een tweerichtingsfietspad (aan één kant van een weg), wordt in de LEKP-doelstelling meegeteld als een lengte in afstand. """ ;
     sh:order 102 ;
     form:options """{ "level": "6", "skin": "6"}""" ;
     form:displayType displayTypes:heading ;
@@ -1062,10 +1062,9 @@ fields:8b6bc220-a980-4d1e-b7b3-5a6324d1ad4f a form:Field ;
 #### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2021 ####
 fields:f79d9036-5734-463d-826b-d093a6f4e0c5 a form:Field ;
     mu:uuid "f79d9036-5734-463d-826b-d093a6f4e0c5" ;
-    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden* in 2021" ;
+    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2021" ;
     sh:order 107 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2021 ;
-    form:help """ *Een tweerichtingsfietspad (aan één kant van een weg), wordt in de LEKP-doelstelling meegeteld als een lengte in afstand. """ ;
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
@@ -1080,10 +1079,10 @@ fields:f79d9036-5734-463d-826b-d093a6f4e0c5 a form:Field ;
 #### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2021 ####
 fields:9ec715da-fb12-4fda-bec4-188e4ea6783c a form:Field ;
     mu:uuid "9ec715da-fb12-4fda-bec4-188e4ea6783c" ;
-    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden* in 2021" ;
+    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2021" ;
     sh:order 109 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2021 ;
-    form:help """ *Een tweerichtingsfietspad (aan één kant van een weg), wordt in de LEKP-doelstelling meegeteld als een lengte in afstand. """ ;
+    form:help """<br><br><hr><br>""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
@@ -1132,10 +1131,9 @@ fields:10bfc794-041a-485f-bfe2-2aa82acee56f a form:Field ;
 #### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2022 ####
 fields:5592b583-d9b4-45df-8b2c-d153a6d712db a form:Field ;
     mu:uuid "5592b583-d9b4-45df-8b2c-d153a6d712db" ;
-    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden* in 2022" ;
+    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2022" ;
     sh:order 115 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022 ;
-    form:help """ *Een tweerichtingsfietspad (aan één kant van een weg), wordt in de LEKP-doelstelling meegeteld als een lengte in afstand. """ ;
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
@@ -1150,10 +1148,10 @@ fields:5592b583-d9b4-45df-8b2c-d153a6d712db a form:Field ;
 #### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2022 ####
 fields:9d195161-d9c2-46a9-ad50-f83095aca568 a form:Field ;
     mu:uuid "9d195161-d9c2-46a9-ad50-f83095aca568" ;
-    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden* in 2022" ;
+    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2022" ;
     sh:order 117 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 ;
-    form:help """ *Een tweerichtingsfietspad (aan één kant van een weg), wordt in de LEKP-doelstelling meegeteld als een lengte in afstand. """ ;
+    form:help """<br><br><hr><br>""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
@@ -1202,10 +1200,9 @@ fields:2a47484a-3e09-4c75-9c9f-04956145ae02 a form:Field ;
 #### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2023 ####
 fields:7d8f0e21-7e3d-4f39-88e4-195175a63d65 a form:Field ;
     mu:uuid "7d8f0e21-7e3d-4f39-88e4-195175a63d65" ;
-    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden* in 2023" ;
+    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2023" ;
     sh:order 123 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2023 ;
-    form:help """ *Een tweerichtingsfietspad (aan één kant van een weg), wordt in de LEKP-doelstelling meegeteld als een lengte in afstand. """ ;
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
@@ -1220,10 +1217,10 @@ fields:7d8f0e21-7e3d-4f39-88e4-195175a63d65 a form:Field ;
 #### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2023 ####
 fields:00ccc3c2-7e4c-43b5-bf3b-f62542856745 a form:Field ;
     mu:uuid "00ccc3c2-7e4c-43b5-bf3b-f62542856745" ;
-    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden* in 2023" ;
+    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2023" ;
     sh:order 125 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 ;
-    form:help """ *Een tweerichtingsfietspad (aan één kant van een weg), wordt in de LEKP-doelstelling meegeteld als een lengte in afstand. """ ;
+    form:help """<br><br><hr><br>""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
@@ -1272,10 +1269,9 @@ fields:5a554529-0c7e-43f2-b29e-ddfa39df9b88 a form:Field ;
 #### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2024 ####
 fields:c1bce5db-aeee-4246-acd5-764ed4be3d1b a form:Field ;
     mu:uuid "c1bce5db-aeee-4246-acd5-764ed4be3d1b" ;
-    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden* in 2024" ;
+    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2024" ;
     sh:order 131 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2024 ;
-    form:help """ *Een tweerichtingsfietspad (aan één kant van een weg), wordt in de LEKP-doelstelling meegeteld als een lengte in afstand. """ ;
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
@@ -1290,10 +1286,10 @@ fields:c1bce5db-aeee-4246-acd5-764ed4be3d1b a form:Field ;
 #### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2024 ####
 fields:9e86bf79-170d-4136-9aa9-9db6df27883c a form:Field ;
     mu:uuid "9e86bf79-170d-4136-9aa9-9db6df27883c" ;
-    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden* in 2024" ;
+    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2024" ;
     sh:order 133 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 ;
-    form:help """ *Een tweerichtingsfietspad (aan één kant van een weg), wordt in de LEKP-doelstelling meegeteld als een lengte in afstand. """ ;
+    form:help """<br><br><hr><br>""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
@@ -1484,7 +1480,6 @@ fields:f7e4b0a8-e970-4d49-a6d0-16c99a761f17 a form:Field ;
     sh:path dct:hasPart;
     form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
     sh:group fields:aDynamicPropertyGroup.
-
 
 #### Datum Klimaattafel ####
 fields:2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7 a form:Field ;
