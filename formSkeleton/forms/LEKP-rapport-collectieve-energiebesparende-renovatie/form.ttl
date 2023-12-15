@@ -1,19 +1,35 @@
-########### LEKP Rapport Sloopbeleidsplan ###########
+########### LEKP-rapport-collectieve-energiebesparende-renovatie ###########
 
 fieldGroups:df148902-b014-4422-8b45-16530cbb1d76 a form:FieldGroup ;
   mu:uuid "df148902-b014-4422-8b45-16530cbb1d76" ;
   form:hasField
+
     # Infolabel
     fields:d0644dd9-5181-49c8-9bef-bf109aabdc59,
+
+    # Naam collectieve Renovatie
+    fields:f6ee7c27-5d43-47fb-9720-8321631f5e7a,
+
+    # Wijk/Straat/Adres
+    fields:a95f2851-c371-402e-aed4-f037e2769d85,
 
     # Datum Collectieve Renovatie
     fields:7e3d3dcf-f80b-4364-9e4c-dc6fc1602232,
 
-    # Bestanden (Required)
-    fields:cd27f7a0-5e6b-4f76-b55c-a1cb7c4efee6,
+    # Hoeveel wooneenheden telde deze collectieve renovatie ? 
+    fields:e2006e32-b2fc-400b-92a1-231ff0689925,
+
+    # Het betreft een (multiRadioButton)
+    fields:c9dc7f5e-033b-4181-9c5d-97012fd3a63c,
+
+    # Bestanden - Laad hier jouw documentatie op rond de collectieve renovatie (Required)
+    fields:bafe7754-d178-4485-ba62-a2ff0f6e0957,
 
     # Type RemoteDataObject or FileDataObject
-    fields:355fe001-cdca-48cc-8a6e-88b3aab09874 .
+    fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+    # Opmerking
+    fields:e9036004-9298-480b-8e41-1dd1e10a4dfd .
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:98642e6b-1b3b-4126-8033-80ac4269374c .
 

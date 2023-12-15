@@ -1000,6 +1000,143 @@ fields:d0644dd9-5181-49c8-9bef-bf109aabdc59 a form:Field ;
     sh:group fields:aDynamicPropertyGroup .
 
 ##########################################################
+# LEKP - Collectieve-energiebesparende-renovatie
+##########################################################
+
+#### Naam collectieve Renovatie ####
+fields:f6ee7c27-5d43-47fb-9720-8321631f5e7a a form:Field ;
+    mu:uuid "f6ee7c27-5d43-47fb-9720-8321631f5e7a";
+    sh:name "Naam collectieve Renovatie" ;
+    sh:order 102 ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieNaam ],
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:order 103;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieNaam ];
+    sh:path lblodBesluit:LEKPCollectieveRenovatieNaam ;
+    form:options """{}""" ;
+    form:displayType displayTypes:defaultInput ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Wijk/Straat/Adres ####
+fields:a95f2851-c371-402e-aed4-f037e2769d85 a form:Field ;
+    mu:uuid "a95f2851-c371-402e-aed4-f037e2769d85";
+    sh:name "Wijk/Straat/Adres" ;
+    sh:order 104 ;
+    sh:path lblodBesluit:LEKPCollectieveRenovatieAdres ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:order 105;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieAdres ];
+    form:options """{}""" ;
+    form:displayType displayTypes:defaultInput ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Datum Collectieve Renovatie ####
+fields:7e3d3dcf-f80b-4364-9e4c-dc6fc1602232 a form:Field ;
+    mu:uuid "7e3d3dcf-f80b-4364-9e4c-dc6fc1602232";
+    sh:name "Datum Beëindigen Collectieve Renovatie" ;
+    sh:order 106 ;
+    sh:path lblodBesluit:LEKPCollectieveRenovatieDate ;
+    form:options """{}""" ;
+    form:displayType displayTypes:date ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieDate ],
+    [ a form:ValidDate ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Geef een geldige datum op." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieDate ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Hoeveel wooneenheden telde deze collectieve renovatie ? ####
+fields:e2006e32-b2fc-400b-92a1-231ff0689925 a form:Field ;
+    mu:uuid "e2006e32-b2fc-400b-92a1-231ff0689925" ;
+    sh:name "Hoeveel wooneenheden telde deze collectieve renovatie ?" ;
+    sh:order 107 ;
+    sh:path lblodBesluit:LEKPTotalHousingUnits ;
+    form:validations 
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPTotalHousingUnits ],
+    [ a form:PositiveNumber;
+      form:grouping form:MatchEvery;
+      sh:order 108;
+      sh:path lblodBesluit:LEKPTotalHousingUnits ;
+      sh:resultMessage "Geen negatieve waarden" ] ;
+    form:displayType displayTypes:numericalInput ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Het betreft een (radioButtons) ####
+fields:c9dc7f5e-033b-4181-9c5d-97012fd3a63c a form:Field ;
+    mu:uuid "16eecbb9-0f22-42b0-8bd6-1aeef80b3610";
+    sh:name "Het betreft een :" ;
+    sh:order 109 ;
+    sh:path lblodBesluit:LEKPEnergyRenovationType ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path lblodBesluit:LEKPEnergyRenovationType ],
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:LEKPEnergyRenovationType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/56ef78a0-5ab4-4548-b995-fd995703183c>;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/56ef78a0-5ab4-4548-b995-fd995703183c"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Bestanden - Custom helper text Laad hier jouw documentatie op rond de collectieve renovatie ####
+fields:bafe7754-d178-4485-ba62-a2ff0f6e0957 a form:Field ;
+    mu:uuid "bafe7754-d178-4485-ba62-a2ff0f6e0957" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Laad hier jouw documentatie op rond de collectieve renovatie.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Opmerking ####
+fields:e9036004-9298-480b-8e41-1dd1e10a4dfd a form:Field ;
+    mu:uuid "e9036004-9298-480b-8e41-1dd1e10a4dfd";
+    sh:name "Opmerking" ;
+    sh:order 10002 ;
+    sh:path lblodBesluit:LEKPCollectieveEnergiebesparendeRenovatieComments ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "500" ;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPCollectieveEnergiebesparendeRenovatieComments ] ;
+    sh:group fields:aDynamicPropertyGroup.
+
+##########################################################
+# LEKP - Collectieve-energiebesparende-renovatie END
+##########################################################
+
+##########################################################
 # LEKP - Fietspaden (Bicycle infrastructure)
 ##########################################################
 
@@ -1517,25 +1654,6 @@ fields:7b3feafe-fbf9-4cdb-ae80-b37dbd3107dd a form:Field ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Geef een geldige datum op." ;
       sh:path lblodBesluit:LEKPSloopbeleidsplanDate ] ;
-    sh:group fields:aDynamicPropertyGroup .
-
-#### Datum Collectieve Renovatie ####
-fields:7e3d3dcf-f80b-4364-9e4c-dc6fc1602232 a form:Field ;
-    mu:uuid "7e3d3dcf-f80b-4364-9e4c-dc6fc1602232";
-    sh:name "Datum Beëindigen Collectieve Renovatie" ;
-    sh:order 102 ;
-    sh:path lblodBesluit:LEKPCollectieveRenovatieDate ;
-    form:options """{}""" ;
-    form:displayType displayTypes:date ;
-    form:validations
-    [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht." ;
-      sh:path lblodBesluit:LEKPCollectieveRenovatieDate ],
-    [ a form:ValidDate ;
-      form:grouping form:MatchEvery ;
-      sh:resultMessage "Geef een geldige datum op." ;
-      sh:path lblodBesluit:LEKPCollectieveRenovatieDate ] ;
     sh:group fields:aDynamicPropertyGroup .
 
 #### Households ####
