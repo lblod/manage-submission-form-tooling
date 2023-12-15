@@ -9,8 +9,8 @@ fieldGroups:91667a37-bba1-451e-b6d3-6a8379616280 a form:FieldGroup ;
     # Datum Sloopbeleidsplan
     fields:7b3feafe-fbf9-4cdb-ae80-b37dbd3107dd,
 
-    # Bestanden (Required)
-    fields:cd27f7a0-5e6b-4f76-b55c-a1cb7c4efee6,
+    # Bestanden (Custom)
+    fields:c1a7eed5-4662-41aa-a016-d4eadfe74782,
 
     # Type RemoteDataObject or FileDataObject
     fields:355fe001-cdca-48cc-8a6e-88b3aab09874 .

@@ -899,6 +899,24 @@ fields:1b0b0d89-cb84-45d9-ba07-3a067df84ccc a form:Field ;
     form:help """Voeg hier een handhavingsbesluit toe.""" ;
     sh:group fields:aDynamicPropertyGroup .
 
+#########################################################
+# File with custom helper text for "LEKP Rapport Sloopbeleidsplan"
+#########################################################
+fields:c1a7eed5-4662-41aa-a016-d4eadfe74782 a form:Field ;
+    mu:uuid "c1a7eed5-4662-41aa-a016-d4eadfe74782" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Laad hier jouw sloopbeleidsplan of renovatiestrategie met oog voor sloopbeleid op.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
 
 ##########################################################
 # End Custom files and links fields
