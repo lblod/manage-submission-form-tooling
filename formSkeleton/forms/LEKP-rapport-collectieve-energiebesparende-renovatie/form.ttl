@@ -22,11 +22,17 @@ fieldGroups:df148902-b014-4422-8b45-16530cbb1d76 a form:FieldGroup ;
     # Het betreft een (multiRadioButton)
     fields:c9dc7f5e-033b-4181-9c5d-97012fd3a63c,
 
+    # Link (custom)
+    fields:a4a015ea-6423-4f33-920c-cb5d9c9dd151,
+
     # Bestanden - Laad hier jouw documentatie op rond de collectieve renovatie (Required)
     fields:bafe7754-d178-4485-ba62-a2ff0f6e0957,
 
     # Type RemoteDataObject or FileDataObject
     fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+    ### RemoteDataObject/url ###
+    fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
 
     # Opmerking
     fields:e9036004-9298-480b-8e41-1dd1e10a4dfd .

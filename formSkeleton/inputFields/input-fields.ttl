@@ -899,6 +899,29 @@ fields:1b0b0d89-cb84-45d9-ba07-3a067df84ccc a form:Field ;
     form:help """Voeg hier een handhavingsbesluit toe.""" ;
     sh:group fields:aDynamicPropertyGroup .
 
+#######################################################################################################################
+# Link with custom helper text for "LEKP Rapport Sloopbeleidsplan" & "LEKP - Collectieve-energiebesparende-renovatie"
+#######################################################################################################################
+
+fields:a4a015ea-6423-4f33-920c-cb5d9c9dd151 a form:Field ;
+    mu:uuid "a4a015ea-6423-4f33-920c-cb5d9c9dd151" ;
+    sh:name "Links naar documenten" ;
+    sh:order 10000 ;
+    sh:path dct:hasPart;
+    form:help """<div class="au-u-text-center">Indien de op te laden bewijsstukken beschikbaar zijn via een link, kan u deze link hier plakken. <br> Bij twijfel kan u steeds de documenten 'gewoon' opladen in het veld hieronder.</div> """ ;
+    form:validations
+     [ a form:UriConstraint ;
+        form:grouping form:MatchEvery ;
+        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+         sh:path ( dct:hasPart nie:url ) ],
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path dct:hasPart ;
+         sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl
+     ];
+    form:displayType displayTypes:remoteUrls; # consider this v1.0
+    sh:group fields:aDynamicPropertyGroup .
+
 #########################################################
 # File with custom helper text for "LEKP Rapport Sloopbeleidsplan"
 #########################################################
