@@ -1207,7 +1207,7 @@ fields:d0f11e8a-8a57-4309-91ff-e92e40d27525 a form:Field ;
 fields:6a4f780a-de31-476c-bd7e-f24080339b31 a form:Field ;
     mu:uuid "6a4f780a-de31-476c-bd7e-f24080339b31" ;
     sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2021" ;
-    sh:order 103 ;
+        sh:order 103 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2021 ;
     form:displayType displayTypes:numericalInput ;
     form:validations 
@@ -1260,14 +1260,14 @@ fields:9ec715da-fb12-4fda-bec4-188e4ea6783c a form:Field ;
     sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2021" ;
     sh:order 109 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2021 ;
-    form:help """<br><br><hr><br>""" ; # This is a bit hacky but the form needs some spacing to make it more readable
+    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
             sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2021 ;
-            sh:order 110;
+sh:order 110;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
     sh:group fields:aDynamicPropertyGroup .
@@ -1329,13 +1329,13 @@ fields:9d195161-d9c2-46a9-ad50-f83095aca568 a form:Field ;
     sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2022" ;
     sh:order 117 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 ;
-    form:help """<br><br><hr><br>""" ; # This is a bit hacky but the form needs some spacing to make it more readable
+    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 118;
+sh:order 118;
             sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1398,13 +1398,13 @@ fields:00ccc3c2-7e4c-43b5-bf3b-f62542856745 a form:Field ;
     sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2023" ;
     sh:order 125 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 ;
-    form:help """<br><br><hr><br>""" ; # This is a bit hacky but the form needs some spacing to make it more readable
+    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 126;
+sh:order 126;
             sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1467,13 +1467,13 @@ fields:9e86bf79-170d-4136-9aa9-9db6df27883c a form:Field ;
     sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2024" ;
     sh:order 133 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 ;
-    form:help """<br><br><hr><br>""" ; # This is a bit hacky but the form needs some spacing to make it more readable
+    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
     form:validations 
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 134;
+sh:order 134;
             sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
