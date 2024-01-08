@@ -1085,7 +1085,7 @@ fields:a95f2851-c371-402e-aed4-f037e2769d85 a form:Field ;
 #### Datum Collectieve Renovatie ####
 fields:7e3d3dcf-f80b-4364-9e4c-dc6fc1602232 a form:Field ;
     mu:uuid "7e3d3dcf-f80b-4364-9e4c-dc6fc1602232";
-    sh:name "Datum Collectieve rennovatie (na realisatie)" ;
+    sh:name "Datum Collectieve renovatie (na realisatie)" ;
     sh:order 106 ;
     sh:path lblodBesluit:LEKPCollectieveRenovatieDate ;
     form:options """{}""" ;
