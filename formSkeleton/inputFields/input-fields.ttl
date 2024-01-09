@@ -1085,7 +1085,7 @@ fields:a95f2851-c371-402e-aed4-f037e2769d85 a form:Field ;
 #### Datum Collectieve Renovatie ####
 fields:7e3d3dcf-f80b-4364-9e4c-dc6fc1602232 a form:Field ;
     mu:uuid "7e3d3dcf-f80b-4364-9e4c-dc6fc1602232";
-    sh:name "Datum Collectieve renovatie (na realisatie)" ;
+    sh:name "Datum realisatie collectieve renovatie" ;
     sh:order 106 ;
     sh:path lblodBesluit:LEKPCollectieveRenovatieDate ;
     form:options """{}""" ;
@@ -1197,7 +1197,7 @@ fields:f70a9c35-a58f-4943-bdfc-7b9a761ed04c a form:Field ;
 fields:d0f11e8a-8a57-4309-91ff-e92e40d27525 a form:Field ;
     mu:uuid "d0f11e8a-8a57-4309-91ff-e92e40d27525" ;
     sh:name "Nieuw aangelegde fietsinfrastructuur op eigen grondgebied." ;
-    form:help """ Maak een optelsom van het aantal meter niew aangelegde of structureel verbeterde fietsinfrastructuur. Een tweerichtingsfietspad dat zich aan één kant van een weg bevindt, wordt in de LEKP-doelstelling meegeteld als één lengte in afstand. Noteer hiervan de lengte van A naar B (dus niet dubbel). Een fietspad dat aan beide zijden van de straat is aangelegd, kan in de twee richtingen als eenrichtingsfietspad worden ingegeven, van A naar B en van B naar A. """ ;
+    form:help """ Maak een optelsom van het aantal meter niew aangelegde of structureel verbeterde fietsinfrastructuur. Een tweerichtingsfietspad aan één zijde van de weg telt als één afstand in de LEKP-doelstelling, waarbij de lengte van A naar B wordt genoteerd. Bij een fietspad aan beide zijden kan het als eenrichtingsfietspad gelden in twee richtingen: van A naar B en van B naar A. """ ;
     sh:order 102 ;
     form:options """{ "level": "6", "skin": "6"}""" ;
     form:displayType displayTypes:heading ;
