@@ -1197,7 +1197,7 @@ fields:f70a9c35-a58f-4943-bdfc-7b9a761ed04c a form:Field ;
 fields:d0f11e8a-8a57-4309-91ff-e92e40d27525 a form:Field ;
     mu:uuid "d0f11e8a-8a57-4309-91ff-e92e40d27525" ;
     sh:name "Nieuw aangelegde fietsinfrastructuur op eigen grondgebied." ;
-    form:help """ Maak een optelsom van het aantal meter niew aangelegde of structureel verbeterde fietsinfrastructuur. Een tweerichtingsfietspad aan één zijde van de weg telt als één afstand in de LEKP-doelstelling, waarbij de lengte van A naar B wordt genoteerd. Bij een fietspad aan beide zijden kan het als eenrichtingsfietspad gelden in twee richtingen: van A naar B en van B naar A. """ ;
+    form:help """ Maak een optelsom van het aantal meter nieuw aangelegde of structureel verbeterde fietsinfrastructuur. Een tweerichtingsfietspad aan één zijde van de weg telt als één afstand in de LEKP-doelstelling, waarbij de lengte van A naar B wordt genoteerd. Bij een fietspad aan beide zijden kan het als eenrichtingsfietspad gelden in twee richtingen: van A naar B en van B naar A. """ ;
     sh:order 102 ;
     form:options """{ "level": "6", "skin": "6"}""" ;
     form:displayType displayTypes:heading ;
@@ -1584,7 +1584,7 @@ fields:edfcdaa6-456a-48f2-b2ba-39a460be1a28 a form:Field ;
     form:displayType displayTypes:heading ;
     sh:group fields:aDynamicPropertyGroup .
 
-#### Van welke andere subsidies dan het Fietsfonds of Kopenhagenfonds heb je gebruik gemaakt ? ####
+#### Van welke andere subsidies dan het Fietsfonds of Kopenhagenfonds heb je gebruik gemaakt? ####
   fields:0e47f2d1-e8cd-4ea0-9ea8-4d1e2194769d a form:Field ;
     mu:uuid "0e47f2d1-e8cd-4ea0-9ea8-4d1e2194769d";
     sh:name "Van welke andere subsidies dan het Fietsfonds of Kopenhagenfonds heb je gebruik gemaakt?" ;
@@ -1600,10 +1600,10 @@ fields:edfcdaa6-456a-48f2-b2ba-39a460be1a28 a form:Field ;
       sh:path lblodBesluit:LEKPOtherFietsfondsSubsidy ] ;
     sh:group fields:aDynamicPropertyGroup.
 
-#### Heb je hiervoor met andere overheidsinstanties, steden of gemeenten samegewerkt ? Welke ? ####
+#### Heb je hiervoor met andere overheidsinstanties, steden of gemeenten samengewerkt? Welke? ####
   fields:842a3ef1-138c-408a-af3d-6016cae24a2c a form:Field ;
     mu:uuid "842a3ef1-138c-408a-af3d-6016cae24a2c";
-    sh:name "Heb je hiervoor met andere overheidsinstanties, steden of gemeenten samegewerkt? Welke?" ;
+    sh:name "Heb je hiervoor met andere overheidsinstanties, steden of gemeenten samengewerkt? Welke?" ;
     sh:order 137 ;
     sh:path lblodBesluit:LEKPFietsSubsidyCollaborationWith ;
     form:options """{}""" ;
