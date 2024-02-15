@@ -1,0 +1,115 @@
+##########################################################
+# Alert for Opstart beroepsprocedure naar aanleiding van een beslissing
+##########################################################
+fields:150ea04f-19c4-41f2-b058-74989366c66d a form:Field;
+    mu:uuid "150ea04f-19c4-41f2-b058-74989366c66d" ;
+    sh:name "Met deze melding wordt beroep ingesteld tegen de beslissing van de gemeente- of provincieraad over een meerjarenplan(wijziging) of budget(wijziging). Ook kan een eredienstbestuur met deze melding beroep instellen tegen de gemaakte afspraken tussen het centraal bestuur en de gemeente- of provincieoverheid.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Type beroepsprocedure
+##########################################################
+fields:e7c5b7f6-b096-43d0-aa36-72eb38c790eb a form:Field ;
+    mu:uuid "e7c5b7f6-b096-43d0-aa36-72eb38c790eb" ;
+    sh:name "Type beroepsprocedure" ;
+    sh:order 102 ;
+    sh:path lblodBesluit:BudgetBeroepsprocedure ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:BudgetBeroepsprocedure ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ];
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup.
+
+#######################################################################################################################
+# Custom files and links fields
+# Following fields should be considered as a pair.
+# Their validation is mutually dependent.
+# Either a file or url should be present
+#
+# Link with custom helper text for "Opstart beroepsprocedure naar aanleiding van een beslissing"
+#######################################################################################################################
+
+fields:da81538a-a266-4ea0-be90-8a652fcff896 a form:Field ;
+    mu:uuid "da81538a-a266-4ea0-be90-8a652fcff896" ;
+    sh:name "Links naar documenten" ;
+    sh:order 10000 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a form:UriConstraint ;
+        form:grouping form:MatchEvery ;
+        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+         sh:path ( dct:hasPart nie:url ) ],
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path dct:hasPart ;
+         sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl
+     ];
+    form:displayType displayTypes:remoteUrls; # consider this v1.0
+    sh:group fields:aDynamicPropertyGroup .
+
+#########################################################
+# File with custom helper text for "Opstart beroepsprocedure naar aanleiding van een beslissing"
+#########################################################
+fields:083cb030-ad02-4c5e-9433-1e4634fec09b a form:Field ;
+    mu:uuid "083cb030-ad02-4c5e-9433-1e4634fec09b" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier de brief toe waarmee beroep wordt ingesteld tegen de beslissing van de gemeente- of provincieraad over een meerjarenplan(wijziging) of budget(wijziging) samen met alle bijhorende stukken óf de brief waarmee beroep wordt ingesteld tegen de gemaakte afspraken tussen het centraal bestuur en de gemeente- of provincieoverheid.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+########### Opstart beroepsprocedure naar aanleiding van een beslissing ###########
+
+fieldGroups:d12faf73-3a62-4117-a534-7a2f34392cc9 a form:FieldGroup ;
+    mu:uuid "d12faf73-3a62-4117-a534-7a2f34392cc9" ; 
+    form:hasField 
+                      ###Alert(CUSTOM)###
+                      fields:150ea04f-19c4-41f2-b058-74989366c66d,
+
+                      ###Type beroepsprocedure###
+                      fields:e7c5b7f6-b096-43d0-aa36-72eb38c790eb,
+                      
+                      ###Welk-beslissingsorgaan-nam-het-besluit? (Not required)###
+                      fields:ecff3e94-d1a8-4652-8e46-1dda29c76aea,
+
+                      ###Datum-zitting/besluit (Not Required)###
+                      fields:4a7b54b5-9f0f-4ef8-af40-5c1398426856,
+
+                      ###Link###
+                      fields:da81538a-a266-4ea0-be90-8a652fcff896,
+
+                      ###Bestanden (Custom)###
+                      fields:083cb030-ad02-4c5e-9433-1e4634fec09b,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:8de8583b-3b0f-4bbd-aed6-2e46b3ad7b56.
+
+fields:8de8583b-3b0f-4bbd-aed6-2e46b3ad7b56 a form:ConditionalFieldGroup ;
+    mu:uuid "8de8583b-3b0f-4bbd-aed6-2e46b3ad7b56";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/802a7e56-54f8-488d-b489-4816321fb9ae> # Opstart beroepsprocedure naar aanleiding van een beslissing
+      ] ;
+    form:hasFieldGroup fieldGroups:d12faf73-3a62-4117-a534-7a2f34392cc9 .
