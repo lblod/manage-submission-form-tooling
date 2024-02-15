@@ -1,0 +1,98 @@
+##########################################################
+# Alert for Melding onvolledigheid inzending eredienstbestuur
+##########################################################
+fields:c6bd0564-b570-4cce-b2f0-dde771f60977 a form:Field;
+    mu:uuid "c6bd0564-b570-4cce-b2f0-dde771f60977" ;
+    sh:name "Met deze melding informeer je het eredienstbestuur en het centraal bestuur dat een ingediende budget(wijziging) of meerjarenplan(wijziging) onvolledig en bijgevolg onontvankelijk is.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#######################################################################################################################
+# Custom files and links fields
+# Following fields should be considered as a pair.
+# Their validation is mutually dependent.
+# Either a file or url should be present
+#
+# Link with custom helper text for "Melding onvolledigheid inzending eredienstbestuur"
+#######################################################################################################################
+
+fields:3ef4d29f-6c40-4930-aea4-01626f0ac1c3 a form:Field ;
+    mu:uuid "3ef4d29f-6c40-4930-aea4-01626f0ac1c3" ;
+    sh:name "Links naar documenten" ;
+    sh:order 10000 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a form:UriConstraint ;
+        form:grouping form:MatchEvery ;
+        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+         sh:path ( dct:hasPart nie:url ) ],
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path dct:hasPart ;
+         sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl
+     ];
+    form:displayType displayTypes:remoteUrls; # consider this v1.0
+    sh:group fields:aDynamicPropertyGroup .
+
+#########################################################
+# File with custom helper text for "Melding onvolledigheid inzending eredienstbestuur"
+#########################################################
+fields:f75de5f0-ac1f-479f-9c05-5c056eb9f5fc a form:Field ;
+    mu:uuid "f75de5f0-ac1f-479f-9c05-5c056eb9f5fc" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier de brief toe waarin je het eredienstbestuur en het centraal bestuur op de hoogte brengt van de onvolledigheid en onontvankelijkheid van een specifieke budget(wijziging) of meerjarenplan(wijziging). Door het versturen van deze brief wordt het eredienstbestuur geïnformeerd dat de toezichttermijn eigenlijk nog niet loopt.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+########### Melding onvolledigheid inzending eredienstbestuur ###########
+
+fieldGroups:4840756c-d839-4ae0-b568-c986c73dd6a4 a form:FieldGroup ;
+    mu:uuid "4840756c-d839-4ae0-b568-c986c73dd6a4" ; 
+    form:hasField
+                      ###Alert(CUSTOM)###
+                      fields:c6bd0564-b570-4cce-b2f0-dde771f60977,
+
+                      ###Welk-beslissingsorgaan-nam-het-besluit? (Not required variation)###
+                      fields:ecff3e94-d1a8-4652-8e46-1dda29c76aea,
+                      
+                      ###Eredienst selector (Centrale besturen and besturen van eredienst)###
+                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
+
+                      ###Datum-zitting/besluit (Not required variation)###
+                      fields:4a7b54b5-9f0f-4ef8-af40-5c1398426856,
+
+                      ###Url###
+                      fields:3ef4d29f-6c40-4930-aea4-01626f0ac1c3,
+
+                      ###Bestanden(CUSTOM)###
+                      fields:f75de5f0-ac1f-479f-9c05-5c056eb9f5fc,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:b099c3f4-60ff-4883-b4e3-60ad7698fd17.
+
+fields:b099c3f4-60ff-4883-b4e3-60ad7698fd17 a form:ConditionalFieldGroup ;
+    mu:uuid "b099c3f4-60ff-4883-b4e3-60ad7698fd17";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/863caf68-97c9-4ee0-adb5-620577ea8146> # Melding onvolledigheid inzending eredienstbestuur
+      ] ;
+    form:hasFieldGroup fieldGroups:4840756c-d839-4ae0-b568-c986c73dd6a4 .
+
