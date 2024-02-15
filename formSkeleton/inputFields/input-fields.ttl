@@ -244,6 +244,25 @@ fields:bffbea8d-e55b-4e3d-86e8-ba7aaee7863d a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
+#########################################################
+# Welk beslissingsorgaan nam het besluit? not required constraint
+#########################################################
+fields:ecff3e94-d1a8-4652-8e46-1dda29c76aea a form:Field ;
+    mu:uuid "ecff3e94-d1a8-4652-8e46-1dda29c76aea" ;
+    sh:name "Welk beslissingsorgaan nam het besluit?" ;
+    sh:order 2000 ;
+    sh:path eli:passed_by ;
+    form:validations
+      [ a form:ConceptSchemeConstraint ; #TODO
+        form:grouping form:Bag ;
+        sh:path eli:passed_by ;
+        form:conceptScheme <http://data.lblod.info/concept-schemes/481c03f0-d07f-424e-9c2b-8d4cfb141c72> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ];
+    form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/481c03f0-d07f-424e-9c2b-8d4cfb141c72"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
 # For notulen, we want another path that is semantically correct
 fields:e24d533f-3e63-4b36-a6af-21c65357e258 a form:Field ;
     mu:uuid "e24d533f-3e63-4b36-a6af-21c65357e258" ;
@@ -299,6 +318,27 @@ fields:ac32a491-4b5c-4a7e-973f-fad6127c9433 a form:Field ;
     sh:name "Bestuurseenheid classificatie code [hidden input]" ;
     sh:order 1001 ;
     sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Datum zitting/besluit not required variation
+##########################################################
+fields:4a7b54b5-9f0f-4ef8-af40-5c1398426856 a form:Field ;
+    mu:uuid "4a7b54b5-9f0f-4ef8-af40-5c1398426856" ;
+    sh:name "Datum zitting/besluit" ;
+    sh:order 2600 ;
+    sh:path ( [ sh:inversePath prov:generated ] dct:subject [ sh:inversePath besluit:behandelt ]  prov:startedAtTime ) ;  # see https://www.w3.org/TR/shacl/#property-paths for syntax
+    form:validations
+      [ a form:ValidDateTime ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath prov:generated ] dct:subject [ sh:inversePath besluit:behandelt ]  prov:startedAtTime ) ;
+        sh:resultMessage "Geef een geldige datum en tijd op."],
+      [ a form:DateInPast ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath prov:generated ] dct:subject [ sh:inversePath besluit:behandelt ]  prov:startedAtTime ) ;
+        sh:resultMessage "Let op: datum ligt in de toekomst. Controleer uw keuze." ;
+        sh:severity sh:Warning ] ;
+    form:displayType displayTypes:dateTime ;
     sh:group fields:aDynamicPropertyGroup .
 
 fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb a form:Field ;
