@@ -82,12 +82,6 @@ fieldGroups:d12faf73-3a62-4117-a534-7a2f34392cc9 a form:FieldGroup ;
 
                       ###Type beroepsprocedure###
                       fields:e7c5b7f6-b096-43d0-aa36-72eb38c790eb,
-                      
-                      ###Welk-beslissingsorgaan-nam-het-besluit? (Not required)###
-                      fields:ecff3e94-d1a8-4652-8e46-1dda29c76aea,
-
-                      ###Datum-zitting/besluit (Not Required)###
-                      fields:4a7b54b5-9f0f-4ef8-af40-5c1398426856,
 
                       ###Link###
                       fields:da81538a-a266-4ea0-be90-8a652fcff896,

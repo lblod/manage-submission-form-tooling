@@ -61,15 +61,9 @@ fieldGroups:4840756c-d839-4ae0-b568-c986c73dd6a4 a form:FieldGroup ;
     form:hasField
                       ###Alert(CUSTOM)###
                       fields:c6bd0564-b570-4cce-b2f0-dde771f60977,
-
-                      ###Welk-beslissingsorgaan-nam-het-besluit? (Not required variation)###
-                      fields:ecff3e94-d1a8-4652-8e46-1dda29c76aea,
                       
                       ###Eredienst selector (Centrale besturen and besturen van eredienst)###
                       fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
-
-                      ###Datum-zitting/besluit (Not required variation)###
-                      fields:4a7b54b5-9f0f-4ef8-af40-5c1398426856,
 
                       ###Url###
                       fields:3ef4d29f-6c40-4930-aea4-01626f0ac1c3,
