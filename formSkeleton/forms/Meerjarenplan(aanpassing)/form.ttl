@@ -1,3 +1,13 @@
+##########################################################
+# Info Upload for "Meerjarenplan(aanpassing)-Eredienst"
+##########################################################
+fields:43c2b809-3d4d-4473-858f-2b00f00c7d4d a form:Field;
+    mu:uuid "43c2b809-3d4d-4473-858f-2b00f00c7d4d" ;
+    sh:name "Voeg hier het (gewijzigde) meerjarenplan met strategische nota en financiële nota toe. Voor de besturen van de eredienst: voeg ook de eventueel individuele afsprakennota toe.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ###########Meerjarenplan(aanpassing)-Root###########
 

@@ -1,3 +1,25 @@
+##########################################################
+# Alert for "Budgetten(wijzigingen) - Indiening bij toezichthoudende gemeente of provincie"
+##########################################################
+fields:386d079b-0c44-4280-bdba-9de3a49d4159 a form:Field;
+    mu:uuid "386d079b-0c44-4280-bdba-9de3a49d4159" ;
+    sh:name "Dit formulier mag enkel gebruikt worden indien uw bestuur een budget(wijziging) finaal gecoördineerd wilt indienen bij de financierende en toezichthoudende gemeente (of provincie). Dit kan nadat het representatief orgaan advies heeft uitgebracht.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Info Upload for "Budgetten(wijzigingen) - Indiening bij toezichthoudende gemeente of provincie"
+##########################################################
+fields:829f47a1-6d88-4c19-a119-d0baf779972c a form:Field;
+    mu:uuid "829f47a1-6d88-4c19-a119-d0baf779972c" ;
+    sh:name "Voeg hier een overzicht toe van: de gemeentelijke of provinciale toelagen (per bestuur van de eredienst), het totaal van die toelagen, de adviezen van het representatief orgaan, alle budgetten en/of budgetwijzigingen (met financiële nota’s, beleidsnota's en toelichting waarin alle wijzigingen worden geduid).";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .  
+
 ###########Budgetten(wijzigingen) - Indiening bij toezichthoudende gemeente of provincie###########
 
 fieldGroups:7832d3be-7e6a-4ff8-9e47-be2654174668 a form:FieldGroup ;
@@ -15,8 +37,8 @@ fieldGroups:7832d3be-7e6a-4ff8-9e47-be2654174668 a form:FieldGroup ;
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
-                      ###Bestanden (custom)###
-                      fields:7465c000-c844-4ba9-82cc-bd173cbe41a3,
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
@@ -25,7 +47,10 @@ fieldGroups:7832d3be-7e6a-4ff8-9e47-be2654174668 a form:FieldGroup ;
                       fields:c0f621fc-4c2c-456b-83f9-f087e64af03a,
 
                       ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+
+                      ###Info Upload (CUSTOM)###
+                      fields:829f47a1-6d88-4c19-a119-d0baf779972c.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:4ae23c37-b731-408c-a999-33d0b7183a23.
 

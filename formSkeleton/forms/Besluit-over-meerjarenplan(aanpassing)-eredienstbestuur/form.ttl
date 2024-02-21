@@ -1,4 +1,13 @@
-
+##########################################################
+# Info Upload for "Besluit-over-meerjarenplan(aanpassing)-eredienstbestuur"
+##########################################################
+fields:0078a790-e057-4612-a741-b28df110467b a form:Field;
+    mu:uuid "0078a790-e057-4612-a741-b28df110467b" ;
+    sh:name "Voeg hier de beslissing tot goedkeuring, niet-goedkeuring of aanpassing van het (gewijzigde) meerjarenplan toe.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ###########Besluit-over-meerjarenplan(aanpassing)-eredienstbestuur###########
 
@@ -40,7 +49,10 @@ fieldGroups:ae168679-82cf-4df6-8803-cbcbc6610f47 a form:FieldGroup ;
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
 
                       ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+                      
+                      ###Info Upload (CUSTOM)###
+                      fields:0078a790-e057-4612-a741-b28df110467b.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:c5541662-1c03-446f-837c-8c56d3db5a27.
 

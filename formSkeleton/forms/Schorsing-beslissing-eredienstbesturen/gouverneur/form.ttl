@@ -1,12 +1,14 @@
 fieldGroups:b497bac0-5348-4a56-9b72-94a93bca9b97 a form:FieldGroup ;
     mu:uuid "b497bac0-5348-4a56-9b72-94a93bca9b97" ;
     form:hasField
-
                       ###Links-naar-documenten###
                       fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
 
                       ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39.
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+                      
+                      ###Info Upload (CUSTOM)###
+                      fields:f1c1a4d1-814f-464b-a2ae-afe828b14987.
 
 # this field is the custom bestuursorgaan selector
 fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:a4d84439-5c44-4c3f-8e26-4b681407d579.

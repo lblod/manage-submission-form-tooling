@@ -1,8 +1,32 @@
+##########################################################
+# Alert for "Reactie op opvragen bijkomende inlichtingen door de toezichthouder (gemeente/provincie) aan de eredienstbesturen"
+##########################################################
+fields:0e22b4ae-e158-4a91-90c9-28d30eb9fabf a form:Field;
+    mu:uuid "0e22b4ae-e158-4a91-90c9-28d30eb9fabf" ;
+    sh:name "Met dit formulier geeft jouw bestuur extra info, als de gemeente of de provincie daarnaar vraagt.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Info Upload for "Reactie op opvragen bijkomende inlichtingen door de toezichthouder (gemeente/provincie) aan de eredienstbesturen"
+##########################################################
+fields:8aae740b-b041-420c-995e-c05c42efcdef a form:Field;
+    mu:uuid "8aae740b-b041-420c-995e-c05c42efcdef" ;
+    sh:name "Voeg hier een reactie toe met alle bijhorende stukken.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ########### Reactie op opvragen bijkomende inlichtingen door de toezichthouder (gemeente/provincie) aan de eredienstbesturen ###########
 
 fieldGroups:c042810f-bbfa-4438-9634-8adfa2fd0fc3 a form:FieldGroup ;
     mu:uuid "c042810f-bbfa-4438-9634-8adfa2fd0fc3" ; 
     form:hasField 
+                      ###Alert (Custom)###
+                      fields:0e22b4ae-e158-4a91-90c9-28d30eb9fabf,
 
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,

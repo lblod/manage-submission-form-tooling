@@ -1,3 +1,14 @@
+##########################################################
+# Info Upload for "Besluit-over-budget(wijziging)-eredienstbestuur"
+##########################################################
+fields:a8f24bec-b9f2-4869-89a6-050af59d575a a form:Field;
+    mu:uuid "a8f24bec-b9f2-4869-89a6-050af59d575a" ;
+    sh:name "Voeg hier de beslissing tot akteneming, goedkeuring of aanpassing van het budget of de budgetwijziging toe.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ###########Besluit-over-budget(wijziging)-eredienstbestuur###########
 
 fieldGroups:09fd371f-2afe-4b14-81a9-e780876de077 a form:FieldGroup ;
@@ -32,7 +43,10 @@ fieldGroups:09fd371f-2afe-4b14-81a9-e780876de077 a form:FieldGroup ;
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
 
                       ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+                      
+                      ###Info upload (Custom)###
+                      fields:a8f24bec-b9f2-4869-89a6-050af59d575a.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:a262ac48-1511-4744-a332-164f471c150d.
 

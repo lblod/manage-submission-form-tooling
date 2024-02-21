@@ -1,3 +1,25 @@
+##########################################################
+# Alert for "Opvragen bijkomende inlichtingen eredienstbesturen (met als gevolg stuiting termijn)"
+##########################################################
+fields:949aed0c-8d85-4826-9e88-30891ed34acd a form:Field;
+    mu:uuid "949aed0c-8d85-4826-9e88-30891ed34acd" ;
+    sh:name "Dit formulier dient enkel voor opvraging(en) in kader van het algemeen toezicht, niet voor procedures in het kader van het bijzonder toezicht. Deze opvraging stuit de termijn van de beslissing waarover de gemeente/provincie bijkomende inlichtingen inwint. De dag nadat de toezichthoudende overheid (gemeente/provincie) het dossier of de aanvullende inlichtingen heeft ontvangen, begint een nieuwe termijn van dertig dagen.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Info Upload for "Opvragen bijkomende inlichtingen eredienstbesturen (met als gevolg stuiting termijn)"
+##########################################################
+fields:99554984-daa3-47e9-8b79-10b27df87064 a form:Field;
+    mu:uuid "99554984-daa3-47e9-8b79-10b27df87064" ;
+    sh:name "Voeg hier de brief toe waarin je extra inlichtingen wil over een bepaalde beslissing van het (centraal) bestuur van de eredienst of waarin je het (centraal) bestuur van de eredienst op de hoogte brengt van een klacht tegen een beslissing van het (centraal) bestuur van de eredienst.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ########### Opvragen bijkomende inlichtingen eredienstbesturen (met als gevolg stuiting termijn) ###########
 
 fieldGroups:d7fb55d4-1ba1-4c71-9ada-2ebd1969e360 a form:FieldGroup ;

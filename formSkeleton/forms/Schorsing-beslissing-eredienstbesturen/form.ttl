@@ -1,10 +1,33 @@
+##########################################################
+# Alert for "Schorsing-beslissing-eredienstbesturen (Gemeenten or Provincie)"
+##########################################################
+fields:9db923c8-1498-4c01-b8ad-5f49ad780a45 a form:Field;
+    mu:uuid "9db923c8-1498-4c01-b8ad-5f49ad780a45" ;
+    sh:name "Met dit formulier schorst de gemeente of de provincie een beslissing van een (centraal) bestuur van de eredienst.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
+##########################################################
+# Info Upload for "Schorsing-beslissing-eredienstbesturen (Gemeenten or Provincie)"
+##########################################################
+fields:f1c1a4d1-814f-464b-a2ae-afe828b14987 a form:Field;
+    mu:uuid "f1c1a4d1-814f-464b-a2ae-afe828b14987" ;
+    sh:name "Voeg hier het schorsingsbesluit toe.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ###########Schorsing-beslissing-eredienstbesturen###########
 
 fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
     mu:uuid "6745c3c5-ed83-45e2-a9e7-ca77c18f0d05" ; 
     form:hasField 
+                      ###Alert (CUSTOM)
+                      fields:9db923c8-1498-4c01-b8ad-5f49ad780a45,
+
                       ###Eredienst selector###
                       fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
 

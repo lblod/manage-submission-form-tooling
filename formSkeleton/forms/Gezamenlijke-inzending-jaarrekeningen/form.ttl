@@ -1,3 +1,14 @@
+##########################################################
+# Info Upload for "Gezamenlijke-inzending-jaarrekeningen"
+##########################################################
+fields:4ee01de8-46b2-4109-84cf-d60bebaeb10e a form:Field;
+    mu:uuid "4ee01de8-46b2-4109-84cf-d60bebaeb10e" ;
+    sh:name "Voeg hier een overzicht toe van: de overschotten en tekorten van de jaarrekeningen en de betaalde toelagen, alle jaarrekeningen (met financieel gedeelte en toelichting), uittreksels werkingsrekeningen en patrimoniumrekeningen en eventueel aanvullende nota’s.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .  
+
 ###########Gezamenlijke-inzending-jaarrekeningen###########
 
 fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 a form:FieldGroup ;
@@ -9,8 +20,8 @@ fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 a form:FieldGroup ;
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
-                      ###Bestanden (custom)###
-                      fields:48cff9eb-579b-4e6e-958f-6229903c63d8,
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
@@ -19,7 +30,10 @@ fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 a form:FieldGroup ;
                       fields:c0f621fc-4c2c-456b-83f9-f087e64af03a,
 
                       ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+                      
+                      ###Info Upload (CUSTOM)###
+                      fields:4ee01de8-46b2-4109-84cf-d60bebaeb10e.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:e3b81b82-78cb-4631-884d-ef9f135ab646.
 
