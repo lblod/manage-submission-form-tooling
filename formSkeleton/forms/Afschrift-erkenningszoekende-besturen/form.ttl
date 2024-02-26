@@ -3,24 +3,24 @@
 ##########################################################
 fields:13920035-3a5f-4e4a-a48e-dc43894a0e07 a form:Field;
     mu:uuid "13920035-3a5f-4e4a-a48e-dc43894a0e07" ;
-    sh:name "Door middel van dit formulier dien je tijdens de wachtperiode van de erkenningsaanvraag het budget en de jaarrekening in voor dat gedeelte van de activiteiten dat betrekking heeft op de materiële aspecten van de eredienst, het giftenregister van de lokale geloofsgemeenschap, een afschrift van de begroting en de jaarrekening van de lokale geloofsgemeenschap, het ontwerp van het meerjarenplan en het verslag van de vergaderingen.";
+    sh:name "Met dit formulier dien je tijdens de wachtperiode van de erkenningsaanvraag het budget en de jaarrekening in voor dat gedeelte van de activiteiten dat betrekking heeft op de materiële aspecten van de eredienst, een afschrift van de begroting en de jaarrekening van de lokale geloofsgemeenschap, het ontwerp van het meerjarenplan en het verslag van de vergaderingen.";
     sh:order 101;
     form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
     form:displayType displayTypes:alert ;
     sh:group fields:aDynamicPropertyGroup .
 	
 ##########################################################
-# Type inzending
+# Type afschrift
 ##########################################################
 fields:d0e2274d-15c3-4e77-bd65-a92411c6ead3 a form:Field ;
     mu:uuid "d0e2274d-15c3-4e77-bd65-a92411c6ead3" ;
-    sh:name "Type inzending" ;
+    sh:name "Type afschrift" ;
     sh:order 102 ;
-    sh:path lblodBesluit:TypeInzending ;
+    sh:path lblodBesluit:TypeAfschrift ;
     form:validations
       [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:TypeInzending ;
+        sh:path lblodBesluit:TypeAfschrift ;
         sh:resultMessage "Dit veld is verplicht."@nl
       ];
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869"}""" ;
@@ -47,7 +47,7 @@ fieldGroups:61112374-50d5-4e0b-8847-185f7a0e8167 a form:FieldGroup ;
                       ###Alert (CUSTOM)###
                       fields:13920035-3a5f-4e4a-a48e-dc43894a0e07,
 
-                      ###Type inzending###
+                      ###Type afschrift###
                       fields:d0e2274d-15c3-4e77-bd65-a92411c6ead3,
 
 					            ###Datum-zitting/besluit###
