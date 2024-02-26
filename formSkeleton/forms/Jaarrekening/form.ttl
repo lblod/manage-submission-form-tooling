@@ -1,3 +1,13 @@
+##########################################################
+# Info Upload for "Jaarrekening-Eredienst"
+##########################################################
+fields:c7cc989d-118a-410d-9cbe-af6543b02d51 a form:Field;
+    mu:uuid "c7cc989d-118a-410d-9cbe-af6543b02d51" ;
+    sh:name "Voeg hier de jaarrekening toe. Voor de besturen van de eredienst: voeg ook de uittreksels van de werkingsrekeningen en patrimoniumrekeningen, en eventueel aanvullende nota toe.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ###########Jaarrekening-Root###########
 

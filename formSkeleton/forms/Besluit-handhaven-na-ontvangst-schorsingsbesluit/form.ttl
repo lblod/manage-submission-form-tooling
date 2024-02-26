@@ -1,4 +1,24 @@
+##########################################################
+# Alert for "Besluit handhaven na ontvangst schorsingsbesluit"
+##########################################################
+fields:2ab610ad-871b-443e-9b79-3723390ba0c0 a form:Field;
+    mu:uuid "2ab610ad-871b-443e-9b79-3723390ba0c0" ;
+    sh:name "Met dit formulier handhaaf je een besluit van jouw bestuur. Dit gebeurt na ontvangst van het schorsingsbesluit van de provinciegouverneur of de toezichthoudende gemeente of provincie.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
+##########################################################
+# Info Upload for "Besluit handhaven na ontvangst schorsingsbesluit"
+##########################################################
+fields:5dec48fb-cd08-4cfa-ab86-40b271be6278 a form:Field;
+    mu:uuid "5dec48fb-cd08-4cfa-ab86-40b271be6278" ;
+    sh:name "Voeg hier een handhavingsbesluit toe.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ########### Besluit handhaven na ontvangst schorsingsbesluit - erediensten (bestuur & centraal bestuur) ###########
 
@@ -17,14 +37,17 @@ fieldGroups:90fde57d-8b72-4e4e-b7f2-d04f4e12cf8b a form:FieldGroup ;
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
-                      ###Bestanden (CUSTOM)###
-                      fields:1b0b0d89-cb84-45d9-ba07-3a067df84ccc,
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
 
                       ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+
+                      ###Info Upload (CUSTOM)###
+                      fields:5dec48fb-cd08-4cfa-ab86-40b271be6278.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:ed2e8efd-229f-420e-bb7a-0e01575359eb .
 
