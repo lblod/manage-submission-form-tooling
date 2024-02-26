@@ -1,0 +1,13 @@
+steps:
+  install:
+    image: node:18
+    commands:
+      - npm install
+  build:
+    image: node:18
+    commands:
+      - npm run buildForms
+when:
+  - event: pull_request
+  - event: push
+    branch: master
