@@ -1,0 +1,85 @@
+##########################################################
+# Alert for "Afschrift erkenningszoekende besturen"
+##########################################################
+fields:13920035-3a5f-4e4a-a48e-dc43894a0e07 a form:Field;
+    mu:uuid "13920035-3a5f-4e4a-a48e-dc43894a0e07" ;
+    sh:name "Door middel van dit formulier dien je tijdens de wachtperiode van de erkenningsaanvraag het budget en de jaarrekening in voor dat gedeelte van de activiteiten dat betrekking heeft op de materiële aspecten van de eredienst, het giftenregister van de lokale geloofsgemeenschap, een afschrift van de begroting en de jaarrekening van de lokale geloofsgemeenschap, het ontwerp van het meerjarenplan en het verslag van de vergaderingen.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+	
+##########################################################
+# Type inzending
+##########################################################
+fields:d0e2274d-15c3-4e77-bd65-a92411c6ead3 a form:Field ;
+    mu:uuid "d0e2274d-15c3-4e77-bd65-a92411c6ead3" ;
+    sh:name "Type inzending" ;
+    sh:order 102 ;
+    sh:path lblodBesluit:TypeInzending ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:TypeInzending ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ];
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup.
+
+##########################################################
+# Info Upload for "Afschrift erkenningszoekende besturen"
+##########################################################
+fields:d99a20c1-d0d1-4c17-99c9-9baa17bd834b a form:Field;
+    mu:uuid "d99a20c1-d0d1-4c17-99c9-9baa17bd834b" ;
+    sh:name "Voeg hier de relevante bijlagen toe van uw erkenningszoekende bestuur.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .  
+	
+########### Afschrift erkenningszoekende besturen ###########
+
+fieldGroups:61112374-50d5-4e0b-8847-185f7a0e8167 a form:FieldGroup ;
+    mu:uuid "61112374-50d5-4e0b-8847-185f7a0e8167" ; 
+    form:hasField 
+
+                      ###Alert (CUSTOM)###
+                      fields:13920035-3a5f-4e4a-a48e-dc43894a0e07,
+
+                      ###Type inzending###
+                      fields:d0e2274d-15c3-4e77-bd65-a92411c6ead3,
+
+					            ###Datum-zitting/besluit###
+                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+					            ###Rapportjaar###
+                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+
+				              ###Info Upload (CUSTOM)###
+					            fields:d99a20c1-d0d1-4c17-99c9-9baa17bd834b.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:c9046174-7de6-47f9-85f4-8a011b92afea.
+
+fields:c9046174-7de6-47f9-85f4-8a011b92afea a form:ConditionalFieldGroup ;
+    mu:uuid "c9046174-7de6-47f9-85f4-8a011b92afea";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/a970c99d-c06c-4942-9815-153bf3e87df2> # Afschrift erkenningszoekende besturen
+      ] ;
+    form:hasFieldGroup fieldGroups:61112374-50d5-4e0b-8847-185f7a0e8167 .
