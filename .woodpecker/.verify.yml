@@ -7,6 +7,10 @@ steps:
     image: node:18
     commands:
       - npm run buildForms
+  lint:ttl:
+    image: node:18
+    commands:
+      - npm run lint:ttl
 when:
   - event: pull_request
   - event: push
