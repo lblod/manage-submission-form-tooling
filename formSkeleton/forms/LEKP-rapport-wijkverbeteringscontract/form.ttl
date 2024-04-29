@@ -1,0 +1,190 @@
+##########################################################
+# LEKP-rapport - Wijkverbeteringscontract
+##########################################################
+
+#### Infolabel ####
+fields:e22b6983-9d8f-43c7-9917-097d54879bdf a form:Field;
+    mu:uuid "e22b6983-9d8f-43c7-9917-097d54879bdf" ;
+    sh:name "Dit dossiertype heeft betrekking op het Lokaal Energie- en Klimaatpact.";
+    form:help """
+    <a href="https://lokaalklimaatpact.be/hoe-rapporteren/doelstellingen-rapporteren/loket-voor-lokale-besturen" target="_blank">Meer informatie daarover, alsook over dit formulier, kan je hier terugvinden. </a>
+    """ ;
+    sh:order 101;
+    form:options """{ "level": "6", "skin": "6"}""";
+    form:displayType displayTypes:heading ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Naam wijkverbeteringscontract ####
+fields:b4466ad1-7965-4b41-af74-17b6f16cf866 a form:Field ;
+    mu:uuid "b4466ad1-7965-4b41-af74-17b6f16cf866";
+    sh:name "Naam wijkverbeteringscontract" ;
+    sh:order 102 ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPDistrictImprovementContractName ],
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:order 103;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPDistrictImprovementContractName ];
+    sh:path lblodBesluit:LEKPDistrictImprovementContractName ;
+    form:options """{}""" ;
+    form:displayType displayTypes:defaultInput ;
+    sh:group fields:aDynamicPropertyGroup .
+
+### Datum lancering wijkverbeteringscontract ###
+fields:e68a1b2b-624f-4e7a-b1c6-ac1064471a1e a form:Field ;
+    mu:uuid "e68a1b2b-624f-4e7a-b1c6-ac1064471a1e";
+    sh:name "Datum lancering wijkverbeteringscontract" ;
+    sh:order 104 ;
+    sh:path lblodBesluit:LEKPDistrictImprovementContractLaunchDate ;
+    form:options """{}""" ;
+    form:displayType displayTypes:date ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPDistrictImprovementContractLaunchDate ],
+    [ a form:ValidDate ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Geef een geldige datum op." ;
+      sh:path lblodBesluit:LEKPDistrictImprovementContractLaunchDate ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### 1. Welke nieuwe samenwerkingsvormen/partnerschappen werden tot stand gebracht? ####
+fields:258bb1a4-00fb-4a9d-a5a4-ac40884ca1a0 a form:Field ;
+    mu:uuid "258bb1a4-00fb-4a9d-a5a4-ac40884ca1a0";
+    sh:name "1. Welke nieuwe samenwerkingsvormen/partnerschappen werden tot stand gebracht?" ;
+    sh:order 105 ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:order 106;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPNewCollaborations ];
+    sh:path lblodBesluit:LEKPNewCollaborations ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### 2. Welke wijk werd betrokken? ####
+fields:2a2020f4-96e5-4824-9720-eae707ba16bc a form:Field ;
+    mu:uuid "2a2020f4-96e5-4824-9720-eae707ba16bc";
+    sh:name "2. Welke wijk werd betrokken?" ;
+    sh:order 107 ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:order 108;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPInvolvedDistrict ];
+    sh:path lblodBesluit:LEKPInvolvedDistrict ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### 3. Licht de collectieve (energiebesparende) renovatiemaatregelen toe ####
+fields:bd7e8379-1cd1-402e-9571-53942deeacdf a form:Field ;
+    mu:uuid "bd7e8379-1cd1-402e-9571-53942deeacdf";
+    sh:name "3. Licht de collectieve (energiebesparende) renovatiemaatregelen toe" ;
+    sh:order 109 ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:order 110;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPRenovationsMeasures ];
+    sh:path lblodBesluit:LEKPRenovationsMeasures ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### 4. Hoe werd ingezet op sociale diversiteit? ####
+fields:b46781f5-b576-408e-8d01-931622131fef a form:Field ;
+    mu:uuid "b46781f5-b576-408e-8d01-931622131fef";
+    sh:name "4. Hoe werd ingezet op sociale diversiteit?" ;
+    sh:order 111 ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:order 112;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPSocialDiversity ];
+    sh:path lblodBesluit:LEKPSocialDiversity ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Bestanden - Custom helper text Voeg het wijkverbeteringscontract toe ####
+fields:8d6c1414-948e-46d9-8b54-749c21870955 a form:Field ;
+    mu:uuid "8d6c1414-948e-46d9-8b54-749c21870955" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg het wijkverbeteringscontract toe.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+###########LEKP-rapport - Wijkverbeteringscontract###########
+
+fieldGroups:f6528069-4606-432a-97b4-52a319870ea9 a form:FieldGroup ;
+    mu:uuid "f6528069-4606-432a-97b4-52a319870ea9" ; 
+    form:hasField 
+                      ### Infolabel 
+                      fields:e22b6983-9d8f-43c7-9917-097d54879bdf,
+                      
+                      ### Naam wijkverbeteringscontract
+                      fields:b4466ad1-7965-4b41-af74-17b6f16cf866,
+
+                      ### Datum lancering wijkverbeteringscontract
+                      fields:e68a1b2b-624f-4e7a-b1c6-ac1064471a1e,
+
+                      ### Welke nieuwe samenwerkingsvormen/partnerschappen werden tot stand gebracht?
+                      fields:258bb1a4-00fb-4a9d-a5a4-ac40884ca1a0,
+
+                      ### Welke wijk werd betrokken?
+                      fields:2a2020f4-96e5-4824-9720-eae707ba16bc,
+
+                      ### Licht de collectieve (energiebesparende) renovatiemaatregelen toe
+                      fields:bd7e8379-1cd1-402e-9571-53942deeacdf,
+
+                      ### Hoe werd ingezet op sociale diversiteit?
+                      fields:b46781f5-b576-408e-8d01-931622131fef,
+
+                      ### Link (custom)
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ### Bestanden - Voeg het wijkverbeteringscontract toe (Required)
+                      fields:8d6c1414-948e-46d9-8b54-749c21870955,
+
+                      ### Type RemoteDataObject or FileDataObject
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:634a1241-301e-4de6-a0d3-1197821922db.
+
+fields:634a1241-301e-4de6-a0d3-1197821922db a form:ConditionalFieldGroup ;
+    mu:uuid "634a1241-301e-4de6-a0d3-1197821922db";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/094cef43-055a-4deb-8692-bc0a91a8a2b6>
+      ] ;
+    form:hasFieldGroup fieldGroups:f6528069-4606-432a-97b4-52a319870ea9 .
