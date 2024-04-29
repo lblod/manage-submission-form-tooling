@@ -1,3 +1,24 @@
+##########################################################
+# LEKP-rapport - Klimaattafels
+##########################################################
+
+#### Hoeveel deelnemende wooneenheden kregen een renovatietraject voorgesteld? (LEKP 2.1) ####
+fields:df50e066-b12a-4a93-be9e-7a56777cf1bd a form:Field ;
+    mu:uuid "df50e066-b12a-4a93-be9e-7a56777cf1bd" ;
+    sh:name "Hoeveel deelnemende wooneenheden kregen een renovatietraject voorgesteld? (LEKP 2.1)" ;
+        sh:order 104 ;
+    sh:path lblodBesluit:LEKPTotalHousingForRenovatingProject ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 105;
+            sh:path lblodBesluit:LEKPTotalHousingForRenovatingProject ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ###########LEKP-Rapport Klimaattafels###########
 
 fieldGroups:b1143874-884d-4ffd-8d69-97383870a42e a form:FieldGroup ;
@@ -12,8 +33,14 @@ fieldGroups:b1143874-884d-4ffd-8d69-97383870a42e a form:FieldGroup ;
                       ### Households
                       fields:28ddce67-6aaf-4a3b-8953-63eeb7178d1f,
 
+                      ### Hoeveel deelnemende wooneenheden kregen een renovatietraject voorgesteld? (LEKP 2.1)
+                      fields:df50e066-b12a-4a93-be9e-7a56777cf1bd,
+
                       ### Links
                       fields:df63b483-f2ee-4274-a7d0-0cfc916d22ce,
+                      
+                      ### Bestanden
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ### RemoteDataObject/url ###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
