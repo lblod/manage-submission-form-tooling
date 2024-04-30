@@ -60,6 +60,10 @@ fields:258bb1a4-00fb-4a9d-a5a4-ac40884ca1a0 a form:Field ;
     sh:name "1. Welke nieuwe samenwerkingsvormen/partnerschappen werden tot stand gebracht?" ;
     sh:order 105 ;
     form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPNewCollaborations ],
     [ a form:MaxLength ;
       form:grouping form:MatchEvery ;
       form:max "100" ;
@@ -77,6 +81,10 @@ fields:2a2020f4-96e5-4824-9720-eae707ba16bc a form:Field ;
     sh:name "2. Welke wijk werd betrokken?" ;
     sh:order 107 ;
     form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPInvolvedDistrict ],
     [ a form:MaxLength ;
       form:grouping form:MatchEvery ;
       form:max "100" ;
@@ -94,6 +102,10 @@ fields:bd7e8379-1cd1-402e-9571-53942deeacdf a form:Field ;
     sh:name "3. Licht de collectieve (energiebesparende) renovatiemaatregelen toe" ;
     sh:order 109 ;
     form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPRenovationsMeasures ],
     [ a form:MaxLength ;
       form:grouping form:MatchEvery ;
       form:max "100" ;
@@ -111,6 +123,10 @@ fields:b46781f5-b576-408e-8d01-931622131fef a form:Field ;
     sh:name "4. Hoe werd ingezet op sociale diversiteit?" ;
     sh:order 111 ;
     form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPSocialDiversity ],
     [ a form:MaxLength ;
       form:grouping form:MatchEvery ;
       form:max "100" ;
