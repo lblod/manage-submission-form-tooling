@@ -25,7 +25,7 @@ fieldGroups:b1143874-884d-4ffd-8d69-97383870a42e a form:FieldGroup ;
     mu:uuid "b1143874-884d-4ffd-8d69-97383870a42e" ; 
     form:hasField 
                       ### Infolabel 
-                      fields:2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e,
+                      fields:d0644dd9-5181-49c8-9bef-bf109aabdc59,
                       
                       ### climateTable Date
                       fields:2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7,

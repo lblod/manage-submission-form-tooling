@@ -831,18 +831,6 @@ fields:143c2d80-0a31-4a1b-bdad-a723a4aa1efe a form:Field;
 # Custom Fields for LEKP
 ##########################################################
 
-#### Infolabel ####
-fields:2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e a form:Field;
-    mu:uuid "2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e" ;
-    sh:name "Dit dossierstype heeft betrekking tot het Lokaal Energie- en Klimaatpact.";
-    form:help """
-    <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">Meer informatie daarover, alsook over dit formulier, kun je hier terugvinden. </a>
-    """ ;
-    sh:order 101;
-    form:options """{ "level": "6", "skin": "6"}""";
-    form:displayType displayTypes:heading ;
-    sh:group fields:aDynamicPropertyGroup .
-
 #### Custom Infolabel ####
 fields:d0644dd9-5181-49c8-9bef-bf109aabdc59 a form:Field ;
     mu:uuid "d0644dd9-5181-49c8-9bef-bf109aabdc59" ;
