@@ -1811,3 +1811,39 @@ fields:c0f621fc-4c2c-456b-83f9-f087e64af03a a form:Field ;
     sh:order 5002 ;
     sh:path dct:relation;
     sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Worship Decisions cross reference selector
+##########################################################
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494 a form:Field ;
+    mu:uuid "788b9a98-684e-4d20-ae22-0ae610e6b494" ;
+    sh:name "Artikels" ;
+    sh:order 102 ;
+    sh:path eli:has_part ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path eli:is_about ;
+        sh:path eli:has_part ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ] ;
+    form:displayType displayTypes:worshipDecisionsCrossReferenceSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type a form:Field ;
+    sh:name "Hidden field type artikel" ;
+    sh:order 102 ;
+    sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>);
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc a form:Field ;
+    sh:name "Hidden field type document" ;
+    sh:order 1001 ;
+    sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://data.europa.eu/eli/ontology#type_document>);
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to a form:Field ;
+    sh:name "Hidden field refers to" ;
+    sh:order 1001 ;
+    sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://data.europa.eu/eli/ontology#refers_to>);
+    sh:group fields:aDynamicPropertyGroup .

@@ -15,8 +15,20 @@ fieldGroups:09fd371f-2afe-4b14-81a9-e780876de077 a form:FieldGroup ;
     mu:uuid "09fd371f-2afe-4b14-81a9-e780876de077" ; 
     form:hasField 
 
-                      ###Betreffend-bestuur-van-de-eredienst-(eredienst-selector)###
-                      fields:00a7bce6-2925-4794-93cb-ebd571b28831,
+                      ########################################################################
+                      # START: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
+
+                      ########################################################################
+                      # END: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
 
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,

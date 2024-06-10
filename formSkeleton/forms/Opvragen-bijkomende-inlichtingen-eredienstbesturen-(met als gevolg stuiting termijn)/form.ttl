@@ -23,14 +23,26 @@ fields:99554984-daa3-47e9-8b79-10b27df87064 a form:Field;
 ########### Opvragen bijkomende inlichtingen eredienstbesturen (met als gevolg stuiting termijn) ###########
 
 fieldGroups:d7fb55d4-1ba1-4c71-9ada-2ebd1969e360 a form:FieldGroup ;
-    mu:uuid "d7fb55d4-1ba1-4c71-9ada-2ebd1969e360" ; 
-    form:hasField 
+    mu:uuid "d7fb55d4-1ba1-4c71-9ada-2ebd1969e360" ;
+    form:hasField
 
                       ###Custom-textual-explanation###
                       fields:949aed0c-8d85-4826-9e88-30891ed34acd,
 
-                      ###Betreffend(centraal)-bestuur-van-de-eredienst###
-                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
+                      ########################################################################
+                      # START: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
+
+                      ########################################################################
+                      # END: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
