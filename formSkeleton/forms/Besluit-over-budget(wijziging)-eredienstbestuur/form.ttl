@@ -39,9 +39,6 @@ fieldGroups:09fd371f-2afe-4b14-81a9-e780876de077 a form:FieldGroup ;
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
 
-                      ###Inhoud-besluit###
-                      fields:ecc2bbf1-c76d-4237-9b7b-a4c42b2b1e29,
-
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
