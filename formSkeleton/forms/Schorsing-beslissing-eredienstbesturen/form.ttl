@@ -31,11 +31,9 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
                       ########################################################################
                       # START: Worship Decisions cross reference selector (and related fields)
                       ########################################################################
-                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document,
 
                       fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
-
-                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
 
                       fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
 
@@ -57,7 +55,7 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
-                      
+
                       ### Bestuursorgaan classificatie code [hidden input] ###
                       fields:303545a6-705b-43b3-86b7-b96436524be9,
 
@@ -76,4 +74,3 @@ fields:40f6d026-11f0-44b3-8594-58210f2860c5 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/b25faa84-3ab5-47ae-98c0-1b389c77b827> # Schorsing beslissing eredienstbesturen
       ] ;
     form:hasFieldGroup fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 .
-
