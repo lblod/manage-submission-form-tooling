@@ -1832,6 +1832,8 @@ fields:788b9a98-684e-4d20-ae22-0ae610e6b494 a form:Field ;
     form:displayType displayTypes:worshipDecisionsCrossReferenceSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
+# Flavour with custom configuration to deal with articles where we don't need eli:type_document
+
 fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document a form:Field ;
     sh:name "Artikels" ;
     sh:order 102 ;
