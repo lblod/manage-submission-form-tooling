@@ -1823,7 +1823,6 @@ fields:788b9a98-684e-4d20-ae22-0ae610e6b494 a form:Field ;
     form:validations
       [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path eli:is_about ;
         sh:path eli:has_part ;
         sh:resultMessage "Dit veld is verplicht."@nl
       ] ;
