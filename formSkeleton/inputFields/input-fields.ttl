@@ -3,6 +3,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
 @prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+@prefix fieldOption: <http://lblod.data.gift/vocabularies/field-options/> .
 @prefix fieldGroups: <http://data.lblod.info/field-groups/> .
 @prefix fields: <http://data.lblod.info/fields/> .
 @prefix displayTypes: <http://lblod.data.gift/display-types/> .
@@ -1815,17 +1816,30 @@ fields:c0f621fc-4c2c-456b-83f9-f087e64af03a a form:Field ;
 ##########################################################
 # Worship Decisions cross reference selector
 ##########################################################
+# define the constraint separatly so we can re-use it.
+
+<http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path eli:has_part ;
+        sh:resultMessage "Dit veld is verplicht."@nl.
+
 fields:788b9a98-684e-4d20-ae22-0ae610e6b494 a form:Field ;
     mu:uuid "788b9a98-684e-4d20-ae22-0ae610e6b494" ;
     sh:name "Artikels" ;
     sh:order 102 ;
     sh:path eli:has_part ;
-    form:validations
-      [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path eli:has_part ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-      ] ;
+    form:validations <http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c>;
+    form:displayType displayTypes:worshipDecisionsCrossReferenceSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
+# Flavour with custom configuration to deal with articles where we don't need eli:type_document
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document a form:Field ;
+    sh:name "Artikels" ;
+    sh:order 102 ;
+    sh:path eli:has_part ;
+    form:validations <http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c>;
+    fieldOption:exclude-type_document "true"^^xsd:boolean;
     form:displayType displayTypes:worshipDecisionsCrossReferenceSelector ;
     sh:group fields:aDynamicPropertyGroup .
 

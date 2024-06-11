@@ -32,11 +32,9 @@ fieldGroups:d7fb55d4-1ba1-4c71-9ada-2ebd1969e360 a form:FieldGroup ;
                       ########################################################################
                       # START: Worship Decisions cross reference selector (and related fields)
                       ########################################################################
-                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document,
 
                       fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
-
-                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
 
                       fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
 
