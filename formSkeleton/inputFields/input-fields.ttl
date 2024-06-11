@@ -1833,7 +1833,7 @@ fields:788b9a98-684e-4d20-ae22-0ae610e6b494 a form:Field ;
         form:grouping form:Bag ;
         sh:path eli:has_part ;
       ] ;
-    form:displayType displayTypes:worshipDecisionsCrossReferenceSelector ;
+    form:displayType displayTypes:decisionArticles ;
     sh:group fields:aDynamicPropertyGroup .
 
 # Flavour with custom configuration to deal with articles where we don't need eli:type_document
@@ -1849,7 +1849,7 @@ fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document a form:Field ;
         fieldOption:exclude-type_document "true"^^xsd:boolean ;
       ] ;
     fieldOption:exclude-type_document "true"^^xsd:boolean;
-    form:displayType displayTypes:worshipDecisionsCrossReferenceSelector ;
+    form:displayType displayTypes:decisionArticles ;
     sh:group fields:aDynamicPropertyGroup .
 
 fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type a form:Field ;
