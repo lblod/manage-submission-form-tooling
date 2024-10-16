@@ -18,9 +18,9 @@ fields:93e4f5f9-79b8-4850-a562-8ce8fa184097 a form:Field;
     sh:order 10002;
     form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
     form:displayType displayTypes:alert ;
-    sh:group fields:aDynamicPropertyGroup .  
+    sh:group fields:aDynamicPropertyGroup .
 
-###########Budgetten(wijzigingen) - Indiening bij representatief orgaan########### 
+###########Budgetten(wijzigingen) - Indiening bij representatief orgaan###########
 
 fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 a form:FieldGroup ;
     mu:uuid "aaf4f9b2-643f-474d-b1b0-24f37784e5a6" ;
@@ -33,6 +33,9 @@ fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 a form:FieldGroup ;
 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+
+                      ###Gerelateerde documenten###
+                      fields:3b05127d-d3ec-46c5-8e58-664334eed2d3,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
