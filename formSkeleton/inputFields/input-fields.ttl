@@ -1869,3 +1869,15 @@ fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to a form:Field ;
     sh:order 1001 ;
     sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://data.europa.eu/eli/ontology#refers_to>);
     sh:group fields:aDynamicPropertyGroup .
+
+fields:3b05127d-d3ec-46c5-8e58-664334eed2d3 a form:Field ;
+    sh:name "Gerelateerde documenten" ;
+    sh:order 103 ;
+    sh:path dct:relation ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht." ;
+        sh:path dct:relation ] ;
+    form:displayType displayTypes:decisionDocuments ;
+    sh:group fields:aDynamicPropertyGroup .

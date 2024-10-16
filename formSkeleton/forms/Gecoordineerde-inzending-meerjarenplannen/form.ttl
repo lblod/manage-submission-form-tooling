@@ -21,6 +21,9 @@ fieldGroups:bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2 a form:FieldGroup ;
                       ###Rapportperiode###
                       fields:e578e3ff-240b-421b-a32c-f411489c3806,
 
+                      ###Gerelateerde documenten###
+                      fields:3b05127d-d3ec-46c5-8e58-664334eed2d3,
+
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
@@ -32,10 +35,10 @@ fieldGroups:bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2 a form:FieldGroup ;
 
                       ###Related decision [hidden]###
                       fields:c0f621fc-4c2c-456b-83f9-f087e64af03a,
-                      
+
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
-                      
+
                       ###Info Upload (CUSTOM)###
                       fields:dd66fed0-c025-44de-80bd-bec8b39f5021.
 
