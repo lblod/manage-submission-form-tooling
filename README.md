@@ -115,3 +115,21 @@ If you create a new configuration file, a few things need to be done :
 2. Add migrations to the app defining the configuration file as a resource in the database ([migration](https://github.com/lblod/app-digitaal-loket/blob/ed761a8731ffe8fd51226582f0e6223d460e7f50/config/migrations/20200407100352-automatisch-melding/20200904103600-fix-add-the-forms-file-as-a-file-resource.sparql))
   - Best to add the migration on all instances of the apps using it.
   - Bear in mind: [app-digitaal-loket](https://github.com/lblod/app-digitaal-loket), [app-toezicht-abb](https://github.com/lblod/app-toezicht-abb), [app-meldingsplichtige-api](https://github.com/lblod/app-meldingsplichtige-api) and [app-public-decisions-database](https://github.com/lblod/app-public-decisions-database) are currently using it.
+
+
+### When adding new Dossier Types (BesluitDocumentType/BesluitType)
+If you introduce new Dossier Types (i.e., Concepts), they have to be published in several places. Additionally, there are business rules that should be published so vendors know how to handle these new dossier types.
+
+#### Publishing the business rules to app-centrale-vindplaats
+This should only happen on [app-centrale-vindplaats](https://github.com/lblod/app-centrale-vindplaats). It's a simple TTL file that needs to be updated and ingested. Here is a [reference](https://github.com/lblod/app-centrale-vindplaats/blob/master/config/migrations/2024/20241014141246-Decisions-Types.ttl). Take the latest migration you find and update the file. 
+
+This involves:
+- Adding a new `skos:Concept` as shown [here](https://github.com/lblod/app-centrale-vindplaats/blob/master/config/migrations/2024/20241014141246-Decisions-Types.ttl#L2263).
+- Adding a notification rule, as demonstrated [here](https://github.com/lblod/app-centrale-vindplaats/blob/master/config/migrations/2024/20241014141246-Decisions-Types.ttl#L2503).
+
+Data model for the rules can be found [here](https://lblod.github.io/pages-vendors/#/docs/meldingsplicht).
+
+### Publishing the Dossier Types (BesluitDocumentType/BesluitType) to data.vlaanderen
+Since these `skos:Concept`s fall under `data.vlaanderen.be`, they should be published here as well so they resolve correctly. 
+
+Example PR: [Publishing to data.vlaanderen](https://github.com/Informatievlaanderen/OSLOthema-lokaleBesluiten/pull/21)
