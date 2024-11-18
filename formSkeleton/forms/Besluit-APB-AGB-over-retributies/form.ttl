@@ -1,0 +1,41 @@
+
+###########Besluit-APB-AGB-over-retributies###########
+
+fieldGroups:b7a2894b-4f79-4e77-9055-dad80d1eb781 a form:FieldGroup ;
+    mu:uuid "b7a2894b-4f79-4e77-9055-dad80d1eb781" ;
+    form:hasField
+                      ###Datum-zitting/besluit###
+                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+                      ###Datum-van-publicatie-op-webtoepassing###
+                      fields:49dbe1be-877a-4890-8465-1510ff18ce18,
+
+                      ###Welk-beslissingsorgaan-nam-het-besluit?###
+                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:8e2f989f-37f2-4489-9f92-979aea06a9de.
+
+fields:8e2f989f-37f2-4489-9f92-979aea06a9de a form:ConditionalFieldGroup ;
+    mu:uuid "8e2f989f-37f2-4489-9f92-979aea06a9de";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/ec8652a6-2c49-4955-8d59-fd08c8c0a6e1>
+      ] ;
+    form:hasFieldGroup fieldGroups:b7a2894b-4f79-4e77-9055-dad80d1eb781 .
+
+

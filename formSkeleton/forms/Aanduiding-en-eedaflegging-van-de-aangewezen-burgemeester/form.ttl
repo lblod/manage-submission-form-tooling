@@ -29,6 +29,6 @@ fields:8252a10c-f35c-486f-8314-a36c099e726c a form:ConditionalFieldGroup ;
         form:grouping form:Bag ;
         sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
-        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/a48f2ded-78a5-45e5-a5d8-077814cec39f> # Aanduiding en eedaflegging van de aangewezen burgemeester
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/7927f4f4-ad4c-4460-9207-2a4b5d21a9d7> # Aanduiding en eedaflegging van de aangewezen burgemeester
       ] ;
     form:hasFieldGroup fieldGroups:215b36a1-5a37-4de0-b1b3-b2ee735d2fed .
