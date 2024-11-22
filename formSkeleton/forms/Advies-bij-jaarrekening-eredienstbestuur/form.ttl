@@ -15,8 +15,20 @@ fieldGroups:91045004-2066-40f3-aac1-bf2309eb2b99 a form:FieldGroup ;
     mu:uuid "91045004-2066-40f3-aac1-bf2309eb2b99" ; 
     form:hasField 
                       
-                      ###Eredienst selector###
-                      fields:00a7bce6-2925-4794-93cb-ebd571b28831,
+                      ########################################################################
+                      # START: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
+
+                      ########################################################################
+                      # END: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
               
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
