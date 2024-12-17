@@ -3,7 +3,7 @@
 ##########################################################
 fields:13920035-3a5f-4e4a-a48e-dc43894a0e07 a form:Field;
     mu:uuid "13920035-3a5f-4e4a-a48e-dc43894a0e07" ;
-    sh:name "Met dit formulier dien je tijdens de wachtperiode van de erkenningsaanvraag het budget en de jaarrekening in voor dat gedeelte van de activiteiten dat betrekking heeft op de materiële aspecten van de eredienst, een afschrift van de begroting en de jaarrekening van de lokale geloofsgemeenschap, het ontwerp van het meerjarenplan en het verslag van de vergaderingen.";
+    sh:name """Met dit formulier dien je tijdens de <u>wachtperiode van de erkenningsaanvraag</u> documenten ter staving van het voldoen aan de erkenningscriteria in te dienen. Bij het selectieveld &ldquo;Type afschrift&rdquo; vind je een lijst met mogelijkheden terug. <a href="https://abb-vlaanderen.gitbook.io/handleiding-loket/erediensten/toelichting-verloop-indiening-en-ontvangst-van-stukken/afschriften-van-erkenningszoekende-besturen" target="_blank">Een toelichting betreffende elke type afschrift kan je hier terugvinden.</a>""";
     sh:order 101;
     form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
     form:displayType displayTypes:alert ;
