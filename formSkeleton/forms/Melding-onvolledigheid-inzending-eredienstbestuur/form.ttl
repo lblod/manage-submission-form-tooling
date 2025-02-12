@@ -1,0 +1,62 @@
+##########################################################
+# Alert for Melding onvolledigheid inzending eredienstbestuur
+##########################################################
+fields:c6bd0564-b570-4cce-b2f0-dde771f60977 a form:Field;
+    mu:uuid "c6bd0564-b570-4cce-b2f0-dde771f60977" ;
+    sh:name "Met deze melding informeer je het eredienstbestuur en het centraal bestuur dat een ingediende budget(wijziging) of meerjarenplan(wijziging) onvolledig en bijgevolg onontvankelijk is.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
+#########################################################
+# Info with custom helper text for "Melding onvolledigheid inzending eredienstbestuur"
+#########################################################
+fields:f75de5f0-ac1f-479f-9c05-5c056eb9f5fc a form:Field ;
+    mu:uuid "f75de5f0-ac1f-479f-9c05-5c056eb9f5fc" ;
+    sh:name "Voeg hier de brief toe waarin je het eredienstbestuur en het centraal bestuur op de hoogte brengt van de onvolledigheid en onontvankelijkheid van een specifieke budget(wijziging) of meerjarenplan(wijziging). Door het versturen van deze brief wordt het eredienstbestuur geïnformeerd dat de toezichttermijn eigenlijk nog niet loopt.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+########### Melding onvolledigheid inzending eredienstbestuur ###########
+
+fieldGroups:4840756c-d839-4ae0-b568-c986c73dd6a4 a form:FieldGroup ;
+    mu:uuid "4840756c-d839-4ae0-b568-c986c73dd6a4" ; 
+    form:hasField
+                      ###Alert(CUSTOM)###
+                      fields:c6bd0564-b570-4cce-b2f0-dde771f60977,
+                      
+                      ###Eredienst selector (Centrale besturen and besturen van eredienst)###
+                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
+
+                      ###Link###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+                      
+                      ###Info Upload (CUSTOM)###
+                      fields:f75de5f0-ac1f-479f-9c05-5c056eb9f5fc.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:b099c3f4-60ff-4883-b4e3-60ad7698fd17.
+
+fields:b099c3f4-60ff-4883-b4e3-60ad7698fd17 a form:ConditionalFieldGroup ;
+    mu:uuid "b099c3f4-60ff-4883-b4e3-60ad7698fd17";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/863caf68-97c9-4ee0-adb5-620577ea8146> # Melding onvolledigheid inzending eredienstbestuur
+      ] ;
+    form:hasFieldGroup fieldGroups:4840756c-d839-4ae0-b568-c986c73dd6a4 .
+

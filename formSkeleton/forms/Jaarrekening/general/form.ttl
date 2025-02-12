@@ -12,7 +12,10 @@ fieldGroups:f56fa353-5ad9-423f-8804-c32d104873e5 a form:FieldGroup ;
                       fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
 
                       ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39.
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Info Upload (CUSTOM)###
+                      fields:c7cc989d-118a-410d-9cbe-af6543b02d51.
 
 
 # this field is the custom bestuursorgaan selector

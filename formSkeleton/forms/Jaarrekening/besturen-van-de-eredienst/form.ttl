@@ -7,8 +7,11 @@ fieldGroups:7d12a2bd-30f3-4e1e-8cb5-3c274c021d12 a form:FieldGroup ;
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
-                      ###Bestanden (custom)###
-                      fields:d0555b84-9d8c-4ca8-b7f2-a3bee96bd82f.
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Info Upload (CUSTOM)###
+                      fields:c7cc989d-118a-410d-9cbe-af6543b02d51.
 
 # this field is the custom bestuursorgaan selector
 fields:4c7820f0-4011-4ab4-a16a-e128800e11bc  form:hasConditionalFieldGroup fields:13939a6c-2354-4a87-8d45-420ce6421140.

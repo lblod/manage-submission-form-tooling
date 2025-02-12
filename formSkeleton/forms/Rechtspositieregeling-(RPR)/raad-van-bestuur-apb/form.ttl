@@ -1,0 +1,35 @@
+fieldGroups:11a7e169-3a66-4c8b-9a1d-141120f5198e a form:FieldGroup ;
+    mu:uuid "11a7e169-3a66-4c8b-9a1d-141120f5198e" ;
+    form:hasField
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:c2a97f7d-ded2-4afa-a5e5-6bd44d5cfa13.
+
+fields:c2a97f7d-ded2-4afa-a5e5-6bd44d5cfa13 a form:ConditionalFieldGroup ;
+    mu:uuid "c2a97f7d-ded2-4afa-a5e5-6bd44d5cfa13";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/fb21d14b-734b-48f4-bd4e-888163fd08e8>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> # Raad van bestuur
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d> # Autonoom provinciebedrijf
+      ] ;
+    form:hasFieldGroup fieldGroups:11a7e169-3a66-4c8b-9a1d-141120f5198e .

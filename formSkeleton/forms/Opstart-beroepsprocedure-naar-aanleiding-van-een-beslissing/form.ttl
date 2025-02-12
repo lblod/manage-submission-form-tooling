@@ -1,0 +1,78 @@
+##########################################################
+# Alert for Opstart beroepsprocedure naar aanleiding van een beslissing
+##########################################################
+fields:150ea04f-19c4-41f2-b058-74989366c66d a form:Field;
+    mu:uuid "150ea04f-19c4-41f2-b058-74989366c66d" ;
+    sh:name "Met deze melding wordt beroep ingesteld tegen de beslissing van de gemeente- of provincieraad over een meerjarenplan(wijziging) of budget(wijziging). Ook kan een eredienstbestuur met deze melding beroep instellen tegen de gemaakte afspraken tussen het centraal bestuur en de gemeente- of provincieoverheid.";
+    sh:order 101;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Type beroepsprocedure
+##########################################################
+fields:e7c5b7f6-b096-43d0-aa36-72eb38c790eb a form:Field ;
+    mu:uuid "e7c5b7f6-b096-43d0-aa36-72eb38c790eb" ;
+    sh:name "Type beroepsprocedure" ;
+    sh:order 102 ;
+    sh:path lblodBesluit:BudgetBeroepsprocedure ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:BudgetBeroepsprocedure ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ];
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup.
+
+#########################################################
+# Info with custom helper text for "Opstart beroepsprocedure naar aanleiding van een beslissing"
+#########################################################
+fields:083cb030-ad02-4c5e-9433-1e4634fec09b a form:Field ;
+    mu:uuid "083cb030-ad02-4c5e-9433-1e4634fec09b" ;
+    sh:name "Voeg hier de brief toe waarmee beroep wordt ingesteld tegen de beslissing van de gemeente- of provincieraad over een meerjarenplan(wijziging) of budget(wijziging) samen met alle bijhorende stukken óf de brief waarmee beroep wordt ingesteld tegen de gemaakte afspraken tussen het centraal bestuur en de gemeente- of provincieoverheid." ;
+    sh:order 10002 ;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+########### Opstart beroepsprocedure naar aanleiding van een beslissing ###########
+
+fieldGroups:d12faf73-3a62-4117-a534-7a2f34392cc9 a form:FieldGroup ;
+    mu:uuid "d12faf73-3a62-4117-a534-7a2f34392cc9" ; 
+    form:hasField 
+                      ###Alert(CUSTOM)###
+                      fields:150ea04f-19c4-41f2-b058-74989366c66d,
+
+                      ###Type beroepsprocedure###
+                      fields:e7c5b7f6-b096-43d0-aa36-72eb38c790eb,
+
+                      ###Link###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+                      
+                      ###Info Upload (CUSTOM)###
+                      fields:083cb030-ad02-4c5e-9433-1e4634fec09b.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:8de8583b-3b0f-4bbd-aed6-2e46b3ad7b56.
+
+fields:8de8583b-3b0f-4bbd-aed6-2e46b3ad7b56 a form:ConditionalFieldGroup ;
+    mu:uuid "8de8583b-3b0f-4bbd-aed6-2e46b3ad7b56";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/802a7e56-54f8-488d-b489-4816321fb9ae> # Opstart beroepsprocedure naar aanleiding van een beslissing
+      ] ;
+    form:hasFieldGroup fieldGroups:d12faf73-3a62-4117-a534-7a2f34392cc9 .

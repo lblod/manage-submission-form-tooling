@@ -3,6 +3,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
 @prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+@prefix fieldOption: <http://lblod.data.gift/vocabularies/form-field-options/> .
 @prefix fieldGroups: <http://data.lblod.info/field-groups/> .
 @prefix fields: <http://data.lblod.info/fields/> .
 @prefix displayTypes: <http://lblod.data.gift/display-types/> .
@@ -77,7 +78,7 @@ fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/5cecec47-ba66-4d7a-ac9d-a1e7962ca4e2"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
-    
+
 ###Origineel of wijziging voor erediensten ###
 fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6 a form:Field ;
     mu:uuid "ea141dfa-80ff-4958-9493-c0cf6724cbf6" ;
@@ -100,8 +101,26 @@ fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6 a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
-
-    
+fields:ecc2bbf1-c76d-4237-9b7b-a4c42b2b1e29 a form:Field;
+    mu:uuid "ecc2bbf1-c76d-4237-9b7b-a4c42b2b1e29" ;
+    sh:name "Inhoud besluit" ;
+    sh:order 2102 ;
+    sh:path rdf:type ;
+    form:validations
+      [ a form:RequiredConstraint ; #TODO
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
 
 fields:e578e3ff-240b-421b-a32c-f411489c3806 a form:Field ;
     mu:uuid "e578e3ff-240b-421b-a32c-f411489c3806" ;
@@ -296,7 +315,12 @@ fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb a form:Field ;
       [ a form:ValidDateTime ;
         form:grouping form:MatchEvery ;
         sh:path ( [ sh:inversePath prov:generated ] dct:subject [ sh:inversePath besluit:behandelt ]  prov:startedAtTime ) ;
-        sh:resultMessage "Geef een geldige datum en tijd op."] ;
+        sh:resultMessage "Geef een geldige datum en tijd op."],
+      [ a form:DateInPast ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath prov:generated ] dct:subject [ sh:inversePath besluit:behandelt ]  prov:startedAtTime ) ;
+        sh:resultMessage "Let op: datum ligt in de toekomst. Controleer uw keuze." ;
+        sh:severity sh:Warning ] ;
     form:displayType displayTypes:dateTime ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -313,7 +337,12 @@ fields:ba965704-5a74-4a77-b283-4f97f3b7ddbc a form:Field ;
       [ a form:ValidDateTime ;
         form:grouping form:MatchEvery ;
         sh:path ( [ sh:inversePath besluit:heeftBesluitenlijst ] prov:startedAtTime ) ;
-        sh:resultMessage "Geef een geldige datum en tijd op."] ;
+        sh:resultMessage "Geef een geldige datum en tijd op."],
+      [ a form:DateInPast ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath besluit:heeftBesluitenlijst ] prov:startedAtTime ) ;
+        sh:resultMessage "Let op: datum ligt in de toekomst. Controleer uw keuze." ;
+        sh:severity sh:Warning ] ;
     form:displayType displayTypes:dateTime ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -330,7 +359,12 @@ fields:857d670f-9a25-4555-bfe5-ecc48c2ffde3 a form:Field ;
       [ a form:ValidDateTime ;
         form:grouping form:MatchEvery ;
         sh:path ( [ sh:inversePath besluit:heeftNotulen ] prov:startedAtTime ) ;
-        sh:resultMessage "Geef een geldige datum en tijd op."] ;
+        sh:resultMessage "Geef een geldige datum en tijd op."],
+      [ a form:DateInPast ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath besluit:heeftNotulen ] prov:startedAtTime ) ;
+        sh:resultMessage "Let op: datum ligt in de toekomst. Controleer uw keuze." ;
+        sh:severity sh:Warning ] ;
     form:displayType displayTypes:dateTime ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -347,7 +381,12 @@ fields:720c86f8-4537-44b0-850b-fb3452d8bb2d a form:Field ;
       [ a form:ValidDateTime ;
         form:grouping form:MatchEvery ;
         sh:path ( [ sh:inversePath besluit:heeftAgenda ] prov:startedAtTime ) ;
-        sh:resultMessage "Geef een geldige datum en tijd op."] ;
+        sh:resultMessage "Geef een geldige datum en tijd op."],
+      [ a form:DateInPast ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath besluit:heeftAgenda ] prov:startedAtTime ) ;
+        sh:resultMessage "Let op: datum ligt in de toekomst. Controleer uw keuze." ;
+        sh:severity sh:Warning ] ;
     form:displayType displayTypes:dateTime ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -731,29 +770,34 @@ fields:2aecc67c-687d-448c-be01-94ad42fb51c1 a form:Field ;
     form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de definitieve beslissing, grafisch plan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
     sh:group fields:aDynamicPropertyGroup .
 
-#########################################################
-# File with custom helper text for "Budget"
-#########################################################
-fields:7465c000-c844-4ba9-82cc-bd173cbe41a3 a form:Field ;
-    mu:uuid "7465c000-c844-4ba9-82cc-bd173cbe41a3" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
+#######################################################################################################################
+# Link with custom helper text for "LEKP Rapport Sloopbeleidsplan" & "LEKP - Collectieve-energiebesparende-renovatie"
+#######################################################################################################################
+
+fields:a4a015ea-6423-4f33-920c-cb5d9c9dd151 a form:Field ;
+    mu:uuid "a4a015ea-6423-4f33-920c-cb5d9c9dd151" ;
+    sh:name "Links naar documenten" ;
+    sh:order 10000 ;
     sh:path dct:hasPart;
+    form:help """<div class="au-u-text-center">Indien de op te laden bewijsstukken beschikbaar zijn via een link, kan u deze link hier plakken. <br> Bij twijfel kan u steeds de documenten 'gewoon' opladen in het veld hieronder.</div> """ ;
     form:validations
-     [ a  form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:path dct:hasPart;
-          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     [ a form:UriConstraint ;
+        form:grouping form:MatchEvery ;
+        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+         sh:path ( dct:hasPart nie:url ) ],
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path dct:hasPart ;
+         sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl
      ];
-    form:displayType displayTypes:files; # consider this v1.0
-    form:help """Voeg hier budget en beleidsnota toe.""" ;
+    form:displayType displayTypes:remoteUrls; # consider this v1.0
     sh:group fields:aDynamicPropertyGroup .
 
 #########################################################
-# File with custom helper text for "Meerjarenplan(aanpassing)"
+# File with custom helper text for "LEKP Rapport Sloopbeleidsplan"
 #########################################################
-fields:95c9236e-e849-4888-82ae-b812f906e75d a form:Field ;
-    mu:uuid "95c9236e-e849-4888-82ae-b812f906e75d" ;
+fields:c1a7eed5-4662-41aa-a016-d4eadfe74782 a form:Field ;
+    mu:uuid "c1a7eed5-4662-41aa-a016-d4eadfe74782" ;
     sh:name "Bestanden" ;
     sh:order 10001 ;
     sh:path dct:hasPart;
@@ -764,121 +808,7 @@ fields:95c9236e-e849-4888-82ae-b812f906e75d a form:Field ;
           sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
      ];
     form:displayType displayTypes:files; # consider this v1.0
-    form:help """Voeg hier volgende bijlagen toe: meerjarenplan, strategische nota, individuele afsprakennota.""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
-
-
-#########################################################
-# File with custom helper text for "Jaarrekening"
-#########################################################
-fields:d0555b84-9d8c-4ca8-b7f2-a3bee96bd82f a form:Field ;
-    mu:uuid "d0555b84-9d8c-4ca8-b7f2-a3bee96bd82f" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:validations
-     [ a  form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:path dct:hasPart;
-          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
-     ];
-    form:displayType displayTypes:files; # consider this v1.0
-    form:help """Voeg hier jaarrekening, uittreksel werkingsrekening en patrimoniumrekeningen en eventueel aanvullende nota toe.""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
-#########################################################
-# File with custom helper text for "Eindrekening"
-#########################################################
-fields:e5aa62e8-08b7-4216-8b9c-5fea766e9a22 a form:Field ;
-    mu:uuid "e5aa62e8-08b7-4216-8b9c-5fea766e9a22" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:validations
-     [ a  form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:path dct:hasPart;
-          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
-     ];
-    form:displayType displayTypes:files; # consider this v1.0
-    form:help """Voeg hier eindrekening, uittreksel werkingsrekening en patrimoniumrekeningen en eventueel aanvullende nota toe.""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
-
-
-#########################################################
-# File with custom helper text for "Budget" for centrale besturen eredienst
-#########################################################
-fields:9dd53fc5-077b-439c-aad9-5530f95083e8 a form:Field ;
-    mu:uuid "9dd53fc5-077b-439c-aad9-5530f95083e8" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:validations
-     [ a  form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:path dct:hasPart;
-          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
-     ];
-    form:displayType displayTypes:files; # consider this v1.0
-    form:help """Voeg hier een overzicht en alle  budgetten en bijhorende beleidsnota's toe.""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
-
-#########################################################
-# File with custom helper text for "Meerjarenplannen" voor centrale besturen eredienst 
-#########################################################
-fields:c34a860a-a82e-482d-b077-6482a4edfe3f a form:Field ;
-    mu:uuid "c34a860a-a82e-482d-b077-6482a4edfe3f" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:validations
-     [ a  form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:path dct:hasPart;
-          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
-     ];
-    form:displayType displayTypes:files; # consider this v1.0
-    form:help """Voeg hier een overzicht en alle meerjarenplanpen, strategische nota's en afsprakennota's toe.""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
-
-#########################################################
-# File with custom helper text for "Jaarrekeningen-centraal-bestuur-eredienst"
-#########################################################
-fields:48cff9eb-579b-4e6e-958f-6229903c63d8 a form:Field ;
-    mu:uuid "48cff9eb-579b-4e6e-958f-6229903c63d8" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:validations
-     [ a  form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:path dct:hasPart;
-          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
-     ];
-    form:displayType displayTypes:files; # consider this v1.0
-    form:help """Voeg hier een toelagenoverzicht en alle jaarrekeningen, uittreksels werkingsrekening en patrimoniumrekeningen en eventueel aanvullende nota's toe.""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
-#########################################################
-# File with custom helper text for "Besluit handhaven"
-#########################################################
-fields:1b0b0d89-cb84-45d9-ba07-3a067df84ccc a form:Field ;
-    mu:uuid "1b0b0d89-cb84-45d9-ba07-3a067df84ccc" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:validations
-     [ a  form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:path dct:hasPart;
-          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
-     ];
-    form:displayType displayTypes:files; # consider this v1.0
-    form:help """Voeg hier een handhavingsbesluit toe.""" ;
+    form:help """Laad hier jouw sloopbeleidsplan of renovatiestrategie met oog voor sloopbeleid op.""" ;
     sh:group fields:aDynamicPropertyGroup .
 
 
@@ -887,20 +817,612 @@ fields:1b0b0d89-cb84-45d9-ba07-3a067df84ccc a form:Field ;
 ##########################################################
 
 ##########################################################
+# Alert for Aanvraag desaffectatie presbyteria/kerken
+##########################################################
+fields:143c2d80-0a31-4a1b-bdad-a723a4aa1efe a form:Field;
+    mu:uuid "143c2d80-0a31-4a1b-bdad-a723a4aa1efe" ;
+    sh:name "Met deze melding start je een desaffectatiedossier op wanneer de gemeente eigenaar is van het gebouw. Opgelet het betreft hier enkel presbyteria en kerken die (met toepassing van artikel 72 en 75 van de wet van 18 germinal jaar X « relative à l'organisation des cultes ») opnieuw ter beschikking zijn gesteld van de eredienst. Een presbyterium is een pastorie van voor de 19e eeuw die genationaliseerd werd in de Franse revolutionaire periode, niet vervreemd werd, en dan in 1802 opnieuw de bestemming van pastorie gekregen heeft. Een dergelijk presbyterium kan slechts een nieuwe bestemming krijgen nadat het werd gedesaffecteerd door de Vlaamse regering, na advies van de bisschoppelijke overheid.";
+    sh:order 101;
+    form:help """ Meer informatie over een desaffectatie van een presbyterium kan je hier terugvinden : <a href="https://www.vlaanderen.be/lokaal-bestuur/erediensten-en-kerken/bestemmingswijziging-en-desaffectatie-pastorieen" target="_blank">https://www.vlaanderen.be/lokaal-bestuur/erediensten-en-kerken/bestemmingswijziging-en-desaffectatie-pastorieen</a> """ ;
+    form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
 # Custom Fields for LEKP
 ##########################################################
 
-#### Infolabel ####
-fields:2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e a form:Field;
-    mu:uuid "2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e" ;
-    sh:name "Dit dossierstype heeft betrekking tot het Lokaal Energie- en Klimaatpact.";
+#### Custom Infolabel ####
+fields:d0644dd9-5181-49c8-9bef-bf109aabdc59 a form:Field ;
+    mu:uuid "d0644dd9-5181-49c8-9bef-bf109aabdc59" ;
+    sh:name "Dit dossierstype heeft betrekking tot het Lokaal Energie- en Klimaatpact." ;
     form:help """
-    <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">Meer informatie daarover, alsook over dit formulier, kun je hier terugvinden. </a>
+    <a href="https://lokaalklimaatpact.be/hoe-rapporteren/doelstellingen-rapporteren/loket-voor-lokale-besturen" target="_blank">Meer informatie daarover, alsook over dit formulier, kun je hier terugvinden. </a>
     """ ;
-    sh:order 101;
-    form:options """{ "level": "6", "skin": "6"}""";
+    sh:order 101 ;
+    form:options """{ "level": "6", "skin": "6"}""" ;
     form:displayType displayTypes:heading ;
     sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# LEKP - Collectieve-energiebesparende-renovatie
+##########################################################
+
+#### Naam collectieve Renovatie ####
+fields:f6ee7c27-5d43-47fb-9720-8321631f5e7a a form:Field ;
+    mu:uuid "f6ee7c27-5d43-47fb-9720-8321631f5e7a";
+    sh:name "Naam collectieve Renovatie" ;
+    sh:order 102 ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieNaam ],
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:order 103;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieNaam ];
+    sh:path lblodBesluit:LEKPCollectieveRenovatieNaam ;
+    form:options """{}""" ;
+    form:displayType displayTypes:defaultInput ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Wijk/Straat/Adres ####
+fields:a95f2851-c371-402e-aed4-f037e2769d85 a form:Field ;
+    mu:uuid "a95f2851-c371-402e-aed4-f037e2769d85";
+    sh:name "Wijk/Straat/Adres" ;
+    sh:order 104 ;
+    sh:path lblodBesluit:LEKPCollectieveRenovatieAdres ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:order 105;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieAdres ];
+    form:options """{}""" ;
+    form:displayType displayTypes:defaultInput ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Datum Collectieve Renovatie ####
+fields:7e3d3dcf-f80b-4364-9e4c-dc6fc1602232 a form:Field ;
+    mu:uuid "7e3d3dcf-f80b-4364-9e4c-dc6fc1602232";
+    sh:name "Datum realisatie collectieve renovatie" ;
+    sh:order 106 ;
+    sh:path lblodBesluit:LEKPCollectieveRenovatieDate ;
+    form:options """{}""" ;
+    form:displayType displayTypes:date ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieDate ],
+    [ a form:ValidDate ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Geef een geldige datum op." ;
+      sh:path lblodBesluit:LEKPCollectieveRenovatieDate ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Hoeveel wooneenheden telde deze collectieve renovatie ? ####
+fields:e2006e32-b2fc-400b-92a1-231ff0689925 a form:Field ;
+    mu:uuid "e2006e32-b2fc-400b-92a1-231ff0689925" ;
+    sh:name "Hoeveel wooneenheden telde deze collectieve renovatie?" ;
+    sh:order 107 ;
+    sh:path lblodBesluit:LEKPTotalHousingUnits ;
+    form:validations 
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPTotalHousingUnits ],
+    [ a form:PositiveNumber;
+      form:grouping form:MatchEvery;
+      sh:order 108;
+      sh:path lblodBesluit:LEKPTotalHousingUnits ;
+      sh:resultMessage "Geen negatieve waarden" ] ;
+    form:displayType displayTypes:numericalInput ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Het betreft een (radioButtons) ####
+fields:c9dc7f5e-033b-4181-9c5d-97012fd3a63c a form:Field ;
+    mu:uuid "16eecbb9-0f22-42b0-8bd6-1aeef80b3610";
+    sh:name "Het betreft een :" ;
+    sh:order 109 ;
+    sh:path lblodBesluit:LEKPEnergyRenovationType ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path lblodBesluit:LEKPEnergyRenovationType ],
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:LEKPEnergyRenovationType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/56ef78a0-5ab4-4548-b995-fd995703183c>;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/56ef78a0-5ab4-4548-b995-fd995703183c"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Bestanden - Custom helper text Laad hier jouw documentatie op rond de collectieve renovatie ####
+fields:bafe7754-d178-4485-ba62-a2ff0f6e0957 a form:Field ;
+    mu:uuid "bafe7754-d178-4485-ba62-a2ff0f6e0957" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Laad hier jouw documentatie op rond de collectieve renovatie.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Opmerking ####
+fields:e9036004-9298-480b-8e41-1dd1e10a4dfd a form:Field ;
+    mu:uuid "e9036004-9298-480b-8e41-1dd1e10a4dfd";
+    sh:name "Opmerking" ;
+    sh:order 10002 ;
+    sh:path lblodBesluit:LEKPCollectieveEnergiebesparendeRenovatieComments ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "500" ;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPCollectieveEnergiebesparendeRenovatieComments ] ;
+    sh:group fields:aDynamicPropertyGroup.
+
+##########################################################
+# LEKP - Collectieve-energiebesparende-renovatie END
+##########################################################
+
+##########################################################
+# LEKP - Fietspaden (Bicycle infrastructure)
+##########################################################
+
+#### Custom Heading ####
+fields:f70a9c35-a58f-4943-bdfc-7b9a761ed04c a form:Field ;
+    mu:uuid "f70a9c35-a58f-4943-bdfc-7b9a761ed04c" ;
+    sh:name "Meld hier alleen de inspanningen die niet dankzij steun van het Fietsfonds of Kopenhagenfonds tot stand kwamen." ;
+    form:help """
+    <a href="https://www.lokaalklimaatpact.be/doelstellingen/fietspaden" target="_blank">Voor meer informatie raadpleeg je het Pactportaal.</a>
+    """ ;
+    sh:order 101 ;
+    form:options """{ "level": "6", "skin": "6"}""" ;
+    form:displayType displayTypes:heading ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Custom heading ####
+fields:d0f11e8a-8a57-4309-91ff-e92e40d27525 a form:Field ;
+    mu:uuid "d0f11e8a-8a57-4309-91ff-e92e40d27525" ;
+    sh:name "Nieuw aangelegde fietsinfrastructuur op eigen grondgebied." ;
+    form:help """ Maak een optelsom van het aantal meter nieuw aangelegde of structureel verbeterde fietsinfrastructuur. Een tweerichtingsfietspad aan één zijde van de weg telt als één afstand in de LEKP-doelstelling, waarbij de lengte van A naar B wordt genoteerd. Bij een fietspad aan beide zijden kan het als eenrichtingsfietspad gelden in twee richtingen: van A naar B en van B naar A. """ ;
+    sh:order 102 ;
+    form:options """{ "level": "6", "skin": "6"}""" ;
+    form:displayType displayTypes:heading ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2021 ####
+fields:6a4f780a-de31-476c-bd7e-f24080339b31 a form:Field ;
+    mu:uuid "6a4f780a-de31-476c-bd7e-f24080339b31" ;
+    sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2021" ;
+        sh:order 103 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2021 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2021 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 104;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2021 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2021 ####
+fields:8b6bc220-a980-4d1e-b7b3-5a6324d1ad4f a form:Field ;
+    mu:uuid "8b6bc220-a980-4d1e-b7b3-5a6324d1ad4f" ;
+    sh:name "Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2021" ;
+    sh:order 105 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2021 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2021 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 106;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2021 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2021 ####
+fields:f79d9036-5734-463d-826b-d093a6f4e0c5 a form:Field ;
+    mu:uuid "f79d9036-5734-463d-826b-d093a6f4e0c5" ;
+    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2021" ;
+    sh:order 107 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2021 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2021 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 108;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2021 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2021 ####
+fields:9ec715da-fb12-4fda-bec4-188e4ea6783c a form:Field ;
+    mu:uuid "9ec715da-fb12-4fda-bec4-188e4ea6783c" ;
+    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2021" ;
+    sh:order 109 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2021 ;
+    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2021 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2021 ;
+sh:order 110;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2022 ####
+fields:bfa729b9-2a4e-4fe6-b8cb-e6de01ffacf6 a form:Field ;
+    mu:uuid "bfa729b9-2a4e-4fe6-b8cb-e6de01ffacf6" ;
+    sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2022" ;
+    sh:order 111 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2022 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2022 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 112;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2022 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2022 ####
+fields:10bfc794-041a-485f-bfe2-2aa82acee56f a form:Field ;
+    mu:uuid "10bfc794-041a-485f-bfe2-2aa82acee56f" ;
+    sh:name "Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2022" ;
+    sh:order 113 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2022 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2022 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 114;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2022 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2022 ####
+fields:5592b583-d9b4-45df-8b2c-d153a6d712db a form:Field ;
+    mu:uuid "5592b583-d9b4-45df-8b2c-d153a6d712db" ;
+    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2022" ;
+    sh:order 115 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 116;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2022 ####
+fields:9d195161-d9c2-46a9-ad50-f83095aca568 a form:Field ;
+    mu:uuid "9d195161-d9c2-46a9-ad50-f83095aca568" ;
+    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2022" ;
+    sh:order 117 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 ;
+    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 118;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2023 ####
+fields:857f1d9e-ecbb-4461-819a-7e15aee2e82d a form:Field ;
+    mu:uuid "857f1d9e-ecbb-4461-819a-7e15aee2e82d" ;
+    sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2023" ;
+    sh:order 119 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2023 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2023 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 120;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2023 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2023 ####
+fields:2a47484a-3e09-4c75-9c9f-04956145ae02 a form:Field ;
+    mu:uuid "2a47484a-3e09-4c75-9c9f-04956145ae02" ;
+    sh:name "Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2023" ;
+    sh:order 121 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2023 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2023 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 122;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2023 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2023 ####
+fields:7d8f0e21-7e3d-4f39-88e4-195175a63d65 a form:Field ;
+    mu:uuid "7d8f0e21-7e3d-4f39-88e4-195175a63d65" ;
+    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2023" ;
+    sh:order 123 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2023 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2023 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 124;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2023 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2023 ####
+fields:00ccc3c2-7e4c-43b5-bf3b-f62542856745 a form:Field ;
+    mu:uuid "00ccc3c2-7e4c-43b5-bf3b-f62542856745" ;
+    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2023" ;
+    sh:order 125 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 ;
+    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 126;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2024 ####
+fields:788a6000-097d-4ea7-9a3b-e64ce78e266c a form:Field ;
+    mu:uuid "788a6000-097d-4ea7-9a3b-e64ce78e266c" ;
+    sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2024" ;
+    sh:order 127 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2024 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2024 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 128;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2024 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2024 ####
+fields:5a554529-0c7e-43f2-b29e-ddfa39df9b88 a form:Field ;
+    mu:uuid "5a554529-0c7e-43f2-b29e-ddfa39df9b88" ;
+    sh:name "Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2024" ;
+    sh:order 129 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2024 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2024 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 130;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2024 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2024 ####
+fields:c1bce5db-aeee-4246-acd5-764ed4be3d1b a form:Field ;
+    mu:uuid "c1bce5db-aeee-4246-acd5-764ed4be3d1b" ;
+    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2024" ;
+    sh:order 131 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2024 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2024
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 132;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2024 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2024 ####
+fields:9e86bf79-170d-4136-9aa9-9db6df27883c a form:Field ;
+    mu:uuid "9e86bf79-170d-4136-9aa9-9db6df27883c" ;
+    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2024" ;
+    sh:order 133 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 ;
+    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
+    form:displayType displayTypes:numericalInput ;
+    form:validations 
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 134;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Custom heading ####
+fields:edfcdaa6-456a-48f2-b2ba-39a460be1a28 a form:Field ;
+    mu:uuid "edfcdaa6-456a-48f2-b2ba-39a460be1a28" ;
+    sh:name "Bijkomende informatie :" ;
+    sh:order 135 ;
+    form:options """{ "level": "6", "skin": "6"}""" ;
+    form:displayType displayTypes:heading ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Van welke andere subsidies dan het Fietsfonds of Kopenhagenfonds heb je gebruik gemaakt? ####
+  fields:0e47f2d1-e8cd-4ea0-9ea8-4d1e2194769d a form:Field ;
+    mu:uuid "0e47f2d1-e8cd-4ea0-9ea8-4d1e2194769d";
+    sh:name "Van welke andere subsidies dan het Fietsfonds of Kopenhagenfonds heb je gebruik gemaakt?" ;
+    sh:order 136 ;
+    sh:path lblodBesluit:LEKPOtherFietsfondsSubsidy ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPOtherFietsfondsSubsidy ] ;
+    sh:group fields:aDynamicPropertyGroup.
+
+#### Heb je hiervoor met andere overheidsinstanties, steden of gemeenten samengewerkt? Welke? ####
+  fields:842a3ef1-138c-408a-af3d-6016cae24a2c a form:Field ;
+    mu:uuid "842a3ef1-138c-408a-af3d-6016cae24a2c";
+    sh:name "Heb je hiervoor met andere overheidsinstanties, steden of gemeenten samengewerkt? Welke?" ;
+    sh:order 137 ;
+    sh:path lblodBesluit:LEKPFietsSubsidyCollaborationWith ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "100" ;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPFietsSubsidyCollaborationWith ] ;
+    sh:group fields:aDynamicPropertyGroup.
+
+##########################################################
+# LEKP - Fietspaden (Bicycle infrastructure) END
+##########################################################
 
 #### Authentieke bron ####
 fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
@@ -921,25 +1443,6 @@ fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/c2e7699a-b543-443c-b8b2-b60bef8767dc", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
-
-  #### Type Correctie ####
-  fields:40c91f8e-be26-4e7d-8920-ae547f143744 a form:Field ;
-    mu:uuid "40c91f8e-be26-4e7d-8920-ae547f143744" ;
-    sh:name "Type Correctie" ;
-    form:help """1 type correctie per melding - binnen eenzelfde type correctie kunnen meerdere datacorrecties doorgegeven worden.""";
-    sh:order 103 ;
-    sh:path lblodBesluit:LEKPCorrectionType ;
-    form:validations
-      [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path lblodBesluit:LEKPCorrectionType ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-      ];
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/1dfc51af-99fd-4be9-a681-41360c195f14"}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
-    sh:group fields:aDynamicPropertyGroup .
-
-
 
 #### Doelstelling ####
 fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
@@ -1056,7 +1559,6 @@ fields:f7e4b0a8-e970-4d49-a6d0-16c99a761f17 a form:Field ;
     form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
     sh:group fields:aDynamicPropertyGroup.
 
-
 #### Datum Klimaattafel ####
 fields:2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7 a form:Field ;
     mu:uuid "2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7";
@@ -1074,6 +1576,25 @@ fields:2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7 a form:Field ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Geef een geldige datum op." ;
       sh:path lblodBesluit:LEKPClimateTableDate ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Datum Sloopbeleidsplan ####
+fields:7b3feafe-fbf9-4cdb-ae80-b37dbd3107dd a form:Field ;
+    mu:uuid "7b3feafe-fbf9-4cdb-ae80-b37dbd3107dd";
+    sh:name "Datum Sloopbeleidsplan" ;
+    sh:order 102 ;
+    sh:path lblodBesluit:LEKPSloopbeleidsplanDate ;
+    form:options """{}""" ;
+    form:displayType displayTypes:date ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPSloopbeleidsplanDate ],
+    [ a form:ValidDate ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Geef een geldige datum op." ;
+      sh:path lblodBesluit:LEKPSloopbeleidsplanDate ] ;
     sh:group fields:aDynamicPropertyGroup .
 
 #### Households ####
@@ -1099,7 +1620,7 @@ fields:28ddce67-6aaf-4a3b-8953-63eeb7178d1f a form:Field ;
       sh:path lblodBesluit:LEKPHouseholds ] ;
     sh:group fields:aDynamicPropertyGroup .
 
-#### Links ####  
+#### Links ####
 fields:df63b483-f2ee-4274-a7d0-0cfc916d22ce a form:Field ;
     mu:uuid "df63b483-f2ee-4274-a7d0-0cfc916d22ce" ;
     sh:name "Voeg hier een link toe naar een webpagina, document of persbericht waar er meer informatie staat over de organisatie van de klimaattafel" ;
@@ -1134,6 +1655,14 @@ fields:9724f76e-6b1d-480d-a868-f24b74f236a0 a form:Field;
     form:displayType displayTypes:heading ;
     sh:group fields:aDynamicPropertyGroup .
 
+#### InfoAlert ####
+fields:6e0f57d5-6d89-478b-8b0a-f3f662bccd40 a form:Field;
+    mu:uuid "6e0f57d5-6d89-478b-8b0a-f3f662bccd40" ;
+    sh:name "Voeg hier het dossier toe met alle bijhorende stukken.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ##########################################################
 # Custom Fields for Erediensten selector (FILTERED)
@@ -1142,7 +1671,7 @@ fields:9724f76e-6b1d-480d-a868-f24b74f236a0 a form:Field;
 fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
     mu:uuid "7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b" ;
     sh:name "Betreffend (centraal) bestuur van de eredienst" ;
-    sh:order 101 ;
+    sh:order 102 ;
     sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -1167,7 +1696,7 @@ fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
 fields:00a7bce6-2925-4794-93cb-ebd571b28831 a form:Field ;
     mu:uuid "00a7bce6-2925-4794-93cb-ebd571b28831" ;
     sh:name "Betreffend bestuur van de eredienst" ;
-    sh:order 101 ;
+    sh:order 102 ;
     sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -1191,7 +1720,7 @@ fields:00a7bce6-2925-4794-93cb-ebd571b28831 a form:Field ;
 fields:eb089ca1-2c5b-42a4-a781-f009c46ac583 a form:Field ;
     mu:uuid "eb089ca1-2c5b-42a4-a781-f009c46ac583" ;
     sh:name "Betreffend bestuur van de eredienst" ;
-    sh:order 101 ;
+    sh:order 102 ;
     sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -1282,4 +1811,73 @@ fields:c0f621fc-4c2c-456b-83f9-f087e64af03a a form:Field ;
     sh:name "Related submission [hidden input]" ;
     sh:order 5002 ;
     sh:path dct:relation;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Worship Decisions cross reference selector
+##########################################################
+# define the constraint separatly so we can re-use it.
+
+<http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path eli:has_part ;
+        sh:resultMessage "Dit veld is verplicht."@nl.
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494 a form:Field ;
+    mu:uuid "788b9a98-684e-4d20-ae22-0ae610e6b494" ;
+    sh:name "Artikels" ;
+    sh:order 102 ;
+    sh:path eli:has_part ;
+    form:validations <http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> ,
+      [ a form:DecisionArticlesValidator ;
+        form:grouping form:Bag ;
+        sh:path eli:has_part ;
+      ] ;
+    form:displayType displayTypes:decisionArticles ;
+    sh:group fields:aDynamicPropertyGroup .
+
+# Flavour with custom configuration to deal with articles where we don't need eli:type_document
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document a form:Field ;
+    sh:name "Artikels" ;
+    sh:order 102 ;
+    sh:path eli:has_part ;
+    form:validations <http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> ,
+      [ a form:DecisionArticlesValidator ;
+        form:grouping form:Bag ;
+        sh:path eli:has_part ;
+        fieldOption:exclude-type_document "true"^^xsd:boolean ;
+      ] ;
+    fieldOption:exclude-type_document "true"^^xsd:boolean;
+    form:displayType displayTypes:decisionArticles ;
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type a form:Field ;
+    sh:name "Hidden field type artikel" ;
+    sh:order 102 ;
+    sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>);
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc a form:Field ;
+    sh:name "Hidden field type document" ;
+    sh:order 1001 ;
+    sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://data.europa.eu/eli/ontology#type_document>);
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to a form:Field ;
+    sh:name "Hidden field refers to" ;
+    sh:order 1001 ;
+    sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://data.europa.eu/eli/ontology#refers_to>);
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:3b05127d-d3ec-46c5-8e58-664334eed2d3 a form:Field ;
+    sh:name "Gerelateerde documenten" ;
+    sh:order 103 ;
+    sh:path dct:relation ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht." ;
+        sh:path dct:relation ] ;
+    form:displayType displayTypes:decisionDocuments ;
     sh:group fields:aDynamicPropertyGroup .

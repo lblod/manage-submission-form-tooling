@@ -1,3 +1,13 @@
+##########################################################
+# Info Upload for "Eindrekening"
+##########################################################
+fields:a06dd232-938c-446c-af73-c1e03039c9c4 a form:Field;
+    mu:uuid "a06dd232-938c-446c-af73-c1e03039c9c4" ;
+    sh:name "Voeg hier de eindrekening (met financieel gedeelte en toelichting), uittreksels werkingsrekeningen en patrimoniumrekeningen, en eventueel aanvullende nota toe.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ###########Eindrekening###########
 
@@ -13,14 +23,17 @@ fieldGroups:393c7c2d-4e57-4bf7-89ae-21c05be7b5ed a form:FieldGroup ;
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
-                      ###Bestanden (custom)###
-                      fields:e5aa62e8-08b7-4216-8b9c-5fea766e9a22,
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
 
                       ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+                      
+                      ###Info Upload (CUSTOM)###
+                      fields:a06dd232-938c-446c-af73-c1e03039c9c4.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:16c8da54-4961-4282-b5c9-9cbd45eccba0.
 

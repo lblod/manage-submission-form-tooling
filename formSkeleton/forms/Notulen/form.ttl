@@ -1,3 +1,14 @@
+##########################################################
+# Info Upload for "Notulen"
+##########################################################
+fields:925ee0aa-b60d-4787-a9e3-089232a411e3 a form:Field;
+    mu:uuid "925ee0aa-b60d-4787-a9e3-089232a411e3" ;
+    sh:name "Voeg hier notulen en eventuele bijlagen toe.";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ###########Notulen###########
 
 fieldGroups:2fb408e5-b38a-43fc-8ebe-7c38381312df a form:FieldGroup ;
@@ -19,7 +30,10 @@ fieldGroups:2fb408e5-b38a-43fc-8ebe-7c38381312df a form:FieldGroup ;
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
 
                       ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+                      
+                      ###Info Upload (CUSTOM)###
+                      fields:925ee0aa-b60d-4787-a9e3-089232a411e3.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:d441cb26-ea24-4ff7-b5fb-868e36e7d468.
 

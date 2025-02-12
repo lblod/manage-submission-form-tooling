@@ -5,13 +5,10 @@ fieldGroups:da491d56-4f98-4f9d-8c34-71ba617cfa64 a form:FieldGroup ;
     form:hasField 
 
                       ### Infolabel 
-                      fields:2bb6c63d-2cb7-4e82-839f-5c1e0a4f6a5e,
+                      fields:d0644dd9-5181-49c8-9bef-bf109aabdc59,
                       
                       ### Authentieke bron
                       fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9,
-
-                      ### Type Correctie
-                      fields:40c91f8e-be26-4e7d-8920-ae547f143744,
 
                       ### Omschrijving
                       fields:5a52adff-2558-437e-8a30-132648f4870c,

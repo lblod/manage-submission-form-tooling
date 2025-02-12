@@ -1,3 +1,14 @@
+##########################################################
+# Info Upload for "Gecoordineerde-inzending-meerjarenplannen"
+##########################################################
+fields:dd66fed0-c025-44de-80bd-bec8b39f5021 a form:Field;
+    mu:uuid "dd66fed0-c025-44de-80bd-bec8b39f5021" ;
+    sh:name "Voeg hier een overzicht toe van: de gemeentelijke of provinciale toelagen per financieel boekjaar en per bestuur van de eredienst, het totaal van die toelagen, alle meerjarenplannen (met strategische nota’s financiële nota’s en eventuele afsprakennota's).";
+    sh:order 10002;
+    form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
+    form:displayType displayTypes:alert ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ###########Gecoordineerde-inzending-meerjarenplannen###########
 
 fieldGroups:bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2 a form:FieldGroup ;
@@ -10,20 +21,26 @@ fieldGroups:bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2 a form:FieldGroup ;
                       ###Rapportperiode###
                       fields:e578e3ff-240b-421b-a32c-f411489c3806,
 
+                      ###Gerelateerde documenten###
+                      fields:3b05127d-d3ec-46c5-8e58-664334eed2d3,
+
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
-                      ###Bestanden (custom)###
-                      fields:c34a860a-a82e-482d-b077-6482a4edfe3f,
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
 
                       ###Related decision [hidden]###
                       fields:c0f621fc-4c2c-456b-83f9-f087e64af03a,
-                      
+
                       ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+
+                      ###Info Upload (CUSTOM)###
+                      fields:dd66fed0-c025-44de-80bd-bec8b39f5021.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:41cd1378-5f16-48a5-92cb-7f4caf89ff16.
 
