@@ -1,3 +1,3 @@
 #!/bin/sh
 npm install;
-npm run buildForms $@;
+npm run buildForms "$@";

@@ -94,7 +94,7 @@ INSERT DATA {
       dbpedia:fileExtension "ttl" .
   }
 }
-    `;
+`;
 }
 
 function formatIsoDate(date) {

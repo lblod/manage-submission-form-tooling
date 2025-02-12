@@ -12,6 +12,7 @@ npm run buildForms
 This will create a folder for each supported project in the `./dist` folder. You can then copy this folder to each respective project.
 
 ### Using a specific date
+
 By default a new timestamp will be generated when running the script, which will be used to prefix all file and folder names. If you want to use a different date for this you can pass it in as an argument to the script:
 
 ```sh
@@ -28,11 +29,35 @@ To run in a docker container clone this repo then run:
 docker run -it --rm -v "$PWD":/app -w /app node:16 sh build-forms.sh
 ```
 
+### Using automatic form update with extending the build-forms.sh script
+
+The `update-semantic-forms.sh` script copies the semantic forms content and migrations from the `manage-submission-form-tooling/dist/project_name` directory to the specified list of projects. It also updates automatically the `ACTIVE_FORM_FILE` of each project to the latest form version for the `enrich-submission-service` located in the `docker-compose.yml` file.
+
+See : [enrich-submission-service](https://github.com/lblod/enrich-submission-service#add-the-service-to-a-stack)
+
+#### Usage
+
+  1. **Not recommended** : Comment out the `bash ./build-forms.sh` command if you have already built the forms and do not want to duplicate them.
+  2. **Required** : Create a `.env` file containing key-value pairs and add the relevant projects to that file.
+      - Example: `app-digitaal-loket="~/path/to/app-digitaal-loket`.
+      - **Note** the use of `~`; the script will automatically expand it.
+
+  _**Note :** You can ignore this step above since projects are already defined in the script but in the case where other apps will use semantic forms you'll need to add the corresponding project in the project array._
+
+  3. Run the script by executing `./update-semantic-forms.sh` in the terminal.
+
+### Requirements
+
+  - Bash
+
+_**Note :** This script has some limitations, of example if you remove the `build-forms.sh` script, it's not advised to run this `./update-semantic-forms.sh` script twice as it will copy the same semantic-forms and migrations content twice, leading to duplicates. Also, before running the script don't forget switch branches in your projects or make sure you are inside the good one._
+
 ## Testing changes
 
 **Make sure to test extensively your updates.**
 
 ### Checklists
+
 ⚠️ ⚠️ ⚠️ An update to the form, means it needs to be manually propageted to ALL apps. ⚠️ ⚠️ ⚠️
 
 **Loket**
@@ -69,11 +94,13 @@ Full flow
 - Same with a submission created with the old forms version but sent with the new forms version in application (env variable)
 
 **app-public-decisions-database**
+
 - Note ⚠️ forms should reside in http://mu.semte.ch/graphs/access-for-role/PubliekeBesluitendatabank-BesluitendatabankLezer
 - connect the app to a source loket (with delta's), assuming the new forms have been deployed at the source
 - create e.g. a besluitenlijst in the source and see wether it comes through and you can open it
 
 **app-worship-decisions-database**
+
 - connect the app to a source loket (with delta's), assuming the new forms have been deployed at the source
 - create e.g. notulen from an eredienstberstuur, and check it correctly syncs through, i.e. login as the same eredienstbestuur on worship-decisions-database
 
@@ -108,7 +135,7 @@ Furthermore, most likely, you want this field in the database if new relation: t
 
 ### Export configuration to the apps
 
-Generate the project specific files using the `npm run buildForms` script and paste the output in the app's root folder.
+Generate the project specific files using the `npm run buildForms` script and paste the output in the app's root folder OR you can use the `update-semantic-forms.sh` script to automate the copy, it includes the `build-forms.sh` script, then you can ignore the following steps.
 
 If you create a new configuration file, a few things need to be done :
 1. The `ACTIVE_FORM_FILE` environment variable of the [enrich-submission-service](https://github.com/lblod/enrich-submission-service#add-the-service-to-a-stack) needs to be updated to the new file name
@@ -118,10 +145,12 @@ If you create a new configuration file, a few things need to be done :
 
 
 ### When adding new Dossier Types (BesluitDocumentType/BesluitType)
+
 If you introduce new Dossier Types (i.e., Concepts), they have to be published in several places. Additionally, there are business rules that should be published so vendors know how to handle these new dossier types.
 
 #### Publishing the business rules to app-centrale-vindplaats
-This should only happen on [app-centrale-vindplaats](https://github.com/lblod/app-centrale-vindplaats). It's a simple TTL file that needs to be updated and ingested. Here is a [reference](https://github.com/lblod/app-centrale-vindplaats/blob/master/config/migrations/2024/20241014141246-Decisions-Types.ttl). Take the latest migration you find and update the file. 
+
+This should only happen on [app-centrale-vindplaats](https://github.com/lblod/app-centrale-vindplaats). It's a simple TTL file that needs to be updated and ingested. Here is a [reference](https://github.com/lblod/app-centrale-vindplaats/blob/master/config/migrations/2024/20241014141246-Decisions-Types.ttl). Take the latest migration you find and update the file.
 
 This involves:
 - Adding a new `skos:Concept` as shown [here](https://github.com/lblod/app-centrale-vindplaats/blob/master/config/migrations/2024/20241014141246-Decisions-Types.ttl#L2263).
@@ -130,6 +159,7 @@ This involves:
 Data model for the rules can be found [here](https://lblod.github.io/pages-vendors/#/docs/meldingsplicht).
 
 ### Publishing the Dossier Types (BesluitDocumentType/BesluitType) to data.vlaanderen
-Since these `skos:Concept`s fall under `data.vlaanderen.be`, they should be published here as well so they resolve correctly. 
+
+Since these `skos:Concept`s fall under `data.vlaanderen.be`, they should be published here as well so they resolve correctly.
 
 Example PR: [Publishing to data.vlaanderen](https://github.com/Informatievlaanderen/OSLOthema-lokaleBesluiten/pull/21)
