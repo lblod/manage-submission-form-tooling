@@ -1,6 +1,33 @@
 #!/bin/bash
 
-# Extending the build-forms script
+# Check if .env file exists
+if [[ ! -f .env ]]; then
+    echo ".env file not found. Consult the README on what the contents of the file should be."
+    exit 1
+fi
+
+# Declare arrays for projects and paths
+declare -a projects
+declare -a paths
+
+# Read the .env file
+while IFS='' read -r line || [[ -n "$line" ]]; do
+    # Skip empty lines and comments
+    [[ "$line" =~ ^[[:space:]]*# ]] && continue
+    [[ -z "$line" ]] && continue
+
+    # Trim leading and trailing whitespaces
+    key=$(echo "$line" | cut -d '=' -f 1)
+    # Remove quotes from value
+    value=$(echo "$line" | cut -d '=' -f 2- | sed -e 's/^"//' -e 's/"$//')
+
+    # Expand ~ in value if it's present
+    value=$(eval echo "$value")
+
+    projects+=("$key")
+    paths+=("$value")
+done < .env
+
 # (Not recommended but you can comment this part but it will result in duplicate if you run the command twice)
 echo "Building the forms..."
 bash ./build-forms.sh
@@ -9,17 +36,12 @@ echo ""
 echo "---------------------------------------"
 echo ""
 
-# Required : Add your path where you store your projects this has to start with / and end with /
-path_folder="/path/to/yours/projects/"
+# projects=("app-digitaal-loket" "app-meldingsplichtige-api" "app-public-decisions-database" "app-toezicht-abb" "app-worship-decisions-database")
 
-# List of projects that will be affected by the script
-projects=("app-digitaal-loket" "app-meldingsplichtige-api" "app-public-decisions-database" "app-toezicht-abb" "app-worship-decisions-database")
-
-for index in ${!projects[@]};
-do
+for index in "${!projects[@]}"; do
     project_name="${projects[$index]}"
-    input_project_path="${path_folder}manage-submission-form-tooling/dist/$project_name/"
-    output_project_path="$path_folder$project_name"
+    output_project_path="${paths[$index]}"
+    input_project_path=$(realpath "./dist/$project_name/")
 
     echo "Processing $project_name ..."
     echo ""
@@ -27,32 +49,24 @@ do
     echo "Copying migrations and semantic-forms content from $input_project_path to $output_project_path ..."
     echo ""
 
-    # Copy the folders content into the output_project_path
-    rsync -ru "$input_project_path"* "$output_project_path"/
+    # Get the full path for form and migration
+    form_file=$(find "${input_project_path}/config/semantic-forms" -type f -name "*.ttl" | head -n 1)
+    form_file_name=$(echo "$form_file" | xargs basename)
+    migration_file=$(find "${input_project_path}/config/migrations/$(date +%Y)/" -type f -name "*.sparql" | head -n 1)
 
-    # Get the form file name without the extension
-    form_file=$(ls "${input_project_path}config/semantic-forms" | grep .ttl | head -n 1 | sed 's/.ttl//')
+    # Copy form and migration into the relevant project directories
+    cp "$form_file" "${output_project_path}/config/semantic-forms"
+    cp "$migration_file" "${output_project_path}/config/migrations/$(date +%Y)/"
 
-    echo "Updating the ACTIVE_FORM_FILE to ${form_file}.ttl in ${output_project_path}/docker-compose.yml ..."
+    echo "Updating the ACTIVE_FORM_FILE to ${form_file_name} in ${output_project_path}/docker-compose.yml ..."
     echo ""
 
-    sed -i "s/ACTIVE_FORM_FILE:.*/ACTIVE_FORM_FILE: \"share:\/\/semantic-forms\/$form_file.ttl\"/g" "${output_project_path}/docker-compose.yml"
+    sed -i "s/ACTIVE_FORM_FILE:.*/ACTIVE_FORM_FILE: \"share:\/\/semantic-forms\/$form_file_name\"/g" "${output_project_path}/docker-compose.yml"
 
-    cd "${path_folder}manage-submission-form-tooling/dist"
-
-    next_index=$(($index + 1))
-    if [ "$next_index" -lt "${#projects[@]}" ]; then
-        next_project="${projects[$next_index]}"
-        echo "Done processing $project_name. Next project: $next_project."
-        echo ""
-        echo "---------------------------------------"
-        echo ""
-    else
-        echo "Done processing $project_name."
-        echo ""
-        echo "---------------------------------------"
-        echo ""
-    fi
+    echo "Done processing ${project_name}."
+    echo ""
+    echo "---------------------------------------"
+    echo ""
 done
 
 echo "All projects were successfully updated to the latest semantic form! Exiting."
