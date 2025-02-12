@@ -38,17 +38,17 @@ See : [enrich-submission-service](https://github.com/lblod/enrich-submission-ser
 #### Usage
 
   1. **Not recommended** : Comment out the `bash ./build-forms.sh` command if you have already built the forms and do not want to duplicate them.
-  2. **Required** : Set the `path_folder` variable to the folder where you store your projects. It's recommended to use the same base folder for storing project else you will run into issues.
-  3. Define the list of projects that will be affected by the script by setting the projects array.
+  2. **Required** : Create a `.env` file containing key-value pairs and add the relevant projects to that file.
+      - Example: `app-digitaal-loket="~/path/to/app-digitaal-loket`.
+      - **Note** the use of `~`; the script will automatically expand it.
 
   _**Note :** You can ignore this step above since projects are already defined in the script but in the case where other apps will use semantic forms you'll need to add the corresponding project in the project array._
 
-  4. Run the script by executing `./update-semantic-forms.sh` in the terminal.
+  3. Run the script by executing `./update-semantic-forms.sh` in the terminal.
 
 ### Requirements
 
   - Bash
-  - rsync
 
 _**Note :** This script has some limitations, of example if you remove the `build-forms.sh` script, it's not advised to run this `./update-semantic-forms.sh` script twice as it will copy the same semantic-forms and migrations content twice, leading to duplicates. Also, before running the script don't forget switch branches in your projects or make sure you are inside the good one._
 
