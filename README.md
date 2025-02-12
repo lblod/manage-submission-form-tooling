@@ -12,6 +12,7 @@ npm run buildForms
 This will create a folder for each supported project in the `./dist` folder. You can then copy this folder to each respective project.
 
 ### Using a specific date
+
 By default a new timestamp will be generated when running the script, which will be used to prefix all file and folder names. If you want to use a different date for this you can pass it in as an argument to the script:
 
 ```sh
@@ -56,6 +57,7 @@ _**Note :** This script has some limitations, of example if you remove the `buil
 **Make sure to test extensively your updates.**
 
 ### Checklists
+
 ⚠️ ⚠️ ⚠️ An update to the form, means it needs to be manually propageted to ALL apps. ⚠️ ⚠️ ⚠️
 
 **Loket**
@@ -92,11 +94,13 @@ Full flow
 - Same with a submission created with the old forms version but sent with the new forms version in application (env variable)
 
 **app-public-decisions-database**
+
 - Note ⚠️ forms should reside in http://mu.semte.ch/graphs/access-for-role/PubliekeBesluitendatabank-BesluitendatabankLezer
 - connect the app to a source loket (with delta's), assuming the new forms have been deployed at the source
 - create e.g. a besluitenlijst in the source and see wether it comes through and you can open it
 
 **app-worship-decisions-database**
+
 - connect the app to a source loket (with delta's), assuming the new forms have been deployed at the source
 - create e.g. notulen from an eredienstberstuur, and check it correctly syncs through, i.e. login as the same eredienstbestuur on worship-decisions-database
 
@@ -141,10 +145,12 @@ If you create a new configuration file, a few things need to be done :
 
 
 ### When adding new Dossier Types (BesluitDocumentType/BesluitType)
+
 If you introduce new Dossier Types (i.e., Concepts), they have to be published in several places. Additionally, there are business rules that should be published so vendors know how to handle these new dossier types.
 
 #### Publishing the business rules to app-centrale-vindplaats
-This should only happen on [app-centrale-vindplaats](https://github.com/lblod/app-centrale-vindplaats). It's a simple TTL file that needs to be updated and ingested. Here is a [reference](https://github.com/lblod/app-centrale-vindplaats/blob/master/config/migrations/2024/20241014141246-Decisions-Types.ttl). Take the latest migration you find and update the file. 
+
+This should only happen on [app-centrale-vindplaats](https://github.com/lblod/app-centrale-vindplaats). It's a simple TTL file that needs to be updated and ingested. Here is a [reference](https://github.com/lblod/app-centrale-vindplaats/blob/master/config/migrations/2024/20241014141246-Decisions-Types.ttl). Take the latest migration you find and update the file.
 
 This involves:
 - Adding a new `skos:Concept` as shown [here](https://github.com/lblod/app-centrale-vindplaats/blob/master/config/migrations/2024/20241014141246-Decisions-Types.ttl#L2263).
@@ -153,6 +159,7 @@ This involves:
 Data model for the rules can be found [here](https://lblod.github.io/pages-vendors/#/docs/meldingsplicht).
 
 ### Publishing the Dossier Types (BesluitDocumentType/BesluitType) to data.vlaanderen
-Since these `skos:Concept`s fall under `data.vlaanderen.be`, they should be published here as well so they resolve correctly. 
+
+Since these `skos:Concept`s fall under `data.vlaanderen.be`, they should be published here as well so they resolve correctly.
 
 Example PR: [Publishing to data.vlaanderen](https://github.com/Informatievlaanderen/OSLOthema-lokaleBesluiten/pull/21)
