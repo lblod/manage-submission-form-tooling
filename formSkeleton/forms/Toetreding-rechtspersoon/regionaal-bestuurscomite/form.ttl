@@ -27,3 +27,4 @@ fields:6b12b310-8981-4499-bb45-2ef54b704b58 a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/17e76b36-64a1-4db1-8927-def3064b4bf1> # Regionaal bestuurscomité
       ] ;
     form:hasFieldGroup fieldGroups:1ed80702-9bec-4b44-ba1f-c033ef35a018 .
+

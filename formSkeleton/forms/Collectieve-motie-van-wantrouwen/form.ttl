@@ -56,3 +56,4 @@ fields:d67e38fb-e68e-4b57-9622-b3017e81feaa a form:Field ;
     form:displayType displayTypes:files; # consider this v1.0
     form:help """Indien een collectieve motie van wantrouwen wordt aangenomen, moet u hier de ingediende collectieve motie en de beslissing van de gemeenteraad (of districtsraad) hierover opladen, dit is de kennisgeving zoals bepaald in artikel 46, §5 (of artikel 124/1, §5) van het DLB.""" ;
     sh:group fields:aDynamicPropertyGroup .
+

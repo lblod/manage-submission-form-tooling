@@ -1,5 +1,3 @@
-
-
 ###########Advies budget(wijziging)-RO###########
 
 fieldGroups:abb02ef6-581d-4876-aa45-acd1fbc4f49b a form:FieldGroup ;
@@ -39,3 +37,4 @@ fields:af9a1822-dc7a-45f4-b126-e57ed0d022d0 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/2b12630f-8c4e-40a4-8a61-a0c45621a1e6>
       ] ;
     form:hasFieldGroup fieldGroups:abb02ef6-581d-4876-aa45-acd1fbc4f49b .
+

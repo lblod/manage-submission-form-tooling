@@ -1,4 +1,3 @@
-
 ###########Budget-Root###########
 
 fieldGroups:8e826b62-3bce-4a9c-b8c1-e84db510c6a3 a form:FieldGroup ;
@@ -31,5 +30,4 @@ fields:8640f3ff-2302-40eb-85c6-d932628250ed a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/40831a2c-771d-4b41-9720-0399998f1873>
       ] ;
     form:hasFieldGroup fieldGroups:8e826b62-3bce-4a9c-b8c1-e84db510c6a3 .
-
 

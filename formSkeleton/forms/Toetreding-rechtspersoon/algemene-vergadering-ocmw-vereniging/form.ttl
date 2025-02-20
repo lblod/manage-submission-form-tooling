@@ -33,3 +33,4 @@ fields:2bf6d586-63f4-4b82-a4f5-957e80fee56c a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089> # OCMW vereniging
       ] ;
     form:hasFieldGroup fieldGroups:03d1de1c-a093-483a-a0c7-34e4e391803f .
+

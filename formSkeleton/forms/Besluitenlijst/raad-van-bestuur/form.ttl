@@ -27,3 +27,4 @@ fields:fc67c635-0ad3-4424-aaae-0b7c2cd4d814 a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> # Raad van bestuur
       ] ;
     form:hasFieldGroup fieldGroups:c6913042-e84b-4ba9-a2f5-424b9cd5f005 .
+

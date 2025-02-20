@@ -27,3 +27,4 @@ fields:81e12e46-5a19-4911-a9df-cea6ec135ca1 a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000a> # Districtsraad
       ] ;
     form:hasFieldGroup fieldGroups:ea030090-ed7d-477d-a94d-ff0797c757ac .
+

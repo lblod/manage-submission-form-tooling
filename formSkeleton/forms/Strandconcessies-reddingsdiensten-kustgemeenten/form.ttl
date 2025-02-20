@@ -32,3 +32,4 @@ fields:0849ec1c-a6bf-48f6-91de-cb3701c466b0 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/ae6168d2-8119-46b1-b810-9f529be95a62> # Strandconcessies - reddingsdiensten kustgemeenten
       ] ;
     form:hasFieldGroup fieldGroups:34a1099d-c6e0-4029-93de-b4444c260c17 .
+

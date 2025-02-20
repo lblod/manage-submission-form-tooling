@@ -1,5 +1,3 @@
-
-
 ###########Voorlopige Opheving###########
 
 fieldGroups:6f7eeed2-6f6e-4999-b225-a43ed0de5e4c a form:FieldGroup ;
@@ -35,3 +33,4 @@ fields:20f49493-ff36-49c2-bb6f-e1711f8799d2 a form:ConditionalFieldGroup ;
         form:customValue <http://lblod.data.gift/concepts/82813418-356b-49a6-be9e-c5ef1b7a70bc>
       ] ;
     form:hasFieldGroup fieldGroups:6f7eeed2-6f6e-4999-b225-a43ed0de5e4c .
+

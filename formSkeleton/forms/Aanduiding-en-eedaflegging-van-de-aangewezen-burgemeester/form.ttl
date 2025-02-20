@@ -32,3 +32,4 @@ fields:8252a10c-f35c-486f-8314-a36c099e726c a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/7927f4f4-ad4c-4460-9207-2a4b5d21a9d7> # Aanduiding en eedaflegging van de aangewezen burgemeester
       ] ;
     form:hasFieldGroup fieldGroups:215b36a1-5a37-4de0-b1b3-b2ee735d2fed .
+

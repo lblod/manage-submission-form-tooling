@@ -27,3 +27,4 @@ fields:d1315fc9-e893-4b95-b715-ee94211a586e a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> # vast bureau
       ] ;
     form:hasFieldGroup fieldGroups:37ed86ab-4473-46e0-8516-dd7ecf6938aa .
+

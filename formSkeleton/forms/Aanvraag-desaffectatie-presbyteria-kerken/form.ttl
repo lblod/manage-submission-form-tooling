@@ -37,3 +37,4 @@ fields:0445e260-da17-4348-9734-01ae5857cdc0 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/4f938e44-8bce-4d3a-b5a7-b84754fe981a> # Aanvraag desaffectatie presbyteria/kerken
       ] ;
     form:hasFieldGroup fieldGroups:788cbc2b-8d7c-4b9e-b368-b1098e6ffe79 .
+

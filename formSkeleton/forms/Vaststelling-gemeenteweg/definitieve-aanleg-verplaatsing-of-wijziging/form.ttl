@@ -1,5 +1,3 @@
-
-
 ###########Definitieve aanleg, verplaatsing of wijziging van een gemeenteweg###########
 
 fieldGroups:f7e0c669-2634-4264-b01f-cc76cfa24b1a a form:FieldGroup ;
@@ -35,3 +33,4 @@ fields:f831b57d-905a-4002-9a1d-60d2723c6672 a form:ConditionalFieldGroup ;
         form:customValue <http://lblod.data.gift/concepts/0588da5c-08b2-4209-ab3c-efd1b94e1326>
       ] ;
     form:hasFieldGroup fieldGroups:f7e0c669-2634-4264-b01f-cc76cfa24b1a .
+

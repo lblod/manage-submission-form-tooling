@@ -33,3 +33,4 @@ fields:3de3d137-2e50-42dd-bbcd-57292b04d399 a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71> # Dienstverlenende vereniging
       ] ;
     form:hasFieldGroup fieldGroups:40e3130a-1674-44fe-b7d6-61d247614941 .
+

@@ -1,5 +1,3 @@
-
-
 ###########Definitieve Opheving###########
 
 fieldGroups:98a3e371-6c90-446b-8547-901e47d3b047 a form:FieldGroup ;
@@ -35,3 +33,4 @@ fields:083a2c18-e46b-4f2a-a29d-358412f310bf a form:ConditionalFieldGroup ;
         form:customValue <http://lblod.data.gift/concepts/82813418-356b-49a6-be9e-c5ef1b7a70bc>
       ] ;
     form:hasFieldGroup fieldGroups:98a3e371-6c90-446b-8547-901e47d3b047 .
+

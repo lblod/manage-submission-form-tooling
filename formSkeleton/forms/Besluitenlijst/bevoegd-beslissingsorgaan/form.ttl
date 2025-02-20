@@ -27,3 +27,4 @@ fields:e5a0028c-20e6-46fd-a6c0-2aa732e3124c a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/0dbc70ec-6be9-4997-b8e1-11b6c0542382> # Bevoegd beslissingsorgaan
       ] ;
     form:hasFieldGroup fieldGroups:4a41de32-e793-416b-9270-55c0617b1abf .
+

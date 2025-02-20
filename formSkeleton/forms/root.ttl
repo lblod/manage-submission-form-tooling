@@ -10,3 +10,4 @@ fields:aDynamicPropertyGroup a form:PropertyGroup;
     sh:description "A dynamic property group";
     sh:order 3;
     sh:name "aDynamicPropertyGroup".
+

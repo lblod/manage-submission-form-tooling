@@ -76,3 +76,4 @@ fields:8de8583b-3b0f-4bbd-aed6-2e46b3ad7b56 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/802a7e56-54f8-488d-b489-4816321fb9ae> # Opstart beroepsprocedure naar aanleiding van een beslissing
       ] ;
     form:hasFieldGroup fieldGroups:d12faf73-3a62-4117-a534-7a2f34392cc9 .
+

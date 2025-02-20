@@ -29,3 +29,4 @@ fields:4395c2e7-467a-44af-83dc-5ef1e1b912fc a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> # college van schepenen en burgermeester
       ] ;
     form:hasFieldGroup fieldGroups:8cde44c1-5173-40ce-95c9-56838f3f8907 .
+

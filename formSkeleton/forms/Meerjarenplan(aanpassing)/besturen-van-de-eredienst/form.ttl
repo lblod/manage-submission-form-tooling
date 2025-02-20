@@ -1,4 +1,3 @@
-
 ###########Meerjarenplan(aanpassing)-Eredienst###########
 
 fieldGroups:5a21ed58-c0cf-4042-8b59-bd14ca595aae a form:FieldGroup ;
@@ -42,8 +41,4 @@ fields:13a56126-4b73-4d92-a5d2-ddb2433f191b a form:ConditionalFieldGroup ;
             <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183> );
       ] ;
     form:hasFieldGroup fieldGroups:5a21ed58-c0cf-4042-8b59-bd14ca595aae .
-
-
-
-
 

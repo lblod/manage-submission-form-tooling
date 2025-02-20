@@ -27,3 +27,4 @@ fields:335b1a8a-e6d6-11ea-bf88-8b5df92c347a a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> # gemeenteraad
       ] ;
     form:hasFieldGroup fieldGroups:7e26db7b-e864-4afe-ad2b-1753434f3e3f .
+

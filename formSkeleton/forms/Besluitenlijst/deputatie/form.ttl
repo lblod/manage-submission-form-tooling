@@ -27,3 +27,4 @@ fields:c8acd61d-a126-4ceb-b06f-afa714673931 a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000d> # deputatie
       ] ;
     form:hasFieldGroup fieldGroups:2f758e4f-45b0-4f53-a2d4-7153f73f553b .
+

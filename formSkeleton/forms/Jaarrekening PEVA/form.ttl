@@ -1,4 +1,3 @@
-
 ###########Jaarrekening PEVA###########
 
 fieldGroups:09442240-cda1-4f12-a1d8-988da34cab81 a form:FieldGroup ;
@@ -40,5 +39,4 @@ fields:a8bd5027-ef9f-4522-9bd5-209f02d20eb9 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/0a8141bc-cf35-43dd-855d-365fa32ad89b>
       ] ;
     form:hasFieldGroup fieldGroups:09442240-cda1-4f12-a1d8-988da34cab81 .
-
 

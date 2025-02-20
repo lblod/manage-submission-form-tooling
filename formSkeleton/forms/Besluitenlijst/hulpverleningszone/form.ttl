@@ -27,3 +27,4 @@ fields:6c7676ec-0b58-4f1d-b56e-c988834a0c31 a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/ea446861-2c51-45fa-afd3-4e4a37b71562> # Hulpverleningszone
       ] ;
     form:hasFieldGroup fieldGroups:0b6c8596-8536-4726-bd93-137005d7aa5f .
+

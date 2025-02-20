@@ -33,3 +33,4 @@ fields:a20a4a8e-04ee-4159-821e-a144ff6a7e8f a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/4b8450cf-a326-4c66-9e63-b4ec10acc7f6> # Opdrachthoudende vereniging met private deelname
       ] ;
     form:hasFieldGroup fieldGroups:ecbae079-8b9b-415a-8e1e-010da362bb0e .
+

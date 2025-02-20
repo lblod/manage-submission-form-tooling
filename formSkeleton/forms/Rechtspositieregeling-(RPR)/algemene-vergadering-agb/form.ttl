@@ -33,3 +33,4 @@ fields:8112d820-9f26-4157-82fe-98eb1773e11f a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721> # Autonoom gemeentebedrijf
       ] ;
     form:hasFieldGroup fieldGroups:97b8287e-0a95-4f08-a60f-8f0a468ad7d2 .
+

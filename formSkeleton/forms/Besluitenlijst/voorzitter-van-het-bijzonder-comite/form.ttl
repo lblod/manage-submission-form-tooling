@@ -27,3 +27,4 @@ fields:3a3c7b25-cce7-4b69-9412-4e79ae0bccb8 a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> # Voorzitter van het Bijzonder Comité voor de Sociale Dienst
       ] ;
     form:hasFieldGroup fieldGroups:cd043d7a-175a-4453-88cb-a3083e57086d .
+

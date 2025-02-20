@@ -83,3 +83,4 @@ fields:c9046174-7de6-47f9-85f4-8a011b92afea a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/a970c99d-c06c-4942-9815-153bf3e87df2> # Afschrift erkenningszoekende besturen
       ] ;
     form:hasFieldGroup fieldGroups:61112374-50d5-4e0b-8847-185f7a0e8167 .
+

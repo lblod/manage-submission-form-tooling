@@ -1,5 +1,3 @@
-
-
 ###########Besluit-budget-AGB###########
 
 fieldGroups:0cb3ea99-0555-4529-a367-0a76de0fc448 a form:FieldGroup ;
@@ -59,3 +57,4 @@ fields:40384e53-5fa2-49a8-aa52-fabcae68bc62 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/9f12dc58-18ba-4a1f-9e7a-cf73d0b4f025>
       ] ;
     form:hasFieldGroup fieldGroups:0cb3ea99-0555-4529-a367-0a76de0fc448 .
+

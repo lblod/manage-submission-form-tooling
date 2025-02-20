@@ -27,3 +27,4 @@ fields:3467fac0-fafd-4bce-bd62-11d00e4ad064 a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> # burgemeester
       ] ;
     form:hasFieldGroup fieldGroups:c824e597-6bd5-42b3-b636-90f1921de923 .
+

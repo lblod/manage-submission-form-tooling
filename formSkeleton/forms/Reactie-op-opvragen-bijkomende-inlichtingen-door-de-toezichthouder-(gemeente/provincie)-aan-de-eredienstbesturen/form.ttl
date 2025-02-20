@@ -61,3 +61,4 @@ fields:7ac60200-8539-4024-9d08-d0363063c0f2 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3a3ea43f-6631-4a7d-94c6-3a77a445d450> # Reactie na stuiten door de gemeente of provincie
       ] ;
     form:hasFieldGroup fieldGroups:c042810f-bbfa-4438-9634-8adfa2fd0fc3 .
+

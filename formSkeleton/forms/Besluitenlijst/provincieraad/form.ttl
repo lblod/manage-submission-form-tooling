@@ -27,3 +27,4 @@ fields:60ebd2aa-12c4-4f63-9155-113d789e6ccc a form:ConditionalFieldGroup ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000c> # Provincieraad
       ] ;
     form:hasFieldGroup fieldGroups:c4e06af8-7dde-405d-b273-a5fd47ac8f2f .
+

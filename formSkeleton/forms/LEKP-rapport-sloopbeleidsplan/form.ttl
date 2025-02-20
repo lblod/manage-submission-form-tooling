@@ -33,3 +33,4 @@ fields:59f09c0d-e30b-4703-9a6e-a3547434e4c8 a form:ConditionalFieldGroup ;
       form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/fbe65218-836d-4e7a-a988-bb0b2cf26c7b>
     ] ;
   form:hasFieldGroup fieldGroups:91667a37-bba1-451e-b6d3-6a8379616280 .
+

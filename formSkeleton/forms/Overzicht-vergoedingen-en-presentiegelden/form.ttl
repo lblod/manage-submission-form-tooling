@@ -50,3 +50,4 @@ fields:1d8f3fa0-a908-494c-8cd3-48035f581936 a form:Field ;
     form:displayType displayTypes:files; # consider this v1.0
     form:help """Hier dient u de exceltabel in te dienen met een per mandataris geïndividualiseerd overzicht van de vergoedingen en de presentiegelden zoals bepaald in artikel 448, vierde lid DLB.""";
     sh:group fields:aDynamicPropertyGroup .
+
