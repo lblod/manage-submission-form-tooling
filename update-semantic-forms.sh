@@ -24,6 +24,12 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     # Expand ~ in value if it's present
     value=$(eval echo "$value")
 
+    if [ ! -d "$value" ]; then
+        # Directory does not exist.
+        echo "Directory $value does not exist."
+        exit 1
+    fi
+
     projects+=("$key")
     paths+=("$value")
 done < .env
