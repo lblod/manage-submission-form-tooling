@@ -1,5 +1,5 @@
 ##########################################################
-# Alert for "Kerkenbeleidsplan eredienstbesturen"
+# Alert for "LEKP-rapport-Fietspaden"
 ##########################################################
 
 fields:11af2d00-7d6e-41f3-89f1-9ac212fd0021 a form:Field;
@@ -13,8 +13,8 @@ fields:11af2d00-7d6e-41f3-89f1-9ac212fd0021 a form:Field;
 ########### LEKP-rapport-Fietspaden ###########
 
 fieldGroups:bce2b0df-0738-49c2-9ea5-32917733a037 a form:FieldGroup ;
-    mu:uuid "bce2b0df-0738-49c2-9ea5-32917733a037" ; 
-    form:hasField 
+    mu:uuid "bce2b0df-0738-49c2-9ea5-32917733a037" ;
+    form:hasField
                       ### Custom Alert ###
                       fields:11af2d00-7d6e-41f3-89f1-9ac212fd0021,
 
@@ -23,18 +23,6 @@ fieldGroups:bce2b0df-0738-49c2-9ea5-32917733a037 a form:FieldGroup ;
 
                       ### Nieuw aangelegde fietsinfrastructuur op eigen grondgebied (Custom heading)
                       fields:d0f11e8a-8a57-4309-91ff-e92e40d27525,
-
-                      ### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2022 ####
-                      fields:bfa729b9-2a4e-4fe6-b8cb-e6de01ffacf6,
-
-                      ### Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2022 ####
-                      fields:10bfc794-041a-485f-bfe2-2aa82acee56f,
-
-                      ### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2022 ####
-                      fields:5592b583-d9b4-45df-8b2c-d153a6d712db,
-
-                      ### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2022 ####
-                      fields:9d195161-d9c2-46a9-ad50-f83095aca568,
 
                       ### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2023 ####
                       fields:857f1d9e-ecbb-4461-819a-7e15aee2e82d,
@@ -72,12 +60,24 @@ fieldGroups:bce2b0df-0738-49c2-9ea5-32917733a037 a form:FieldGroup ;
                       ### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2025 ####
                       fields:d500e98f-cba4-4039-92fb-343235923315,
 
+                      # ### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2026 ####
+                      fields:910fe041-2fd4-42fc-ae43-562bb82e8f18,
+
+                      # ### Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2026 ####
+                      fields:59e99537-5aed-4cad-b4ed-4dad51a9811d,
+
+                      # ### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2026 ####
+                      fields:adc1eb59-6b4b-421a-a00e-626adbbe1938,
+
+                      # ### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2026 ####
+                      fields:f72746e7-850e-4d26-862d-9211cc0b8b79,
+
                       ### Bijkomende informatie (Custom heading) ####
                       fields:edfcdaa6-456a-48f2-b2ba-39a460be1a28,
 
                       ###  Van Welke andere subsidies dan het Fietsfonds of Kopenhagenfonds heb je gebruik gemaakt ?
                       fields:0e47f2d1-e8cd-4ea0-9ea8-4d1e2194769d,
-                      
+
                       ### Heb je hiervoor met andere overheidsinstanties, steden of gemeenten samegewerkt ? Welke ?
                       fields:842a3ef1-138c-408a-af3d-6016cae24a2c.
 

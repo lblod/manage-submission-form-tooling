@@ -1007,104 +1007,11 @@ fields:d0f11e8a-8a57-4309-91ff-e92e40d27525 a form:Field ;
     form:displayType displayTypes:heading ;
     sh:group fields:aDynamicPropertyGroup .
 
-#### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2022 ####
-fields:bfa729b9-2a4e-4fe6-b8cb-e6de01ffacf6 a form:Field ;
-    mu:uuid "bfa729b9-2a4e-4fe6-b8cb-e6de01ffacf6" ;
-    sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2022" ;
-    sh:order 103 ;
-    sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2022 ;
-    form:displayType displayTypes:numericalInput ;
-    form:validations
-        [
-            a form:RequiredConstraint ;
-            form:grouping form:Bag ;
-            sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2022
-        ],
-        [
-            a form:PositiveNumber;
-            form:grouping form:MatchEvery;
-            sh:order 104;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2022 ;
-            sh:resultMessage "Geen negatieve waarden"
-        ] ;
-    sh:group fields:aDynamicPropertyGroup .
-
-#### Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2022 ####
-fields:10bfc794-041a-485f-bfe2-2aa82acee56f a form:Field ;
-    mu:uuid "10bfc794-041a-485f-bfe2-2aa82acee56f" ;
-    sh:name "Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2022" ;
-    sh:order 105 ;
-    sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2022 ;
-    form:displayType displayTypes:numericalInput ;
-    form:validations
-        [
-            a form:RequiredConstraint ;
-            form:grouping form:Bag ;
-            sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2022
-        ],
-        [
-            a form:PositiveNumber;
-            form:grouping form:MatchEvery;
-            sh:order 106;
-            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2022 ;
-            sh:resultMessage "Geen negatieve waarden"
-        ] ;
-    sh:group fields:aDynamicPropertyGroup .
-
-#### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2022 ####
-fields:5592b583-d9b4-45df-8b2c-d153a6d712db a form:Field ;
-    mu:uuid "5592b583-d9b4-45df-8b2c-d153a6d712db" ;
-    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2022" ;
-    sh:order 107 ;
-    sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022 ;
-    form:displayType displayTypes:numericalInput ;
-    form:validations
-        [
-            a form:RequiredConstraint ;
-            form:grouping form:Bag ;
-            sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022
-        ],
-        [
-            a form:PositiveNumber;
-            form:grouping form:MatchEvery;
-            sh:order 108;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022 ;
-            sh:resultMessage "Geen negatieve waarden"
-        ] ;
-    sh:group fields:aDynamicPropertyGroup .
-
-#### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2022 ####
-fields:9d195161-d9c2-46a9-ad50-f83095aca568 a form:Field ;
-    mu:uuid "9d195161-d9c2-46a9-ad50-f83095aca568" ;
-    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2022" ;
-    sh:order 109 ;
-    sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 ;
-    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
-    form:displayType displayTypes:numericalInput ;
-    form:validations
-        [
-            a form:RequiredConstraint ;
-            form:grouping form:Bag ;
-            sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022
-        ],
-        [
-            a form:PositiveNumber;
-            form:grouping form:MatchEvery;
-            sh:order 110;
-            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 ;
-            sh:resultMessage "Geen negatieve waarden"
-        ] ;
-    sh:group fields:aDynamicPropertyGroup .
-
 #### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2023 ####
 fields:857f1d9e-ecbb-4461-819a-7e15aee2e82d a form:Field ;
     mu:uuid "857f1d9e-ecbb-4461-819a-7e15aee2e82d" ;
     sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2023" ;
-    sh:order 111 ;
+    sh:order 103 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2023 ;
     form:displayType displayTypes:numericalInput ;
     form:validations
@@ -1117,7 +1024,7 @@ fields:857f1d9e-ecbb-4461-819a-7e15aee2e82d a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 112;
+            sh:order 104;
             sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2023 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1127,7 +1034,7 @@ fields:857f1d9e-ecbb-4461-819a-7e15aee2e82d a form:Field ;
 fields:2a47484a-3e09-4c75-9c9f-04956145ae02 a form:Field ;
     mu:uuid "2a47484a-3e09-4c75-9c9f-04956145ae02" ;
     sh:name "Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2023" ;
-    sh:order 113 ;
+    sh:order 105 ;
     sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2023 ;
     form:displayType displayTypes:numericalInput ;
     form:validations
@@ -1140,7 +1047,7 @@ fields:2a47484a-3e09-4c75-9c9f-04956145ae02 a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 114;
+            sh:order 106;
             sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2023 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1150,7 +1057,7 @@ fields:2a47484a-3e09-4c75-9c9f-04956145ae02 a form:Field ;
 fields:7d8f0e21-7e3d-4f39-88e4-195175a63d65 a form:Field ;
     mu:uuid "7d8f0e21-7e3d-4f39-88e4-195175a63d65" ;
     sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2023" ;
-    sh:order 115 ;
+    sh:order 107 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2023 ;
     form:displayType displayTypes:numericalInput ;
     form:validations
@@ -1163,7 +1070,7 @@ fields:7d8f0e21-7e3d-4f39-88e4-195175a63d65 a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 116;
+            sh:order 108;
             sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2023 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1173,7 +1080,7 @@ fields:7d8f0e21-7e3d-4f39-88e4-195175a63d65 a form:Field ;
 fields:00ccc3c2-7e4c-43b5-bf3b-f62542856745 a form:Field ;
     mu:uuid "00ccc3c2-7e4c-43b5-bf3b-f62542856745" ;
     sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2023" ;
-    sh:order 117 ;
+    sh:order 109 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 ;
     form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
@@ -1187,7 +1094,7 @@ fields:00ccc3c2-7e4c-43b5-bf3b-f62542856745 a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 118;
+            sh:order 110;
             sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1197,7 +1104,7 @@ fields:00ccc3c2-7e4c-43b5-bf3b-f62542856745 a form:Field ;
 fields:788a6000-097d-4ea7-9a3b-e64ce78e266c a form:Field ;
     mu:uuid "788a6000-097d-4ea7-9a3b-e64ce78e266c" ;
     sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2024" ;
-    sh:order 119 ;
+    sh:order 111 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2024 ;
     form:displayType displayTypes:numericalInput ;
     form:validations
@@ -1210,7 +1117,7 @@ fields:788a6000-097d-4ea7-9a3b-e64ce78e266c a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 120;
+            sh:order 112;
             sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2024 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1220,7 +1127,7 @@ fields:788a6000-097d-4ea7-9a3b-e64ce78e266c a form:Field ;
 fields:5a554529-0c7e-43f2-b29e-ddfa39df9b88 a form:Field ;
     mu:uuid "5a554529-0c7e-43f2-b29e-ddfa39df9b88" ;
     sh:name "Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2024" ;
-    sh:order 121 ;
+    sh:order 113 ;
     sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2024 ;
     form:displayType displayTypes:numericalInput ;
     form:validations
@@ -1233,7 +1140,7 @@ fields:5a554529-0c7e-43f2-b29e-ddfa39df9b88 a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 122;
+            sh:order 114;
             sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2024 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1243,7 +1150,7 @@ fields:5a554529-0c7e-43f2-b29e-ddfa39df9b88 a form:Field ;
 fields:c1bce5db-aeee-4246-acd5-764ed4be3d1b a form:Field ;
     mu:uuid "c1bce5db-aeee-4246-acd5-764ed4be3d1b" ;
     sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2024" ;
-    sh:order 123 ;
+    sh:order 115 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2024 ;
     form:displayType displayTypes:numericalInput ;
     form:validations
@@ -1256,7 +1163,7 @@ fields:c1bce5db-aeee-4246-acd5-764ed4be3d1b a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 124;
+            sh:order 116;
             sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2024 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1266,7 +1173,7 @@ fields:c1bce5db-aeee-4246-acd5-764ed4be3d1b a form:Field ;
 fields:9e86bf79-170d-4136-9aa9-9db6df27883c a form:Field ;
     mu:uuid "9e86bf79-170d-4136-9aa9-9db6df27883c" ;
     sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2024" ;
-    sh:order 125 ;
+    sh:order 117 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 ;
     form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
@@ -1280,7 +1187,7 @@ fields:9e86bf79-170d-4136-9aa9-9db6df27883c a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 126;
+            sh:order 118;
             sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1290,7 +1197,7 @@ fields:9e86bf79-170d-4136-9aa9-9db6df27883c a form:Field ;
 fields:826f96ae-4465-4c63-a95e-eafff7ea86eb a form:Field ;
     mu:uuid "826f96ae-4465-4c63-a95e-eafff7ea86eb" ;
     sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2025" ;
-    sh:order 127 ;
+    sh:order 119 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2025 ;
     form:displayType displayTypes:numericalInput ;
     form:validations
@@ -1303,7 +1210,7 @@ fields:826f96ae-4465-4c63-a95e-eafff7ea86eb a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 128;
+            sh:order 120;
             sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2025 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1313,7 +1220,7 @@ fields:826f96ae-4465-4c63-a95e-eafff7ea86eb a form:Field ;
 fields:b024283a-4a6d-460a-8bd8-899e3381f09e a form:Field ;
     mu:uuid "b024283a-4a6d-460a-8bd8-899e3381f09e" ;
     sh:name "Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2025" ;
-    sh:order 129 ;
+    sh:order 121 ;
     sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2025 ;
     form:displayType displayTypes:numericalInput ;
     form:validations
@@ -1326,7 +1233,7 @@ fields:b024283a-4a6d-460a-8bd8-899e3381f09e a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 130;
+            sh:order 122;
             sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2025 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1336,7 +1243,7 @@ fields:b024283a-4a6d-460a-8bd8-899e3381f09e a form:Field ;
 fields:b5a49347-5cb2-4ad7-831c-289c41ba2abd a form:Field ;
     mu:uuid "b5a49347-5cb2-4ad7-831c-289c41ba2abd" ;
     sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2025" ;
-    sh:order 131 ;
+    sh:order 123 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2025 ;
     form:displayType displayTypes:numericalInput ;
     form:validations
@@ -1349,7 +1256,7 @@ fields:b5a49347-5cb2-4ad7-831c-289c41ba2abd a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 132;
+            sh:order 124;
             sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2025 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
@@ -1359,7 +1266,7 @@ fields:b5a49347-5cb2-4ad7-831c-289c41ba2abd a form:Field ;
 fields:d500e98f-cba4-4039-92fb-343235923315 a form:Field ;
     mu:uuid "d500e98f-cba4-4039-92fb-343235923315" ;
     sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2025" ;
-    sh:order 133 ;
+    sh:order 125 ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2025 ;
     form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
@@ -1373,8 +1280,101 @@ fields:d500e98f-cba4-4039-92fb-343235923315 a form:Field ;
         [
             a form:PositiveNumber;
             form:grouping form:MatchEvery;
-            sh:order 134;
+            sh:order 126;
             sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2025 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2026 ####
+fields:910fe041-2fd4-42fc-ae43-562bb82e8f18 a form:Field ;
+    mu:uuid "910fe041-2fd4-42fc-ae43-562bb82e8f18" ;
+    sh:name "Totaal aantal kilometers gerenoveerde eenrichtingsfietspaden in 2026" ;
+    sh:order 127 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2026 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2026
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 128;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2026 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2026 ####
+fields:59e99537-5aed-4cad-b4ed-4dad51a9811d a form:Field ;
+    mu:uuid "59e99537-5aed-4cad-b4ed-4dad51a9811d" ;
+    sh:name "Totaal aantal kilometers nieuwe eenrichtingsfietspaden in 2026" ;
+    sh:order 129 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2026 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2026
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 130;
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2026 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2026 ####
+fields:adc1eb59-6b4b-421a-a00e-626adbbe1938 a form:Field ;
+    mu:uuid "adc1eb59-6b4b-421a-a00e-626adbbe1938" ;
+    sh:name "Totaal aantal kilometers gerenoveerde tweerichtingsfietspaden in 2026" ;
+    sh:order 131 ;
+    sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2026 ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2026
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 132;
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2026 ;
+            sh:resultMessage "Geen negatieve waarden"
+        ] ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#### Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2026 ####
+fields:f72746e7-850e-4d26-862d-9211cc0b8b79 a form:Field ;
+    mu:uuid "f72746e7-850e-4d26-862d-9211cc0b8b79" ;
+    sh:name "Totaal aantal kilometers nieuwe tweerichtingsfietspaden in 2026" ;
+    sh:order 133 ;
+    sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2026 ;
+    form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
+    form:displayType displayTypes:numericalInput ;
+    form:validations
+        [
+            a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht." ;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2026
+        ],
+        [
+            a form:PositiveNumber;
+            form:grouping form:MatchEvery;
+            sh:order 134;
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2026 ;
             sh:resultMessage "Geen negatieve waarden"
         ] ;
     sh:group fields:aDynamicPropertyGroup .
