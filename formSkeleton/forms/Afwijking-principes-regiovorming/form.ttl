@@ -28,7 +28,7 @@ fields:109d5a85-fcc7-462a-ac63-ff49f5be5f6d a form:ConditionalFieldGroup ;
         form:grouping form:Bag ;
         sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
-        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> # Afwijking principes regiovorming
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/cc831628-95a0-4874-bad5-cdf563896032> # Afwijking principes regiovorming
       ] ;
     form:hasFieldGroup fieldGroups:109d5a85-fcc7-462a-ac63-ff49f5be5f6a .
 
