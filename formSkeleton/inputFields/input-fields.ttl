@@ -1597,29 +1597,6 @@ fields:7b3feafe-fbf9-4cdb-ae80-b37dbd3107dd a form:Field ;
       sh:path lblodBesluit:LEKPSloopbeleidsplanDate ] ;
     sh:group fields:aDynamicPropertyGroup .
 
-#### Households ####
-fields:28ddce67-6aaf-4a3b-8953-63eeb7178d1f a form:Field ;
-    mu:uuid "28ddce67-6aaf-4a3b-8953-63eeb7178d1f";
-    sh:name "Geef hier aan hoeveel huishoudens uitgenodigd zijn voor een klimaattafel voor 31/12/2024" ;
-    sh:order 103 ;
-    sh:path lblodBesluit:LEKPHouseholds ;
-    form:options """{}""" ;
-    form:displayType displayTypes:numericalInput ;
-    form:validations
-    [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht." ;
-      sh:path lblodBesluit:LEKPHouseholds ],
-    [ a form:ValidInteger ;
-      form:grouping form:MatchEvery ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn." ;
-      sh:path lblodBesluit:LEKPHouseholds ],
-    [ a form:PositiveNumber ;
-      form:grouping form:MatchEvery ;
-      sh:resultMessage "Geef een positief aantal op." ;
-      sh:path lblodBesluit:LEKPHouseholds ] ;
-    sh:group fields:aDynamicPropertyGroup .
-
 #### Links ####
 fields:df63b483-f2ee-4274-a7d0-0cfc916d22ce a form:Field ;
     mu:uuid "df63b483-f2ee-4274-a7d0-0cfc916d22ce" ;
