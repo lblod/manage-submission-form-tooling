@@ -15,17 +15,14 @@ fieldGroups:8f69f627-e0f0-44e9-95f2-7db5e421f0fc a form:FieldGroup ;
                       ###Datum-van-publicatie-op-webtoepassing###
                       fields:49dbe1be-877a-4890-8465-1510ff18ce18,
 
-                      ###Datum-zitting/besluit###
-                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
-
-                      ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
-                      fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
-
-                      ###Naam-betreffend-bedrijf/bestuur###
-                      fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
-
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+                      ###Links-naar-documenten###
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
@@ -37,12 +34,12 @@ fieldGroups:8f69f627-e0f0-44e9-95f2-7db5e421f0fc a form:FieldGroup ;
                       fields:303545a6-705b-43b3-86b7-b96436524be9,
 
                       ### Bestuurseenheid classificatie code [hidden input] ###
-                      fields:ac32a491-4b5c-4a7e-973f-fad6127c9433.
+                      fields:ac32a491-4b5c-4a7e-973f-fad6127c9433 .
 
-fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:0ae400e4-6897-4d86-982a-e1f74ead1f93.
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:0ae400e4-6897-4d86-982a-e1f74ead1f93 .
 
 fields:0ae400e4-6897-4d86-982a-e1f74ead1f93 a form:ConditionalFieldGroup ;
-    mu:uuid "0ae400e4-6897-4d86-982a-e1f74ead1f93";
+    mu:uuid "0ae400e4-6897-4d86-982a-e1f74ead1f93" ;
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
@@ -51,4 +48,3 @@ fields:0ae400e4-6897-4d86-982a-e1f74ead1f93 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/d9c3d177-6dc6-4775-8c6a-1055a9cbdcc6>
       ] ;
     form:hasFieldGroup fieldGroups:8f69f627-e0f0-44e9-95f2-7db5e421f0fc .
-
